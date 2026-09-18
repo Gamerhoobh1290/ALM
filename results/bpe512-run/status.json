@@ -1,0 +1,12 @@
+{
+  "state": "data_stop: 429 Client Error: Too Many Requests for url: https://datasets-server.huggingface.co/rows?dataset=roneneldan%2FTinyStories&config=default&split=train&offset=6300&length=100",
+  "detail": "data_stop: 429 Client Error: Too Many Requests for url: https://datasets-server.huggingface.co/rows?dataset=roneneldan%2FTinyStories&config=default&split=train&offset=6300&length=100",
+  "updated_at": "2026-09-16 23:53:14",
+  "checkpoint": "results\\bpe512-run\\checkpoints\\step_00000325.pt",
+  "checkpoint_step": 325,
+  "step": 325,
+  "tokens": 1331200,
+  "target_tokens": 50000000,
+  "train_loss": 4.519336700439453,
+  "validation_loss": 3.8928279575427216
+}

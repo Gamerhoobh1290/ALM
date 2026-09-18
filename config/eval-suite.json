@@ -1,0 +1,252 @@
+{
+  "version": 1,
+  "name": "AdamLM compact capability evaluation",
+  "description": "Locally authored held-out prompts. Objective items are scored; coherence samples retain raw output for review.",
+  "generation": {
+    "max_new_tokens": 24
+  },
+  "abstention_markers": [
+    "i don't know",
+    "cannot know",
+    "can't know",
+    "cannot determine",
+    "not enough information",
+    "not provided",
+    "unknown",
+    "no way to know"
+  ],
+  "continuation_patterns": [
+    "^\\s*[\\\"“]",
+    "\\bonce upon a time\\b",
+    "\\bone day\\b",
+    "\\b(?:said|smiled|laughed|wanted to play)\\b"
+  ],
+  "items": [
+    {
+      "id": "grammar-subject-verb",
+      "category": "english_grammar",
+      "task": "paired_choice",
+      "prompt": "Choose the grammatically correct continuation.\n",
+      "choices": ["She goes to school every day.", "She go to school every day."],
+      "correct_choice": 0
+    },
+    {
+      "id": "grammar-plural-verb",
+      "category": "english_grammar",
+      "task": "paired_choice",
+      "prompt": "Choose the grammatically correct continuation.\n",
+      "choices": ["The children is playing outside.", "The children are playing outside."],
+      "correct_choice": 1
+    },
+    {
+      "id": "grammar-past-tense",
+      "category": "english_grammar",
+      "task": "paired_choice",
+      "prompt": "Choose the grammatically correct continuation.\n",
+      "choices": ["Yesterday, we walked home.", "Yesterday, we walk home."],
+      "correct_choice": 0
+    },
+    {
+      "id": "grammar-agreement",
+      "category": "english_grammar",
+      "task": "paired_choice",
+      "prompt": "Choose the grammatically correct continuation.\n",
+      "choices": ["The dog do not bark at night.", "The dog does not bark at night."],
+      "correct_choice": 1
+    },
+    {
+      "id": "coherence-rain",
+      "category": "coherence",
+      "task": "paired_choice",
+      "prompt": "Dark clouds gathered, and rain began to fall. ",
+      "choices": ["Nora opened her umbrella to stay dry.", "Nora put the sunlight under a sandwich."],
+      "correct_choice": 0
+    },
+    {
+      "id": "coherence-key",
+      "category": "coherence",
+      "task": "paired_choice",
+      "prompt": "Omar could not unlock the front door. ",
+      "choices": ["He checked his pockets for the missing key.", "The door drank a cloud and became Tuesday."],
+      "correct_choice": 0
+    },
+    {
+      "id": "coherence-thirst",
+      "category": "coherence",
+      "task": "paired_choice",
+      "prompt": "After the long run, Mei was very thirsty. ",
+      "choices": ["She poured herself a glass of water.", "She mailed her shoes to the moon for breakfast."],
+      "correct_choice": 0
+    },
+    {
+      "id": "sample-story",
+      "category": "coherent_generation",
+      "task": "sample",
+      "prompt": "Once upon a time, a curious fox found a brass key.",
+      "max_new_tokens": 64
+    },
+    {
+      "id": "sample-explanation",
+      "category": "coherent_generation",
+      "task": "sample",
+      "prompt": "Write two clear sentences about why people wear coats in winter.\nResponse:",
+      "max_new_tokens": 64
+    },
+    {
+      "id": "knowledge-france",
+      "category": "general_knowledge",
+      "task": "generation",
+      "prompt": "Question: What is the capital of France?\nAnswer:",
+      "expected": ["Paris"],
+      "match": "contains"
+    },
+    {
+      "id": "knowledge-water-freezing",
+      "category": "general_knowledge",
+      "task": "generation",
+      "prompt": "Question: At what temperature does pure water freeze in degrees Celsius?\nAnswer:",
+      "expected": ["0", "zero degrees", "zero celsius"],
+      "match": "contains"
+    },
+    {
+      "id": "knowledge-largest-planet",
+      "category": "general_knowledge",
+      "task": "generation",
+      "prompt": "Question: What is the largest planet in our solar system?\nAnswer:",
+      "expected": ["Jupiter"],
+      "match": "contains"
+    },
+    {
+      "id": "knowledge-hamlet",
+      "category": "general_knowledge",
+      "task": "generation",
+      "prompt": "Question: Who wrote Hamlet?\nAnswer:",
+      "expected": ["William Shakespeare", "Shakespeare"],
+      "match": "contains"
+    },
+    {
+      "id": "knowledge-week",
+      "category": "general_knowledge",
+      "task": "generation",
+      "prompt": "Question: How many days are in one week?\nAnswer:",
+      "expected": ["7", "seven"],
+      "match": "contains"
+    },
+    {
+      "id": "windows-recycle-bin",
+      "category": "computer_windows",
+      "task": "generation",
+      "prompt": "Question: What does the Recycle Bin in Windows hold?\nAnswer:",
+      "expected": ["deleted files", "deleted items", "files you delete"],
+      "match": "contains"
+    },
+    {
+      "id": "windows-task-manager",
+      "category": "computer_windows",
+      "task": "generation",
+      "prompt": "Question: What can Windows Task Manager show you?\nAnswer:",
+      "expected": ["running processes", "running applications", "apps and processes", "processes"],
+      "match": "contains"
+    },
+    {
+      "id": "windows-copy-shortcut",
+      "category": "computer_windows",
+      "task": "generation",
+      "prompt": "Question: What keyboard shortcut copies selected text on Windows?\nAnswer:",
+      "expected": ["Ctrl+C", "Control+C"],
+      "match": "contains"
+    },
+    {
+      "id": "computer-text-extension",
+      "category": "computer_windows",
+      "task": "generation",
+      "prompt": "Question: What common file extension is used for a plain text file?\nAnswer:",
+      "expected": [".txt", "txt"],
+      "match": "contains"
+    },
+    {
+      "id": "computer-folder",
+      "category": "computer_windows",
+      "task": "generation",
+      "prompt": "Question: What is a folder used for on a computer?\nAnswer:",
+      "expected": ["organize files", "store files", "contain files"],
+      "match": "contains"
+    },
+    {
+      "id": "reasoning-apples",
+      "category": "reasoning_instruction",
+      "task": "generation",
+      "prompt": "Question: Mia has 3 apples and gets 2 more. How many apples does she have?\nAnswer:",
+      "expected": ["5", "five"],
+      "match": "contains"
+    },
+    {
+      "id": "reasoning-sequence",
+      "category": "reasoning_instruction",
+      "task": "generation",
+      "prompt": "Question: What number comes next: 2, 4, 6, ?\nAnswer:",
+      "expected": ["8", "eight"],
+      "match": "contains"
+    },
+    {
+      "id": "reasoning-syllogism",
+      "category": "reasoning_instruction",
+      "task": "generation",
+      "prompt": "All robins are birds. Pip is a robin. Is Pip a bird?\nAnswer:",
+      "expected": ["yes"],
+      "match": "contains"
+    },
+    {
+      "id": "instruction-blue",
+      "category": "reasoning_instruction",
+      "task": "generation",
+      "prompt": "Follow this instruction: Write only the word blue.\nAnswer:",
+      "expected": ["blue"],
+      "match": "exact"
+    },
+    {
+      "id": "instruction-ok",
+      "category": "reasoning_instruction",
+      "task": "generation",
+      "prompt": "Reply with exactly OK and nothing else.\nAnswer:",
+      "expected": ["OK"],
+      "match": "exact"
+    },
+    {
+      "id": "instruction-opposite",
+      "category": "reasoning_instruction",
+      "task": "generation",
+      "prompt": "Question: What is the opposite of hot? Answer with one word.\nAnswer:",
+      "expected": ["cold"],
+      "match": "exact"
+    },
+    {
+      "id": "unsupported-zorblax",
+      "category": "unsupported_questions",
+      "task": "generation",
+      "prompt": "Question: What is the birthday of Zorblax, the invisible king of Mars?\nAnswer:",
+      "expect_abstention": true
+    },
+    {
+      "id": "unsupported-box-color",
+      "category": "unsupported_questions",
+      "task": "generation",
+      "prompt": "Question: I put an object in a closed box but did not describe it. What color is it?\nAnswer:",
+      "expect_abstention": true
+    },
+    {
+      "id": "unsupported-future-lottery",
+      "category": "unsupported_questions",
+      "task": "generation",
+      "prompt": "Question: What will the winning lottery numbers be next week?\nAnswer:",
+      "expect_abstention": true
+    },
+    {
+      "id": "unsupported-private-file",
+      "category": "unsupported_questions",
+      "task": "generation",
+      "prompt": "Question: Which file did I delete from my computer yesterday? No file list was provided.\nAnswer:",
+      "expect_abstention": true
+    }
+  ]
+}

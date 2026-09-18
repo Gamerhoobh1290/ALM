@@ -1,0 +1,14 @@
+{
+  "state": "target_reached",
+  "dataset": "dolly",
+  "source": "dolly",
+  "detail": "Target was already reached; checkpoint and summary unchanged.",
+  "updated_at": "2026-09-17 11:15:55",
+  "checkpoint": "results\\sft-benchmark\\checkpoints\\step_00000092.pt",
+  "checkpoint_step": 92,
+  "step": 92,
+  "tokens": 3014656,
+  "target_tokens": 3000000,
+  "train_loss": 4.517021179199219,
+  "validation_loss": 4.522010761428395
+}

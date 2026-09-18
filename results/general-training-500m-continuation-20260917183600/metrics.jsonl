@@ -1,0 +1,2 @@
+{"event": "start", "step": 0, "params": 8868096, "validation_loss": 2.344149675773666, "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4", "max_session_seconds": 18000.0}
+{"event": "graceful_stop", "step": 0, "tokens": 0, "checkpoint": "C:\\AdamLM\\results\\general-training-500m-continuation-20260917183600\\checkpoints\\step_00000000.pt"}

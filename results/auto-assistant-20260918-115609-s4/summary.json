@@ -1,0 +1,22 @@
+{
+  "reason": "data_stop: SFT train exhausted",
+  "step": 2024,
+  "params": 8868096,
+  "new_tokens": 8290304,
+  "total_tokens": 8290304,
+  "seconds": 127.99741460001678,
+  "end_to_end_tokens_per_second": 64769.30823881589,
+  "compute_tokens_per_second": 158517.35560977922,
+  "compute_seconds": 52.29903040023055,
+  "data_seconds": 13.521984799939673,
+  "validation_seconds": 1.4832450000103563,
+  "checkpoint_seconds": 44.97210029998678,
+  "allocated_mib": 561.087890625,
+  "reserved_mib": 650.0,
+  "initial_validation_loss": 2.7107050738668588,
+  "final_validation_loss": 2.721796648202792,
+  "final_holdout_loss": 2.9092520149525405,
+  "last_train_loss": 2.8683300018310547,
+  "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-115609-s4\\checkpoints\\step_00002024.pt",
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+}

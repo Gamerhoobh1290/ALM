@@ -1,0 +1,11 @@
+{
+  "feedback_id": "feedback-20260918-013828-415d7c",
+  "conversation_id": "",
+  "created_at": 1789691908.331269,
+  "status": "approved",
+  "assistant_text": "Bannon Basil is United by American Norsements\nThe California Swift",
+  "corrected_text": "AdamLM",
+  "note": "",
+  "training_use": "approved \u2014 eligible for a future SFT stage with response-only loss masking; held-out feedback stays held out",
+  "reviewed_at": 1789692047.4503164
+}

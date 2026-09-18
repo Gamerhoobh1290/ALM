@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: adamlm
+Version: 0.1.0
+Summary: A from-scratch language-model training baseline for a local RTX 3060
+Requires-Python: <3.13,>=3.12
+Requires-Dist: requests<3,>=2.32

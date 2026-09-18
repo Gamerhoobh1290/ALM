@@ -1,0 +1,208 @@
+{
+  "plan_id": "auto-assistant-20260918-023246",
+  "head": {
+    "run": "auto-assistant-20260918-012952-s3",
+    "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-012952-s3\\checkpoints\\step_00002024.pt",
+    "step": 2024,
+    "tokens": 8290304
+  },
+  "foundation": {
+    "run": "general-training-500m",
+    "state": "target_reached",
+    "checkpoint": "C:\\AdamLM\\results\\general-training-500m\\checkpoints\\step_00015259.pt"
+  },
+  "diet": {
+    "manifest": "data/sft_assistant/processed-manifest.json",
+    "revision": "curated-mix-20260918",
+    "masking": "response-only (unchanged SFT template)",
+    "dailydialog": {
+      "rows": 34890,
+      "tokens": 5258299
+    },
+    "dolly": {
+      "rows": 13511,
+      "tokens": 3033000
+    }
+  },
+  "allocation": {
+    "dd_share": 0.75,
+    "dolly_share": 0.25,
+    "basis": "base 70% DailyDialog / 30% Dolly by sampled training tokens: conversation-majority reading diet with roughly balanced response supervision (Dolly rows carry ~3.3x the response tokens); tilted +5pp toward conversation on measured skill gap (conversation F1 0.054 < instructions F1 0.313)",
+    "requested_tokens": 100000000,
+    "effective_tokens": 24873897,
+    "capped": true,
+    "cap_explanation": "Requested 100.00M exceeds what the available data supports (24.87M = 3 full passes of the 8.29M mixed file). Effective budget capped at 24.87M \u2014 repeated data is never presented as new data. Add training data or accept the capped plan.",
+    "stage_chunks": [
+      {
+        "tokens": 8291299,
+        "epoch_label": "pass 1"
+      },
+      {
+        "tokens": 8291299,
+        "epoch_label": "pass 2"
+      },
+      {
+        "tokens": 8291299,
+        "epoch_label": "pass 3"
+      }
+    ]
+  },
+  "requested_tokens": 100000000,
+  "effective_tokens": 24873897,
+  "budget": {
+    "requested_tokens": 100000000,
+    "effective_tokens": 24873897,
+    "epoch_tokens": 8291299,
+    "max_passes": 3,
+    "capped": true,
+    "cap_explanation": "Requested 100.00M exceeds what the available data supports (24.87M = 3 full passes of the 8.29M mixed file). Effective budget capped at 24.87M \u2014 repeated data is never presented as new data. Add training data or accept the capped plan.",
+    "repeated_data": true,
+    "note": "Budget is capped at 3 full passes of the 8.29M mixed file; every pass beyond the first repeats the same rows and is labeled as repeated data."
+  },
+  "stages": [
+    {
+      "index": 1,
+      "run_dir": "results/auto-assistant-20260918-023246-s1",
+      "target_tokens": 8291299,
+      "epoch_label": "pass 1",
+      "status": "done",
+      "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-012952-s3\\checkpoints\\step_00002024.pt",
+      "command": [
+        "C:\\AdamLM\\.venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "adamlm.bpe_train",
+        "--auto-resume",
+        "--config",
+        "C:\\AdamLM\\config\\sft-assistant.json",
+        "--run-dir",
+        "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s1",
+        "--dataset",
+        "dailydialog",
+        "--target-tokens",
+        "8291299",
+        "--parent-checkpoint",
+        "C:\\AdamLM\\results\\auto-assistant-20260918-012952-s3\\checkpoints\\step_00002024.pt",
+        "--max-seconds",
+        "3599.9979994297028"
+      ],
+      "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s1\\checkpoints\\step_00002024.pt",
+      "tokens": 8290304,
+      "note": "full-pass boundary: data exhausted 995 tokens short of target (< one batch of 4096); advancing with actual 8290304 tokens from step_00002024.pt"
+    },
+    {
+      "index": 2,
+      "run_dir": "results/auto-assistant-20260918-023246-s2",
+      "target_tokens": 8292294,
+      "epoch_label": "pass 2",
+      "status": "done",
+      "parent_stage": 1,
+      "note": "full-pass boundary: data exhausted 1990 tokens short of target (< one batch of 4096); advancing with actual 8290304 tokens from step_00002024.pt",
+      "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s1\\checkpoints\\step_00002024.pt",
+      "command": [
+        "C:\\AdamLM\\.venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "adamlm.bpe_train",
+        "--auto-resume",
+        "--config",
+        "C:\\AdamLM\\config\\sft-assistant.json",
+        "--run-dir",
+        "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s2",
+        "--dataset",
+        "dailydialog",
+        "--target-tokens",
+        "8292294",
+        "--parent-checkpoint",
+        "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s1\\checkpoints\\step_00002024.pt",
+        "--max-seconds",
+        "3444.707177877426"
+      ],
+      "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s2\\checkpoints\\step_00002024.pt",
+      "tokens": 8290304
+    },
+    {
+      "index": 3,
+      "run_dir": "results/auto-assistant-20260918-023246-s3",
+      "target_tokens": 8293289,
+      "epoch_label": "pass 3",
+      "status": "done",
+      "parent_stage": 2,
+      "note": "full-pass boundary: data exhausted 2985 tokens short of target (< one batch of 4096); advancing with actual 8290304 tokens from step_00002024.pt",
+      "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s2\\checkpoints\\step_00002024.pt",
+      "command": [
+        "C:\\AdamLM\\.venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "adamlm.bpe_train",
+        "--auto-resume",
+        "--config",
+        "C:\\AdamLM\\config\\sft-assistant.json",
+        "--run-dir",
+        "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s3",
+        "--dataset",
+        "dailydialog",
+        "--target-tokens",
+        "8293289",
+        "--parent-checkpoint",
+        "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s2\\checkpoints\\step_00002024.pt",
+        "--max-seconds",
+        "3294.4644873142242"
+      ],
+      "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s3\\checkpoints\\step_00002024.pt",
+      "tokens": 8290304
+    }
+  ],
+  "storage": {
+    "project_gib": 20.477098531089723,
+    "est_new_gib": 1.6580543518066406,
+    "budget_gib": 25.0,
+    "free_gib": 130.89745330810547,
+    "floor_gib": 5.0,
+    "fits_budget": true,
+    "floor_ok": true,
+    "config": "config/sft-assistant.json"
+  },
+  "time": {
+    "max_seconds": 3600.0,
+    "max_duration": "1h 00m",
+    "est_seconds": 206.03295887013826,
+    "est_duration": "3m 26s"
+  },
+  "stopping": [
+    "overall time limit of 1h 00m (stages share one deadline)",
+    "Stop button: graceful stop with checkpoint, resumable without replanning",
+    "disk pause: stages halt safely on storage-guard trips, checkpoints intact"
+  ],
+  "eval": {
+    "old_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-012952-s3\\checkpoints\\step_00002024.pt",
+    "new_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s3\\checkpoints\\step_00002024.pt",
+    "report": "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s3\\auto_eval.json",
+    "instr_f1_old": 0.3011,
+    "instr_f1_new": 0.3417,
+    "instr_n": 4,
+    "conv_f1_old": 0.1281,
+    "conv_f1_new": 0.0614,
+    "conv_n": 2,
+    "hygiene_problems": [],
+    "suite_accuracy_old": 0.18518518518518517,
+    "suite_accuracy_new": 0.18518518518518517,
+    "suite_delta": 0.0,
+    "old_validation_loss": 2.606234298921147,
+    "new_validation_loss": 2.665383423332328
+  },
+  "warnings": [
+    "Requested 100.00M exceeds what the available data supports (24.87M = 3 full passes of the 8.29M mixed file). Effective budget capped at 24.87M \u2014 repeated data is never presented as new data. Add training data or accept the capped plan."
+  ],
+  "status": "done",
+  "created_at": 1789695168.8866,
+  "started_at": 1789695168.9445999,
+  "updated_at": 1789695640.3939562,
+  "stop_reason": null,
+  "failure": null,
+  "produced_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s3\\checkpoints\\step_00002024.pt",
+  "promotion": {
+    "promoted": false,
+    "reason": "held: conversation regressed (new F1 0.061 < old F1 0.128); default unchanged"
+  }
+}

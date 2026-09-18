@@ -1,0 +1,29 @@
+{
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4",
+  "datasets": {
+    "wikitext103": {
+      "documents": 200,
+      "characters": 3628166,
+      "tokens": 1421568,
+      "characters_per_token": 2.5522282437421215,
+      "utf8_bytes_per_token": 2.556972301008464,
+      "tokenizer_tokens_per_second": 1464683.5981355808,
+      "loader_mean_ms_per_batch": 5.657011999501265,
+      "loader_p95_ms_per_batch": 0.5949999977019615,
+      "raw_rows_read": 4096,
+      "documents_rejected": 6
+    },
+    "fineweb_edu": {
+      "documents": 200,
+      "characters": 914770,
+      "tokens": 328157,
+      "characters_per_token": 2.7875986189537327,
+      "utf8_bytes_per_token": 2.80908833271879,
+      "tokenizer_tokens_per_second": 1378338.3512182017,
+      "loader_mean_ms_per_batch": 5.221721000270918,
+      "loader_p95_ms_per_batch": 34.391200002573896,
+      "raw_rows_read": 256,
+      "documents_rejected": 0
+    }
+  }
+}

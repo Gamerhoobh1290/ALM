@@ -1,0 +1,8 @@
+{
+  "config": "config\\sft-dailydialog.json",
+  "target_tokens": 1000000,
+  "stage": "sft",
+  "dataset": "dailydialog",
+  "mixture": null,
+  "parent_checkpoint": "results\\general-training-500m\\checkpoints\\step_00004802.pt"
+}

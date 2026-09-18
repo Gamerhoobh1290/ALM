@@ -1,0 +1,11 @@
+{
+  "feedback_id": "feedback-20260918-013757-d648ee",
+  "conversation_id": "",
+  "created_at": 1789691877.7870288,
+  "status": "approved",
+  "assistant_text": "Bannon Basil is U.S. California is American",
+  "corrected_text": "2",
+  "note": "",
+  "training_use": "approved \u2014 eligible for a future SFT stage with response-only loss masking; held-out feedback stays held out",
+  "reviewed_at": 1789692047.9505975
+}

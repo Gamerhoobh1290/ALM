@@ -1,0 +1,22 @@
+{
+  "reason": "target_reached",
+  "step": 32,
+  "params": 8868096,
+  "new_tokens": 1048576,
+  "total_tokens": 1048576,
+  "seconds": 14.61692509999557,
+  "end_to_end_tokens_per_second": 71737.11247930783,
+  "compute_tokens_per_second": 218155.2650687725,
+  "compute_seconds": 4.806558299977041,
+  "data_seconds": 1.2769605000139563,
+  "validation_seconds": 0.05776170000171987,
+  "checkpoint_seconds": 3.5575057999958517,
+  "allocated_mib": 3481.119140625,
+  "reserved_mib": 3522.0,
+  "initial_validation_loss": 5.755948669916807,
+  "final_validation_loss": 4.893345600608605,
+  "final_holdout_loss": 4.955078800213256,
+  "last_train_loss": 4.839526653289795,
+  "checkpoint": "results\\sft-smoke\\checkpoints\\step_00000032.pt",
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+}

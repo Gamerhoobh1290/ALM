@@ -1,0 +1,12 @@
+{
+  "state": "error",
+  "detail": "Incompatible checkpoint: tokenizer, validation or training configuration changed",
+  "updated_at": "2026-09-16 23:46:37",
+  "checkpoint": "results\\launcher-smoke\\checkpoints\\step_00000072.pt",
+  "checkpoint_step": 72,
+  "step": 72,
+  "tokens": 294912,
+  "target_tokens": 1048576,
+  "train_loss": 6.474815368652344,
+  "validation_loss": 6.578498874434564
+}

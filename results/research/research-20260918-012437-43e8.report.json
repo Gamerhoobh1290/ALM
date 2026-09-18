@@ -1,0 +1,31 @@
+{
+  "session_id": "research-20260918-012437-43e8",
+  "status": "stopped",
+  "stop_reason": "Reached token budget",
+  "experiments": [
+    {
+      "index": 1,
+      "status": "failed",
+      "plan": {
+        "hypothesis": "Conversation skill lags instructions (conv F1 0.054 < instr F1 0.313). A small DailyDialog-heavy SFT stage should improve greeting/follow-up relevance without touching general weights.",
+        "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-231947-s3\\checkpoints\\step_00002024.pt",
+        "dataset": "dailydialog",
+        "mixture": null,
+        "target_tokens": 1000000,
+        "max_seconds": 3600.0,
+        "eval_plan": "assistant probes (greetings + follow-ups primary) + hygiene + capability regression check",
+        "expected_risks": "possible instruction-skill dip; promotion gate requires no regression",
+        "stop_conditions": "hygiene failure or capability regression beyond tolerance",
+        "config": ""
+      },
+      "run_dir": "C:\\AdamLM\\results\\research-20260918-012437-43e8-e1",
+      "started_at": 1789691077.9918492,
+      "supervisor_model": null,
+      "supervisor_attempts": [],
+      "checkpoint": "C:\\AdamLM\\results\\research-20260918-012437-43e8-e1\\checkpoints\\step_00000245.pt",
+      "tokens_trained": 1003520,
+      "trainer_state": "target_reached",
+      "failure": "evaluation failed: evaluate_checkpoints() got an unexpected keyword argument 'out'"
+    }
+  ]
+}

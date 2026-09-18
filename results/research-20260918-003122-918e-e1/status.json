@@ -1,0 +1,16 @@
+{
+  "state": "error",
+  "stage": "sft",
+  "dataset": "dailydialog",
+  "source": "dailydialog",
+  "detail": "[WinError 2] The system cannot find the file specified: 'C:\\\\AdamLM\\\\results\\\\sft-dailydialog-extended\\\\.training.lock'",
+  "updated_at": "2026-09-18 00:31:48",
+  "checkpoint": "C:\\AdamLM\\results\\research-20260918-003122-918e-e1\\checkpoints\\step_00000200.pt",
+  "checkpoint_step": 200,
+  "step": 232,
+  "tokens": 950272,
+  "target_tokens": 1000000,
+  "train_loss": 1.4778085947036743,
+  "validation_loss": 2.5383594768019564,
+  "learning_rate": 1.0983357966978745e-05
+}

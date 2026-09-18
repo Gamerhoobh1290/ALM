@@ -1,0 +1,116 @@
+{
+  "phase": "before",
+  "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-231947-s3\\checkpoints\\step_00002024.pt",
+  "settings": {
+    "tokens": 60,
+    "temperature": 0.8,
+    "top_k": 40,
+    "seed": 42
+  },
+  "rows": [
+    {
+      "messages": [
+        {
+          "role": "user",
+          "text": "hi"
+        }
+      ],
+      "prompt": "User:\nhi\n\nAssistant:\n",
+      "raw_output": "User:\nhi\n\nAssistant:\nthe House, Yellowstone, Williamsburg, Texas, and Lake Megarte are the best friends of all time\n\nIn April 2015, USADCE",
+      "reply": "the House, Yellowstone, Williamsburg, Texas, and Lake Megarte are the best friends of all time\n\nIn April 2015, USADCE",
+      "trim": {
+        "kept_turns": 1,
+        "total_turns": 1,
+        "trimmed": false
+      }
+    },
+    {
+      "messages": [
+        {
+          "role": "user",
+          "text": "Let's talk about The Blue Roto Store in San Francisco."
+        }
+      ],
+      "prompt": "User:\nLet's talk about The Blue Roto Store in San Francisco.\n\nAssistant:\n",
+      "raw_output": "User:\nLet's talk about The Blue Roto Store in San Francisco.\n\nAssistant:\nIt was a 1964 book The Blue Roto Store was published by San Francisco.",
+      "reply": "It was a 1964 book The Blue Roto Store was published by San Francisco.",
+      "trim": {
+        "kept_turns": 1,
+        "total_turns": 1,
+        "trimmed": false
+      }
+    },
+    {
+      "messages": [
+        {
+          "role": "user",
+          "text": "hey"
+        }
+      ],
+      "prompt": "User:\nhey\n\nAssistant:\n",
+      "raw_output": "User:\nhey\n\nAssistant:\nthe House, Yellowstone, Williamsburg, Texas, Zhang, Ronald Reggs, Covene and Padjarat",
+      "reply": "the House, Yellowstone, Williamsburg, Texas, Zhang, Ronald Reggs, Covene and Padjarat",
+      "trim": {
+        "kept_turns": 1,
+        "total_turns": 1,
+        "trimmed": false
+      }
+    },
+    {
+      "messages": [
+        {
+          "role": "user",
+          "text": "Good morning! How are you today?"
+        }
+      ],
+      "prompt": "User:\nGood morning! How are you today?\n\nAssistant:\n",
+      "raw_output": "User:\nGood morning! How are you today?\n\nAssistant:\nIt can do a lot of fun, but I am not sure what's going on next week. I've got it in my room because I've got to be a refund with my roommate and there are a lot of fun. I love to ask for it to go back to",
+      "reply": "It can do a lot of fun, but I am not sure what's going on next week. I've got it in my room because I've got to be a refund with my roommate and there are a lot of fun. I love to ask for it to go back to",
+      "trim": {
+        "kept_turns": 1,
+        "total_turns": 1,
+        "trimmed": false
+      }
+    },
+    {
+      "messages": [
+        {
+          "role": "user",
+          "text": "Name three red fruits."
+        }
+      ],
+      "prompt": "User:\nName three red fruits.\n\nAssistant:\n",
+      "raw_output": "User:\nName three red fruits.\n\nAssistant:\nIn 2022, they took the Eastwatch Point for the time.",
+      "reply": "In 2022, they took the Eastwatch Point for the time.",
+      "trim": {
+        "kept_turns": 1,
+        "total_turns": 1,
+        "trimmed": false
+      }
+    },
+    {
+      "messages": [
+        {
+          "role": "user",
+          "text": "Let's talk about The Blue Roto Store in San Francisco."
+        },
+        {
+          "role": "assistant",
+          "text": "It was a 1964 book The Blue Roto Store was published by San Francisco."
+        },
+        {
+          "role": "user",
+          "text": "What were we talking about?"
+        }
+      ],
+      "prompt": "User:\nWhat were we talking about?\n\nContext:\nUser:\nLet's talk about The Blue Roto Store in San Francisco.\nAssistant:\nIt was a 1964 book The Blue Roto Store was published by San Francisco.\n\nAssistant:\n",
+      "raw_output": "User:\nWhat were we talking about?\n\nContext:\nUser:\nLet's talk about The Blue Roto Store in San Francisco.\nAssistant:\nIt was a 1964 book The Blue Roto Store was published by San Francisco.\n\nAssistant:\nIt was based on 11 December 1960 and was published by San Francisco.",
+      "reply": "It was based on 11 December 1960 and was published by San Francisco.",
+      "trim": {
+        "kept_turns": 3,
+        "total_turns": 3,
+        "trimmed": false
+      }
+    }
+  ]
+}

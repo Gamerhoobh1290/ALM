@@ -1,0 +1,23 @@
+{
+  "enabled": false,
+  "base_url": "https://openrouter.ai/api/v1",
+  "model": "qwen/qwen3.8-27b:free",
+  "fallback_models": [
+    "qwen/qwen3.8-27b:free",
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    "z-ai/glm-5.2:free",
+    "poolside/laguna-s-2.1:free",
+    "inclusionai/ling-3.0-flash-fin:free",
+    "nvidia/nemotron-3.5-lightning:free"
+  ],
+  "allow_external_eval": true,
+  "send_categories": [
+    "eval-summaries",
+    "dataset-summaries",
+    "failure-labels"
+  ],
+  "max_api_requests": 25,
+  "max_api_cost_usd": 0.0,
+  "timeout_seconds": 60,
+  "provider": "openrouter"
+}

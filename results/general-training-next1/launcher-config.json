@@ -1,0 +1,23 @@
+{
+  "config": "C:\\AdamLM\\config\\pretrain-general.json",
+  "target_tokens": 50000000,
+  "stage": "pretrain",
+  "dataset": "mixture",
+  "mixture": {
+    "components": [
+      {
+        "dataset": "tinystories",
+        "weight": 0.2
+      },
+      {
+        "dataset": "wikitext103",
+        "weight": 0.35
+      },
+      {
+        "dataset": "fineweb_edu",
+        "weight": 0.45
+      }
+    ]
+  },
+  "parent_checkpoint": "C:\\AdamLM\\results\\general-pretrain-extended-50m\\checkpoints\\step_00001526.pt"
+}

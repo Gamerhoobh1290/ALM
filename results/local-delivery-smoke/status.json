@@ -1,0 +1,12 @@
+{
+  "state": "stopped",
+  "detail": "Graceful stop completed; full checkpoint saved.",
+  "updated_at": "2026-09-17 00:06:18",
+  "step": 427,
+  "tokens": 1748992,
+  "target_tokens": 50000000,
+  "train_loss": 3.8290393352508545,
+  "validation_loss": 3.952326874346966,
+  "checkpoint": "results\\local-delivery-smoke\\checkpoints\\step_00000427.pt",
+  "checkpoint_step": 427
+}

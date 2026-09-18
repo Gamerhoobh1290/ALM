@@ -1,0 +1,16 @@
+{
+  "state": "target_reached",
+  "stage": "pretrain",
+  "dataset": "tinystories",
+  "source": "tinystories",
+  "detail": "target_reached",
+  "updated_at": "2026-09-17 13:44:53",
+  "checkpoint": "C:\\AdamLM\\results\\web-ui-cycle-20260917-1342\\checkpoints\\step_00000008.pt",
+  "checkpoint_step": 8,
+  "step": 8,
+  "tokens": 32768,
+  "target_tokens": 32768,
+  "train_loss": 1.6912003755569458,
+  "validation_loss": 1.8089237477478102,
+  "learning_rate": 1.2e-06
+}

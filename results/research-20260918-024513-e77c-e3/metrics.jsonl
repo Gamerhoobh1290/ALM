@@ -1,0 +1,6 @@
+{"event": "start", "step": 0, "params": 8868096, "validation_loss": 2.5198454512732598, "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4", "max_session_seconds": 3514.4493610858917}
+{"event": "validation", "step": 50, "tokens": 204800, "train_loss": 2.3627946376800537, "validation_loss": 2.560084179018976, "learning_rate": 0.0001}
+{"event": "validation", "step": 100, "tokens": 409600, "train_loss": 2.201817512512207, "validation_loss": 2.5795154648890315, "learning_rate": 8.617259590793198e-05}
+{"event": "validation", "step": 150, "tokens": 614400, "train_loss": 2.47878360748291, "validation_loss": 2.552758313554297, "learning_rate": 5.3188032695076335e-05}
+{"event": "validation", "step": 200, "tokens": 819200, "train_loss": 2.422051191329956, "validation_loss": 2.5378164216603296, "learning_rate": 2.1317016332300447e-05}
+{"event": "graceful_stop", "step": 200, "tokens": 819200, "checkpoint": "C:\\AdamLM\\results\\research-20260918-024513-e77c-e3\\checkpoints\\step_00000200.pt"}

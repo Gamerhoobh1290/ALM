@@ -1,0 +1,191 @@
+- generic [ref=f8e2]:
+  - banner [ref=f8e3]:
+    - generic [ref=f8e9]:
+      - generic [ref=f8e10]: AdamLM
+      - generic [ref=f8e11]: LOCAL TRAINING STUDIO
+    - generic [ref=f8e12]:
+      - generic [ref=f8e14]: Backend online
+      - code [ref=f8e15]: 127.0.0.1:8765
+  - navigation "Main navigation" [ref=f8e16]:
+    - button "Training 0" [ref=f8e17] [cursor=pointer]
+    - button "Playground" [ref=f8e18] [cursor=pointer]
+  - main [ref=f8e19]:
+    - generic [ref=f8e20]:
+      - generic [ref=f8e21]:
+        - generic [ref=f8e22]:
+          - generic [ref=f8e23]: OPERATIONS
+          - heading "Training overview" [level=1] [ref=f8e24]
+          - paragraph [ref=f8e25]: Monitor the selected lineage and prepare the next safe session.
+        - generic [ref=f8e26]:
+          - text: Last refresh
+          - strong [ref=f8e27]: 1:42:56 PM
+      - region "Training telemetry" [ref=f8e28]:
+        - generic [ref=f8e29]:
+          - generic [ref=f8e30]: STATE
+          - strong [ref=f8e31]: "DATA STOP: 429 CLIENT ERROR: TOO MANY REQUESTS FOR URL: HTTPS://DATASETS-SERVER.HUGGINGFACE.CO/ROWS?DATASET=RONENELDAN%2FTINYSTORIES&CONFIG=DEFAULT&SPLIT=TRAIN&OFFSET=6300&LENGTH=100"
+          - generic [ref=f8e32]: No active trainer
+        - generic [ref=f8e33]:
+          - generic [ref=f8e34]: STEP
+          - strong [ref=f8e35]: "325"
+          - generic [ref=f8e36]: optimizer updates
+        - generic [ref=f8e37]:
+          - generic [ref=f8e38]: PROCESSED
+          - strong [ref=f8e39]: 1.33M
+          - generic [ref=f8e40]: of 50M target
+        - generic [ref=f8e41]:
+          - generic [ref=f8e42]: THROUGHPUT
+          - strong [ref=f8e43]: 24.94K/s
+          - generic [ref=f8e44]: ETA 32m 31s
+        - generic [ref=f8e45]:
+          - generic [ref=f8e46]: GPU
+          - strong [ref=f8e47]: 12%
+          - generic [ref=f8e48]: utilization
+        - generic [ref=f8e49]:
+          - generic [ref=f8e50]: VRAM / TEMP
+          - strong [ref=f8e51]: 813 MiB
+          - generic [ref=f8e52]: 36°C
+        - generic [ref=f8e53]:
+          - generic [ref=f8e54]: STORAGE
+          - strong [ref=f8e55]: 137.4 GiB
+          - generic [ref=f8e56]: 475.4 GiB total
+      - generic [ref=f8e57]:
+        - generic [ref=f8e58]:
+          - generic [ref=f8e59]:
+            - generic [ref=f8e60]:
+              - generic [ref=f8e61]: CONTROL PLANE
+              - heading "Training configuration" [level=2] [ref=f8e62]
+            - generic [ref=f8e63]: SAFE PREFLIGHT
+          - generic [ref=f8e64]:
+            - generic [ref=f8e65]:
+              - generic [ref=f8e66]: Action
+              - combobox "Action" [ref=f8e67]:
+                - option "New continuation stage" [selected]
+                - option "Resume selected run"
+            - generic [ref=f8e68]:
+              - generic [ref=f8e69]: New continuation stage name
+              - textbox "New continuation stage name" [ref=f8e70]: web-stage-20260917124206
+            - generic [ref=f8e71]:
+              - generic [ref=f8e72]: Existing run
+              - combobox "Existing run" [ref=f8e73]:
+                - option "PRODUCTION · bpe512-local-run · step 12,208 · 50M tokens" [selected]
+                - option "general-pretrain-run · step 1,526 · 50M tokens"
+                - option "general-pretrain-extended-50m · step 1,526 · 50M tokens"
+                - option "general-pretrain-extended · step 1,526 · 50M tokens"
+                - option "first-run · step 1,024 · 0 tokens"
+                - option "bpe512-run · step 325 · 1.33M tokens"
+                - option "gui-stage-20260917-131619 · step 245 · 1M tokens"
+                - option "SMOKE · sft-benchmark-v2 · step 733 · 3M tokens"
+                - option "SMOKE · local-delivery-smoke · step 427 · 1.75M tokens"
+                - option "SMOKE · gui-smoke · step 372 · 1.52M tokens"
+                - option "SMOKE · bpe512-benchmark · step 242 · 0 tokens"
+                - option "SMOKE · sft-benchmark · step 92 · 3.01M tokens"
+                - option "SMOKE · launcher-smoke · step 72 · 294.91K tokens"
+                - option "SMOKE · sft-smoke · step 32 · 1.05M tokens"
+                - option "SMOKE · wikitext-smoke · step 1 · 4.1K tokens"
+                - option "SMOKE · general-pretrain-smoke · step 1 · 32.77K tokens"
+            - generic [ref=f8e74]:
+              - generic [ref=f8e75]: Dataset / stage
+              - combobox "Dataset / stage" [ref=f8e76]:
+                - option "TinyStories · pretrain" [selected]
+                - option "WikiText-103 · pretrain"
+                - option "FineWeb-Edu · pretrain"
+                - option "Dolly · SFT"
+                - option "Custom mixture · pretrain"
+            - generic [ref=f8e77]:
+              - generic [ref=f8e78]: Parent checkpoint
+              - combobox "Parent checkpoint" [ref=f8e79]:
+                - option "PRODUCTION · bpe512-local-run · step 12,208" [selected]
+                - option "general-pretrain-run · step 1,526"
+                - option "general-pretrain-extended-50m · step 1,526"
+                - option "general-pretrain-extended · step 1,526"
+                - option "first-run · step 1,024"
+                - option "bpe512-run · step 325"
+                - option "gui-stage-20260917-131619 · step 245"
+                - option "SMOKE · sft-benchmark-v2 · step 733"
+                - option "SMOKE · local-delivery-smoke · step 427"
+                - option "SMOKE · gui-smoke · step 372"
+                - option "SMOKE · bpe512-benchmark · step 242"
+                - option "SMOKE · sft-benchmark · step 92"
+                - option "SMOKE · launcher-smoke · step 72"
+                - option "SMOKE · sft-smoke · step 32"
+                - option "SMOKE · wikitext-smoke · step 1"
+                - option "SMOKE · general-pretrain-smoke · step 1"
+            - generic [ref=f8e80]:
+              - text: SELECTED CHECKPOINT
+              - strong [ref=f8e81]: C:\AdamLM\results\bpe512-local-run\checkpoints\step_00012208.pt
+              - generic [ref=f8e82]:
+                - generic [ref=f8e83]: 100.0% of target
+                - generic [ref=f8e84]: 50M / 50M
+            - generic [ref=f8e86]:
+              - generic [ref=f8e87]: Additional training tokens
+              - generic [ref=f8e88]:
+                - textbox "Additional training tokens tokens Token presets" [ref=f8e89]: "1000000"
+                - generic [ref=f8e90]: tokens
+              - generic "Token presets" [ref=f8e91]:
+                - button "1M" [ref=f8e92] [cursor=pointer]
+                - button "10M" [ref=f8e93] [cursor=pointer]
+                - button "50M" [ref=f8e94] [cursor=pointer]
+                - button "100M" [ref=f8e95] [cursor=pointer]
+            - generic [ref=f8e96]:
+              - generic [ref=f8e97]: Session duration
+              - generic [ref=f8e98]:
+                - spinbutton "Session duration minutes" [ref=f8e99]: "60"
+                - combobox [ref=f8e100]:
+                  - option "minutes" [selected]
+                  - option "hours"
+            - generic [ref=f8e101]:
+              - generic [ref=f8e102]: Session mode
+              - generic [ref=f8e103]:
+                - checkbox "Session mode Run until manually stopped" [checked] [active] [ref=f8e104]
+                - generic [ref=f8e105]: Run until manually stopped
+            - generic [ref=f8e106]:
+              - generic [ref=f8e107]: Mixture weights
+              - textbox "Mixture weights" [ref=f8e108]: tinystories=0.20,wikitext103=0.35,fineweb_edu=0.45
+          - generic [ref=f8e109]:
+            - button "Start training" [ref=f8e110] [cursor=pointer]
+            - button "Graceful stop" [disabled] [ref=f8e111]
+            - generic [ref=f8e112]: No training starts during preflight.
+        - generic [ref=f8e113]:
+          - generic [ref=f8e114]:
+            - generic [ref=f8e115]:
+              - generic [ref=f8e116]: PREFLIGHT
+              - heading "Effective plan" [level=2] [ref=f8e117]
+            - generic [ref=f8e118]: READY
+          - generic [ref=f8e119]:
+            - strong [ref=f8e120]: Create continuation stage · 1M tokens remaining
+            - generic [ref=f8e121]: C:\AdamLM\results\web-stage-20260917124206
+          - generic [ref=f8e122]:
+            - generic [ref=f8e590]:
+              - generic [ref=f8e591]: Additional
+              - strong [ref=f8e592]: 1M
+            - generic [ref=f8e593]:
+              - generic [ref=f8e594]: Cumulative
+              - strong [ref=f8e595]: "0"
+            - generic [ref=f8e596]:
+              - generic [ref=f8e597]: Effective target
+              - strong [ref=f8e598]: 1M
+            - generic [ref=f8e599]:
+              - generic [ref=f8e600]: Est. completion
+              - strong [ref=f8e601]: 13s
+            - generic [ref=f8e602]:
+              - generic [ref=f8e603]: LR schedule
+              - strong [ref=f8e604]: 0.0003 → 0.00003
+            - generic [ref=f8e605]:
+              - generic [ref=f8e606]: Model
+              - strong [ref=f8e607]: 8,868,096 params
+          - generic [ref=f8e141]:
+            - generic [ref=f8e142]:
+              - heading "Loss" [level=3] [ref=f8e143]
+              - text: bpe512-run · metrics.jsonl
+            - generic [ref=f8e144]: Train Validation
+          - img "Training and validation loss chart" [ref=f8e148]:
+            - generic [ref=f8e608]: "9.09"
+            - generic [ref=f8e609]: "-0.67"
+            - generic [ref=f8e610]: step 0
+            - generic [ref=f8e611]: step 325
+          - generic [ref=f8e149]:
+            - generic [ref=f8e150]: step 0
+            - generic [ref=f8e151]: actual metric steps
+            - generic [ref=f8e152]: step 325
+          - generic [ref=f8e153]: Checkpoint C:\AdamLM\results\bpe512-run\checkpoints\step_00000325.ptRun folder C:\AdamLM\results\web-stage-20260917124206
+      - generic [ref=f8e154]: Preflight only. No training starts until Start training is pressed.

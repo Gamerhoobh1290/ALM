@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>AdamLM · Local Training Studio</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true"><span>A</span></div>
+        <div class="brand-text"><div class="brand">AdamLM</div><div class="eyebrow">LOCAL TRAINING STUDIO</div></div>
+      </div>
+      <nav class="tabs" aria-label="Main navigation" role="tablist">
+        <button class="tab active" data-tab="chat" role="tab" aria-selected="true" aria-controls="chatView" id="tab-chat">Chat</button>
+        <button class="tab" data-tab="research" role="tab" aria-selected="false" aria-controls="researchView" id="tab-research">Research</button>
+        <button class="tab" data-tab="training" role="tab" aria-selected="false" aria-controls="trainingView" id="tab-training">Training <span class="tab-count" id="activeBadge">0</span></button>
+        <button class="tab" data-tab="versions" role="tab" aria-selected="false" aria-controls="versionsView" id="tab-versions">Versions</button>
+      </nav>
+      <div class="connection" role="status" aria-live="polite" title="Web backend connection">
+        <span class="status-dot" id="connectionDot"></span>
+        <span id="connectionText">Connecting</span>
+        <code>127.0.0.1:8765</code>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="chatView" class="view active-view" role="tabpanel" aria-labelledby="tab-chat">
+        <div class="section-intro">
+          <div>
+            <div class="eyebrow accent">ADAMLM</div>
+            <h1>Chat with AdamLM</h1>
+            <p>One local assistant. Nothing is sent anywhere.</p>
+            <p class="play-note" id="chatCapabilityNote">Small local model: solid at short grammar and story coherence, weak at facts and reasoning. It may answer fluently and still be wrong — check anything important.</p>
+          </div>
+          <div class="chat-identity" id="chatIdentity" role="status" aria-live="polite">
+            <strong id="chatName">AdamLM</strong>
+            <span class="version-pill" id="chatVersion">checking…</span>
+            <span class="version-pill" id="chatActivity">idle</span>
+            <span class="version-pill warn" id="chatCandidate" hidden>new candidate available</span>
+          </div>
+        </div>
+        <div class="chat-grid">
+          <section class="panel chat-panel" aria-labelledby="chatHeading">
+            <h2 id="chatHeading" class="visually-hidden">Conversation</h2>
+            <div class="generation-indicator" id="chatIndicator" hidden><span class="spinner" aria-hidden="true"></span><span>AdamLM is thinking… 0s</span></div>
+            <div id="chatMessages" class="chat-messages" aria-live="polite" aria-label="Conversation messages"></div>
+            <div class="chat-note" id="chatContextNote">New conversation — earlier turns will be included as you chat.</div>
+            <div class="chat-composer">
+              <label class="visually-hidden" for="chatInput">Message AdamLM</label>
+              <textarea id="chatInput" rows="3" placeholder="Message AdamLM… (Ctrl+Enter to send)"></textarea>
+              <div class="chat-actions">
+                <button class="button primary" id="chatSendButton">Send</button>
+                <button class="button danger-ghost" id="chatStopButton" hidden>Stop</button>
+                <button class="button secondary" id="chatRegenButton" disabled>Regenerate</button>
+                <button class="button secondary" id="chatClearButton">Clear</button>
+                <button class="button secondary" id="chatCopyButton" disabled>Copy</button>
+              </div>
+              <div class="chat-options">
+                <label class="switch-line"><input id="chatSaveToggle" type="checkbox"><span class="switch" aria-hidden="true"></span><span>Save this conversation on this PC</span></label>
+                <span class="action-note" id="chatStatus">Ready.</span>
+              </div>
+            </div>
+            <details class="advanced" id="chatAdvancedBox">
+              <summary>Advanced · generation settings &amp; feedback</summary>
+              <div class="two-fields">
+                <label class="field"><span>New tokens</span><input id="chatTokens" type="number" min="1" max="4096" value="60"></label>
+                <label class="field"><span>Temperature</span><input id="chatTemperature" type="number" min="0.01" step="0.05" value="0.8"></label>
+              </div>
+              <div class="two-fields">
+                <label class="field"><span>Top-K</span><input id="chatTopK" type="number" min="1" value="40"></label>
+                <label class="field"><span>Seed</span><input id="chatSeedValue" type="number" min="0" max="4294967295" value="42"></label>
+              </div>
+              <div class="field seed-lock"><span id="chatSeedVarietyLabel">Variety</span><label class="switch-line"><input id="chatSeedRandom" type="checkbox" checked><span class="switch" aria-hidden="true"></span><span>Fresh random seed</span></label><small id="chatSeedHint">Random by default. Uncheck to lock a seed for reproducible tests.</small></div>
+              <div class="feedback-box">
+                <div class="group-title">Teach AdamLM (optional)</div>
+                <p class="play-note">If the last answer was wrong, correct it below. Nothing trains automatically — your correction becomes a <em>candidate</em> example only after you explicitly approve it in Versions → Feedback.</p>
+                <label class="field"><span>Corrected answer</span><textarea id="feedbackCorrection" rows="3" placeholder="Write what AdamLM should have said…"></textarea></label>
+                <div class="action-row"><button class="button secondary small" id="feedbackSubmitButton">Submit correction</button><span class="action-note" id="feedbackNote"></span></div>
+              </div>
+            </details>
+            <small class="play-note" id="chatNote">Replies come from the approved local model shown above. Training and evaluation seeds are never affected by Chat.</small>
+          </section>
+        </div>
+      </section>
+
+      <section id="researchView" class="view" role="tabpanel" aria-labelledby="tab-research" hidden>
+        <div class="section-intro">
+          <div><div class="eyebrow accent">AFK RESEARCH</div><h1>Research sessions</h1><p>One bounded inspect → train → test → decide loop. The assistant stays unchanged until you approve a promotion.</p></div>
+          <div class="updated"><span class="session-pill" id="researchPill">NO SESSION</span></div>
+        </div>
+        <div class="workspace-grid">
+          <section class="panel config-panel" aria-labelledby="researchHeading">
+            <div class="panel-heading"><div><div class="eyebrow">CONTROL PLANE</div><h2 id="researchHeading">Session limits</h2></div><span class="safe-label">BOUNDED</span></div>
+            <div class="form-grid">
+              <label class="field"><span>Maximum total training tokens</span><div class="input-with-suffix"><input id="researchTokens" inputmode="numeric" value="1000000"><span>tokens</span></div></label>
+              <label class="field"><span>Maximum overall session duration</span><div class="duration-row"><input id="researchDuration" type="number" min="1" step="1" value="60"><select id="researchDurationUnit" aria-label="Research duration unit"><option value="minutes">minutes</option><option value="hours">hours</option></select></div><small>Covers training, testing, evaluation, and decisions — not per stage.</small></label>
+              <label class="field"><span>Maximum experiments</span><input id="researchExperiments" type="number" min="1" max="10" value="3"></label>
+              <label class="field"><span>Goal (optional)</span><input id="researchGoal" placeholder="e.g. fix greeting quality" autocomplete="off" spellcheck="false"></label>
+              <label class="field"><span>Planning mode</span><select id="researchUseAi"><option value="local">Local heuristic (no external requests)</option><option value="ai">AI planner (external API proposal)</option></select><small>Local mode never contacts any provider.</small></label>
+              <label class="field"><span>Promotion</span><select id="researchPromotion"><option value="manual">Manual approval required (recommended)</option><option value="auto">Allow automatic promotion on clear wins</option></select></label>
+              <fieldset class="field field-wide dataset-picker"><legend>Datasets the session may use</legend>
+                <label class="check"><input type="checkbox" name="researchDataset" value="dolly" checked><span>Dolly (instructions)</span></label>
+                <label class="check"><input type="checkbox" name="researchDataset" value="dailydialog" checked><span>DailyDialog (conversation)</span></label>
+                <label class="check"><input type="checkbox" name="researchDataset" value="tinystories" checked><span>TinyStories</span></label>
+                <label class="check"><input type="checkbox" name="researchDataset" value="wikitext103" checked><span>WikiText-103</span></label>
+                <label class="check"><input type="checkbox" name="researchDataset" value="fineweb_edu" checked><span>FineWeb-Edu</span></label>
+                <label class="check"><input type="checkbox" name="researchDataset" value="mixture" checked><span>Mixture (weights below)</span></label>
+                <small>Proposals on unselected datasets are rejected before anything launches.</small>
+              </fieldset>
+              <label class="field"><span>Mixture weights (only for mixture)</span><input id="researchMixture" placeholder="e.g. wikitext103=0.7,fineweb_edu=0.3" autocomplete="off" spellcheck="false"></label>
+              <label class="field"><span>Per-stage token cap</span><div class="input-with-suffix"><input id="researchStageCap" inputmode="numeric" value="1000000"><span>tokens</span></div><small>Each experiment stays diagnostic-sized by default.</small></label>
+              <label class="field check-field"><span>Repeated data</span><label class="switch-line"><input id="researchAllowRepetition" type="checkbox"><span class="switch" aria-hidden="true"></span><span>Allow stages that repeat training rows</span></label><small>Off by default. Multi-pass repeats need your explicit confirmation.</small></label>
+            </div>
+            <div class="allowed-box">
+              <div class="group-title">What the agent is allowed to do</div>
+              <ul class="allowed-list">
+                <li>Read model status, checkpoints, dataset summaries, evaluation reports</li>
+                <li>Propose one focused, validated training configuration at a time</li>
+                <li>Start a bounded experiment with existing local tools</li>
+                <li>Evaluate candidates with the real local inference system</li>
+                <li>Write reports — never delete checkpoints, datasets, or code</li>
+              </ul>
+            </div>
+            <div class="action-row">
+              <button class="button secondary" id="researchPreviewButton">Preview first decision</button>
+              <button class="button primary" id="researchStartButton">Start research session</button>
+              <button class="button secondary" id="researchResumeButton" disabled>Resume session</button>
+              <button class="button danger-ghost" id="researchStopButton" disabled>Stop safely</button>
+              <span class="action-note" id="researchNote">Preview first — limits apply to the whole session and never reset mid-run.</span>
+            </div>
+            <div class="preview-panel" id="researchPreview" hidden aria-live="polite"></div>
+            <details class="manual-box" id="providerBox">
+              <summary>Provider · optional OpenRouter-compatible API (decision-making only)</summary>
+              <div class="form-grid">
+                <label class="field"><span>Enable AI planner</span><select id="providerEnabled"><option value="off">Disabled</option><option value="on">Enabled</option></select><small>Disabled by default. Chat and training work without it.</small></label>
+                <label class="field"><span>Base URL</span><input id="providerBaseUrl" value="https://openrouter.ai/api/v1" autocomplete="off" spellcheck="false"></label>
+                <label class="field"><span>Model identifier (primary, free only)</span><input id="providerModel" placeholder="e.g. vendor/model-name:free" autocomplete="off" spellcheck="false"><small>Must end in <code>:free</code> — paid IDs are refused.</small></label>
+                <label class="field field-wide"><span>Fallback free models (one per line, tried in order)</span><textarea id="providerFallbacks" rows="3" placeholder="vendor/second-model:free" autocomplete="off" spellcheck="false"></textarea><small>Used automatically when the primary is rate-limited or unavailable. Free only — never paid, never any charges.</small></label>
+                <label class="field"><span>API key (stored locally, never shown)</span><input id="providerKey" type="password" autocomplete="off" spellcheck="false"><small id="providerKeyState">No key stored.</small></label>
+                <label class="field"><span>External evaluation of model outputs</span><select id="providerAllowEval"><option value="off">Not allowed (local scoring only)</option><option value="on">Allowed for bounded samples</option></select><small>Private chats are never sent unless you opt in here.</small></label>
+                <label class="field"><span>Max API requests</span><input id="providerMaxRequests" type="number" min="1" value="25"></label>
+              </div>
+              <div class="action-row">
+                <button class="button secondary small" id="providerSaveButton">Save provider settings</button>
+                <button class="button secondary small" id="providerKeyButton">Store API key</button>
+                <button class="button secondary small" id="providerKeyClearButton">Remove key</button>
+                <button class="button secondary small" id="providerTestButton">Test connection</button>
+                <span class="action-note" id="providerNote">The provider only sees compact summaries you approve — never keys, files, or datasets.</span>
+              </div>
+            </details>
+          </section>
+          <section class="panel plan-panel" aria-labelledby="researchStatusHeading">
+            <div class="panel-heading"><div><div class="eyebrow">SESSION</div><h2 id="researchStatusHeading">Status &amp; report</h2></div><span class="plan-status" id="researchStatus">NO SESSION</span></div>
+            <div class="plan-summary"><strong id="researchTitle">No research session yet.</strong><span id="researchPath">Set limits, then start when you explicitly choose to.</span></div>
+            <div class="auto-actual" id="researchActual" hidden></div>
+            <div class="eval-scorecard" id="researchEval" hidden></div>
+            <div class="action-row"><button class="button secondary small" id="researchReportButton" disabled>Download report (Markdown)</button><button class="button secondary small" id="researchJsonButton" disabled>Download session (JSON)</button></div>
+            <div class="report-body" id="researchReport" aria-live="polite"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="trainingView" class="view" role="tabpanel" aria-labelledby="tab-training" hidden>
+        <div class="section-intro">
+          <div>
+            <div class="eyebrow accent">OPERATIONS</div>
+            <h1>Training overview</h1>
+            <p>Monitor the selected lineage and prepare the next safe session.</p>
+          </div>
+          <div class="updated">Last refresh <strong id="lastRefresh">—</strong></div>
+        </div>
+
+        <section class="panel session-panel" id="activeSession" aria-label="Active training session" aria-live="polite" hidden>
+          <div class="session-top">
+            <div class="session-title-wrap">
+              <div class="eyebrow">ACTIVE SESSION</div>
+              <h2 id="sessionTitle">No active session</h2>
+              <div class="session-lineage" id="sessionLineage">—</div>
+            </div>
+            <span class="session-pill" id="sessionPill">IDLE</span>
+          </div>
+          <div class="session-bars">
+            <div class="session-bar">
+              <div class="progress-row"><span>Token target</span><span id="sessionTokenLabel">—</span></div>
+              <div class="progress-track" role="progressbar" aria-label="Token target progress" aria-valuemin="0" aria-valuemax="100"><i id="sessionTokenBar"></i></div>
+            </div>
+            <div class="session-bar">
+              <div class="progress-row"><span>Session time</span><span id="sessionTimeLabel">—</span></div>
+              <div class="progress-track" role="progressbar" aria-label="Session time progress" aria-valuemin="0" aria-valuemax="100"><i id="sessionTimeBar"></i></div>
+            </div>
+          </div>
+          <div class="session-facts" id="sessionFacts"></div>
+          <div class="action-row">
+            <button class="button danger-ghost" id="sessionStopButton">Graceful stop</button>
+            <button class="button secondary" id="followActiveButton">View this run</button>
+            <span class="action-note" id="sessionNote">—</span>
+          </div>
+        </section>
+        <section class="panel session-panel idle" id="idleSession" aria-label="No active training">
+          <div class="idle-row">
+            <div class="idle-copy">
+              <div class="eyebrow">ACTIVE SESSION</div>
+              <strong>No training running.</strong>
+              <span>Configure a resume or continuation stage below, or press Continue Training on a completed run.</span>
+            </div>
+            <span class="session-pill">IDLE</span>
+          </div>
+        </section>
+
+        <section class="metrics" aria-label="Training telemetry">
+          <article class="stat stat-state"><span class="metric-icon" aria-hidden="true">●</span><span class="stat-label">STATE</span><strong id="stateValue">IDLE</strong><span class="stat-sub" id="stateSub">No active trainer</span></article>
+          <article class="stat"><span class="metric-icon" aria-hidden="true">◔</span><span class="stat-label">STEP</span><strong id="stepValue">—</strong><span class="stat-sub">optimizer updates</span></article>
+          <article class="stat"><span class="metric-icon" aria-hidden="true">▤</span><span class="stat-label">PROCESSED</span><strong id="tokensValue">—</strong><span class="stat-sub" id="tokensSub">of target</span></article>
+          <article class="stat"><span class="metric-icon" aria-hidden="true">➤</span><span class="stat-label">THROUGHPUT</span><strong id="throughputValue">—</strong><span class="stat-sub" id="etaValue">ETA —</span></article>
+          <article class="stat"><span class="metric-icon" aria-hidden="true">▦</span><span class="stat-label">GPU</span><strong id="gpuValue">—</strong><span class="stat-sub">utilization</span></article>
+          <article class="stat"><span class="metric-icon" aria-hidden="true">⬔</span><span class="stat-label">VRAM / TEMP</span><strong id="vramValue">—</strong><span class="stat-sub" id="tempValue">temperature —</span></article>
+          <article class="stat"><span class="metric-icon" aria-hidden="true">⛁</span><span class="stat-label">STORAGE</span><strong id="storageValue">—</strong><span class="stat-sub" id="storageSub">free</span></article>
+        </section>
+
+        <div class="workspace-grid">
+          <section class="panel config-panel" aria-labelledby="configHeading">
+            <div class="panel-heading">
+              <div><div class="eyebrow">CONTROL PLANE</div><h2 id="configHeading">Auto Train</h2></div>
+              <span class="safe-label">SAFE PREFLIGHT</span>
+            </div>
+            <div class="config-group">
+              <div class="group-title">Auto Train — one assistant, two inputs</div>
+              <div class="form-grid">
+                <label class="field"><span>Additional training tokens — total budget</span>
+                  <div class="input-with-suffix"><input id="autoTokens" inputmode="numeric" value="1000000"><span>tokens</span></div>
+                  <div class="presets" aria-label="Auto token presets"><button type="button" data-auto-tokens="1000000">1M</button><button type="button" data-auto-tokens="5000000">5M</button><button type="button" data-auto-tokens="10000000">10M</button></div>
+                </label>
+                <label class="field"><span>Maximum session duration — overall time limit</span>
+                  <div class="duration-row"><input id="autoDuration" type="number" min="0.1" step="0.1" value="60"><select id="autoDurationUnit" aria-label="Auto duration unit"><option value="minutes">minutes</option><option value="hours">hours</option></select></div>
+                  <small>Shared by all stages. Stages stop gracefully at the limit; resume re-arms a fresh allowance.</small>
+                </label>
+                <label class="field"><span>Dataset / pass policy</span>
+                  <select id="autoPassPolicy"><option value="unique_once">Unique rows only (one pass)</option><option value="repeat">Allow explicitly labeled repeated passes</option></select>
+                  <small>Repeated tokens are never reported as unique data.</small>
+                </label>
+                <label class="field"><span>Stage count</span>
+                  <input id="autoStageCount" inputmode="numeric" placeholder="automatic">
+                  <small>Blank chooses the minimum safe count. Every stage starts a fresh data cursor.</small>
+                </label>
+              </div>
+              <div class="auto-status-row"><span class="session-pill" id="autoPill">NO PLAN</span><span class="action-note" id="autoNote">Preflight only — nothing starts until you press Start Training.</span></div>
+              <div class="auto-actual" id="autoActual" hidden></div>
+              <div class="eval-scorecard" id="autoEval" hidden></div>
+              <div class="preview-caption" id="autoPreviewCaption">Next plan preview — hypothetical from the inputs above; it does not change any saved plan.</div>
+              <div class="auto-preflight" id="autoPreflight" aria-live="polite"></div>
+              <div class="auto-warn" id="autoWarn" hidden></div>
+              <label class="switch-line" id="autoRepeatRow" hidden><input id="autoRepeatConfirm" type="checkbox"><span class="switch" aria-hidden="true"></span><span>Plan repeats training rows — I confirm multi-pass repetition</span></label>
+            </div>
+            <div class="action-row">
+              <button class="button primary" id="autoStartButton">Start Training</button>
+              <button class="button danger-ghost" id="autoStopButton" disabled>Stop Auto Train</button>
+              <button class="button secondary" id="autoResumeButton" disabled>Resume Auto Train</button>
+            </div>
+            <details class="manual-box" id="manualBox">
+              <summary>Advanced / Manual training</summary>
+            <div class="config-group">
+              <div class="group-title">Source</div>
+              <div class="form-grid">
+                <label class="field"><span>Mode</span>
+                  <select id="mode"><option value="continuation">New continuation stage</option><option value="resume">Resume selected run</option></select>
+                  <small>Resume keeps the existing run's target and learning-rate schedule immutable. Continuation starts a new stage from a parent checkpoint.</small>
+                </label>
+                <label class="field"><span>New continuation stage name</span><input id="stageName" autocomplete="off" spellcheck="false"><small>A new folder is created under <code>results\</code>; existing checkpoints are never overwritten.</small></label>
+                <label class="field"><span>Existing run — inspected / resumed</span><input id="runNameFilter" placeholder="Filter runs…" autocomplete="off" spellcheck="false"><select id="runName"></select><small id="runHint">Select a saved lineage.</small></label>
+                <label class="field"><span>Dataset / stage</span>
+                  <select id="dataset"><option value="tinystories">TinyStories · pretrain</option><option value="wikitext103">WikiText-103 · pretrain</option><option value="fineweb_edu">FineWeb-Edu · pretrain</option><option value="dolly">Dolly · SFT</option><option value="dailydialog">DailyDialog · SFT</option><option value="mixture">Custom mixture · pretrain</option></select>
+                  <small>Dolly and DailyDialog use prepared instruction-tuning stages. Resume ignores this and keeps the run's own dataset.</small>
+                </label>
+                <label class="field field-wide"><span>Parent checkpoint — weights for the new stage</span><input id="parentCheckpointFilter" placeholder="Filter checkpoints…" autocomplete="off" spellcheck="false"><select id="parentCheckpoint"></select><small id="checkpointHint">Actual saved path and lineage progress appear below.</small></label>
+                <div class="selected-file field-wide" id="selectedFile">
+                  <span class="file-kicker">SELECTED CHECKPOINT</span>
+                  <strong id="checkpointPath">—</strong>
+                  <div class="progress-row"><span id="checkpointProgress">—</span><span id="checkpointTokens">—</span></div>
+                  <div class="progress-track"><i id="checkpointBar"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="config-group">
+              <div class="group-title">Budget &amp; schedule</div>
+              <div class="form-grid">
+                <label class="field"><span>Additional tokens — new training budget</span>
+                  <div class="input-with-suffix"><input id="additionalTokens" inputmode="numeric" value="1000000"><span>tokens</span></div>
+                  <div class="presets" aria-label="Token presets"><button type="button" data-tokens="1000000">1M</button><button type="button" data-tokens="10000000">10M</button><button type="button" data-tokens="50000000">50M</button><button type="button" data-tokens="100000000">100M</button></div>
+                </label>
+                <label class="field"><span>Session duration — max time for this session</span>
+                  <div class="duration-row"><input id="duration" type="number" min="0.1" step="0.1" value="60"><select id="durationUnit" aria-label="Duration unit"><option value="minutes">minutes</option><option value="hours">hours</option></select></div>
+                  <small>Checked at optimizer boundaries; the final safe save may run slightly past it.</small>
+                </label>
+                <label class="field"><span>Session mode</span>
+                  <label class="switch-line"><input id="untilStopped" type="checkbox"><span class="switch" aria-hidden="true"></span><span>Run until manually stopped</span></label>
+                  <small>Graceful stop saves at an optimizer-safe boundary.</small>
+                </label>
+                <label class="field"><span>Mixture weights</span><input id="mixture" value="tinystories=0.20,wikitext103=0.35,fineweb_edu=0.45" spellcheck="false" autocomplete="off"><small>Use name=weight pairs; required only for Custom mixture.</small></label>
+              </div>
+            </div>
+            <div class="action-row">
+              <button class="button primary" id="startButton">Start training</button>
+              <button class="button danger-ghost" id="stopButton" disabled>Graceful stop</button>
+              <button class="button secondary" id="continueButton" hidden>Continue training</button>
+              <span class="action-note" id="actionNote">No training starts during preflight.</span>
+            </div>
+            </details>
+          </section>
+
+          <section class="panel plan-panel" aria-labelledby="planHeading">
+            <div class="panel-heading">
+              <div><div class="eyebrow">PREFLIGHT</div><h2 id="planHeading">Effective plan</h2></div>
+              <span class="plan-status" id="planStatus">READY</span>
+            </div>
+            <div class="plan-summary"><strong id="planTitle">Choose a checkpoint to prepare a stage.</strong><span id="planPath">—</span></div>
+            <div class="plan-facts" id="planFacts"><div><span>Additional</span><strong>—</strong></div><div><span>Cumulative</span><strong>—</strong></div><div><span>Effective target</span><strong>—</strong></div><div><span>Est. completion</span><strong>—</strong></div><div><span>LR schedule</span><strong>—</strong></div><div><span>Model</span><strong>—</strong></div></div>
+            <div class="chart-heading">
+              <div class="chart-title"><h3>Loss</h3><span id="chartScope">Selected run metrics only</span></div>
+              <div class="legend" aria-hidden="true"><span class="legend-item"><i class="legend-train"></i>Train</span><span class="legend-item"><i class="legend-valid"></i>Validation</span></div>
+            </div>
+            <div class="chart-wrap"><svg id="lossChart" viewBox="0 0 760 320" preserveAspectRatio="none" role="img" aria-label="Training and validation loss chart"></svg></div>
+            <div class="chart-foot"><span id="chartMin">step —</span><span>actual metric steps</span><span id="chartMax">step —</span></div>
+            <div class="action-row"><button class="button secondary small" id="metricsDownloadButton">Download metrics JSON</button></div>
+            <div class="checkpoint-foot" id="planCheckpoint">Checkpoint —<br>Run folder —</div>
+          </section>
+        </div>
+        <div class="notice" id="notice" role="status">The dashboard reads local status and metrics files. The browser can close without stopping training.</div>
+      </section>
+
+      <section id="versionsView" class="view" role="tabpanel" aria-labelledby="tab-versions" hidden>
+        <div class="section-intro">
+          <div><div class="eyebrow accent">LINEAGE</div><h1>Versions &amp; experiments</h1><p>One approved AdamLM. History, candidates, and lab tools — never a checkpoint dropdown in Chat.</p></div>
+        </div>
+        <div class="workspace-grid">
+          <section class="panel config-panel" aria-labelledby="timelineHeading">
+            <div class="panel-heading"><div><div class="eyebrow">ASSISTANT LINEAGE</div><h2 id="timelineHeading">Version timeline</h2></div></div>
+            <div class="version-tools">
+              <label class="field"><span>Filter versions</span><input id="versionFilter" placeholder="Filter by run, dataset, state…" autocomplete="off" spellcheck="false"></label>
+              <label class="switch-line"><input id="versionShowArchived" type="checkbox"><span class="switch" aria-hidden="true"></span><span>Show archived</span></label>
+            </div>
+            <div class="timeline" id="versionTimeline" aria-live="polite"></div>
+            <div class="action-row">
+              <button class="button secondary small" id="rollbackButton" disabled>Revert to previous approved version</button>
+              <span class="action-note" id="rollbackNote"></span>
+            </div>
+          </section>
+          <section class="panel plan-panel" aria-labelledby="evalHeading">
+            <div class="panel-heading"><div><div class="eyebrow">EVALUATION</div><h2 id="evalHeading">Compare &amp; decide</h2></div><span class="plan-status" id="evalStatus">LOCAL</span></div>
+            <div class="form-grid">
+              <label class="field"><span>Approved (A)</span><input id="evalOld" readonly autocomplete="off" spellcheck="false"></label>
+              <label class="field"><span>Candidate (B)</span><select id="evalNew"></select></label>
+            </div>
+            <div class="action-row">
+              <button class="button primary small" id="evalCompareButton">Run fair comparison</button>
+              <button class="button secondary small" id="evalDownloadButton" disabled>Download scorecard</button>
+              <span class="action-note" id="evalNote">Identical prompts, seeds, and settings on both sides.</span>
+            </div>
+            <div class="eval-scorecard" id="evalScorecard" hidden></div>
+            <div class="compare-examples" id="evalExamples" aria-live="polite"></div>
+            <div class="feedback-box">
+              <div class="group-title">Promote candidate</div>
+              <p class="play-note">Promotion needs a completed comparison with no regressions, plus your written reason. The previous approved version is kept for rollback.</p>
+              <label class="field"><span>Reason (required)</span><input id="promoteReason" placeholder="Why is this version better?" autocomplete="off" spellcheck="false"></label>
+              <div class="action-row"><button class="button secondary small" id="promoteButton">Promote candidate to AdamLM</button><span class="action-note" id="promoteNote"></span></div>
+            </div>
+            <div class="feedback-box">
+              <div class="group-title">Feedback inbox</div>
+              <p class="play-note">Corrections you submitted from Chat. Approve one to make it <em>eligible</em> for a future training stage — never automatic.</p>
+              <div class="feedback-list" id="feedbackList" aria-live="polite"></div>
+            </div>
+          </section>
+        </div>
+        <details class="manual-box" id="labBox">
+          <summary>Lab · manual checkpoint inference (story completion, per-checkpoint chat, A/B)</summary>
+        <div class="playground-grid">
+          <section class="panel playground-controls" aria-labelledby="genHeading">
+            <div class="panel-heading"><div><div class="eyebrow">CHECKPOINT</div><h2 id="genHeading">Generation settings</h2></div></div>
+            <label class="field"><span>Saved checkpoint</span><input id="playCheckpointFilter" placeholder="Filter checkpoints…" autocomplete="off" spellcheck="false"><select id="playCheckpoint"></select><small id="playCheckpointHint">Production, general-pretraining, SFT, and smoke-test models are grouped separately.</small><small id="playRecommend">Recommended: Approved assistant for conversation.</small></label>
+            <div class="assistant-banner" id="assistantBanner" hidden>
+              <div class="banner-copy"><strong id="assistantBannerTitle">Newer saved checkpoint available</strong><div class="banner-body" id="assistantBannerBody"></div></div>
+              <div class="banner-actions"><button class="button secondary small" id="assistantSwitchButton">Switch</button><button class="button secondary small" id="assistantCompareButton">Compare</button><button class="button secondary small" id="assistantDismissButton">Dismiss</button></div>
+            </div>
+            <label class="field"><span>Mode</span>
+              <select id="playMode"><option value="story">Story completion — continue the prompt</option><option value="chat">Conversation — User / Assistant turn</option></select>
+              <small id="chatNote">Story completion works with any compatible model. Conversation requires an instruction-tuned SFT checkpoint.</small>
+            </label>
+            <div class="two-fields">
+              <label class="field"><span>Temperature</span><input id="temperature" type="number" min="0.01" step="0.05" value="0.8"></label>
+              <label class="field"><span>Top-K</span><input id="topK" type="number" min="1" value="40"></label>
+            </div>
+            <label class="field"><span>New tokens</span><input id="generationTokens" type="number" min="1" max="4096" value="160"></label>
+            <div class="two-fields">
+              <label class="field"><span>Seed</span><input id="seedValue" type="number" min="0" max="4294967295" value="42"></label>
+              <div class="field seed-lock"><span id="seedVarietyLabel">Variety</span><label class="switch-line"><input id="seedRandom" type="checkbox" checked><span class="switch" aria-hidden="true"></span><span>Fresh random seed</span></label><small id="seedHint">Random by default. Uncheck to lock a seed for reproducible tests.</small></div>
+            </div>
+            <label class="field"><span>Prompt</span><textarea id="prompt" rows="6">Once upon a time, a curious fox</textarea><small class="prompt-meta"><span id="promptCount">—</span><span>Ctrl + Enter to generate</span></small></label>
+            <small class="play-note history-note" id="chatHistoryNote">Story mode is stateless. Switch to Conversation for multi-turn chat.</small>
+            <div class="inference-guard" id="inferenceGuard" hidden></div>
+            <button class="button primary block" id="generateButton">Generate locally</button>
+            <button class="button danger-ghost block" id="cancelButton" hidden>Cancel generation</button>
+            <button class="button secondary block" id="regenerateButton">Regenerate last reply</button>
+            <button class="button secondary block" id="compareButton">Compare current vs newer</button>
+            <button class="button secondary block" id="clearChatButton">Clear chat</button>
+            <details class="advanced" id="advancedBox">
+              <summary>Advanced · experiment checkpoints</summary>
+              <div class="advanced-list" id="advancedList"></div>
+            </details>
+            <small class="play-note" id="generateNote">Only saved checkpoints listed by the backend can be loaded.</small>
+          </section>
+          <section class="panel output-panel" aria-labelledby="outHeading" aria-live="polite">
+            <div class="panel-heading">
+              <div><div class="eyebrow">OUTPUT</div><h2 id="outHeading">Generated text</h2></div>
+              <div class="output-actions"><span class="plan-status" id="outputStatus">LOCAL</span><button class="button secondary small" id="copyButton" disabled>Copy</button></div>
+            </div>
+            <div class="generation-indicator" id="generationIndicator" hidden><span class="spinner" aria-hidden="true"></span><span>Generating locally…</span></div>
+            <div id="outputBody" class="output-body"><div class="bubble system">Generated output will appear here. Nothing is sent anywhere; inference runs from the selected local checkpoint.</div></div>
+            <div class="compare-panel" id="comparePanel" hidden>
+              <div class="compare-head"><strong>Checkpoint comparison — history untouched</strong><span><button class="button secondary small" id="compareDownloadButton">Download</button> <button class="button secondary small" id="compareCloseButton">Close</button></span></div>
+              <div class="compare-meta" id="compareMeta"></div>
+              <div class="compare-grid"><div class="bubble assistant" id="compareA"></div><div class="bubble assistant" id="compareB"></div></div>
+              <small class="play-note">Compare sends one identical prompt, seed, temperature, top-k and token budget to both checkpoints. Your conversation history is not modified.</small>
+            </div>
+          </section>
+        </div>
+        </details>
+      </section>
+    </main>
+    <footer class="foot">AdamLM runs fully locally · backend <code>127.0.0.1:8765</code> · training continues if the browser closes</footer>
+  </div>
+  <div class="tab-lock" id="tabLock" hidden role="alertdialog" aria-labelledby="tabLockTitle" aria-describedby="tabLockBody">
+    <div class="tab-lock-card">
+      <h2 id="tabLockTitle">AdamLM is already open</h2>
+      <p id="tabLockBody">The Training Studio is open in another browser tab. Only one studio runs at a time, so this tab is idle and is not polling the backend.</p>
+      <p class="tab-lock-note">Training is unaffected either way — it runs in the backend, not in the browser.</p>
+      <button class="button" id="tabLockTakeover" type="button">Use this tab instead</button>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "state": "error",
+  "step": 12208,
+  "tokens": 50003968,
+  "target_tokens": 50000000,
+  "checkpoint": "results\\bpe512-local-run\\checkpoints\\step_00012208.pt",
+  "checkpoint_step": 12208,
+  "detail": "project storage budget exceeded",
+  "updated_at": "2026-09-18 15:07:03",
+  "train_loss": 1.699900507926941,
+  "validation_loss": 1.8095224414188977,
+  "stage": "pretrain",
+  "dataset": "tinystories",
+  "source": "tinystories"
+}

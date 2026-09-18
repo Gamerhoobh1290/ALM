@@ -1,0 +1,214 @@
+{
+  "session_id": "research-20260918-024513-e77c",
+  "created_at": 1789695913.3424819,
+  "started_at": 1789695913.3474839,
+  "updated_at": 1789696024.1907613,
+  "status": "stopped",
+  "goal": "fix greeting quality",
+  "use_ai": false,
+  "limits": {
+    "max_tokens": 10000000,
+    "max_seconds": 3600.0,
+    "max_experiments": 6,
+    "max_api_requests": 25,
+    "max_api_cost_usd": 0.0,
+    "max_repetition": 3,
+    "allow_external_eval": false,
+    "require_manual_promotion": true,
+    "allowed_ops": [
+      "train",
+      "evaluate",
+      "compare"
+    ],
+    "allowed_datasets": [
+      "dolly",
+      "dailydialog",
+      "tinystories",
+      "wikitext103",
+      "fineweb_edu",
+      "mixture"
+    ],
+    "stage_token_cap": 1000000,
+    "allow_repetition": true,
+    "mixture": ""
+  },
+  "budget_used": {
+    "tokens": 2826240,
+    "seconds": 0.0,
+    "api_requests": 0,
+    "failures": 2
+  },
+  "experiments": [
+    {
+      "index": 1,
+      "status": "rejected",
+      "plan": {
+        "hypothesis": "Conversation skill lags instructions (conv F1 0.054 < instr F1 0.313). A small DailyDialog-heavy SFT stage should improve greeting/follow-up relevance without touching general weights.",
+        "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-231947-s3\\checkpoints\\step_00002024.pt",
+        "dataset": "dailydialog",
+        "mixture": null,
+        "target_tokens": 1000000,
+        "max_seconds": 3600.0,
+        "eval_plan": "assistant probes (greetings + follow-ups primary) + hygiene + capability regression check",
+        "expected_risks": "possible instruction-skill dip; promotion gate requires no regression",
+        "stop_conditions": "hygiene failure or capability regression beyond tolerance",
+        "config": ""
+      },
+      "run_dir": "C:\\AdamLM\\results\\research-20260918-024513-e77c-e1",
+      "started_at": 1789695913.6134834,
+      "supervisor_model": null,
+      "supervisor_attempts": [],
+      "checkpoint": "C:\\AdamLM\\results\\research-20260918-024513-e77c-e1\\checkpoints\\step_00000245.pt",
+      "tokens_trained": 1003520,
+      "trainer_state": "target_reached",
+      "eval_report": "C:\\AdamLM\\results\\evals\\research-20260918-024513-e77c-e1.json",
+      "eval": {
+        "instr_f1_old": 0.3129,
+        "instr_f1_new": 0.2788,
+        "conv_f1_old": 0.0541,
+        "conv_f1_new": 0.0455,
+        "suite_accuracy_old": 0.2222222222222222,
+        "suite_accuracy_new": 0.2222222222222222,
+        "promote": false,
+        "reason": "held: instructions regressed (new F1 0.279 < old F1 0.313); held: conversation regressed (new F1 0.045 < old F1 0.054)"
+      },
+      "examples": [
+        {
+          "id": "greet-heldout-dd",
+          "kind": "greeting",
+          "prompt": "Hello ! What are you reading about in the newspaper ?",
+          "reference": "Hello ! I was exhausted some studying , so I decided to read the newspaper to relax . Unfortunately , the news is so depressing . There has been another murder in the city center . I \u2019 m shocked that ",
+          "approved_reply": "I'm reading about it .",
+          "candidate_reply": "I'm reading about it ."
+        },
+        {
+          "id": "greet-hand-0",
+          "kind": "greeting",
+          "prompt": "hey",
+          "reference": "",
+          "approved_reply": "I'm afraid it's not far from the sun. They are the same for each other. It's the same as China. The sun's warmer and the elements are generally shorter.",
+          "candidate_reply": "I'm afraid it's not too bad ."
+        },
+        {
+          "id": "greet-hand-1",
+          "kind": "greeting",
+          "prompt": "Good morning! How are you today?",
+          "reference": "",
+          "approved_reply": "I'm the PA Van Goods. I love being a lot of exercise. You might enjoy being in the offices, and then you should start making any of them. Alady or I want to spend some time to go home. First, I need",
+          "candidate_reply": "I'm Yiking, Miss Harvard, and Oxford are the three-point companys in my name Yioh, India."
+        },
+        {
+          "id": "instr-heldout-classification",
+          "kind": "instruction",
+          "prompt": "Identify which animal species is alive or extinct: Palaeophis, Giant Tortoise",
+          "reference": "Giant Tortoise is alive, Palaeophis is extinct.",
+          "approved_reply": "Giant Tortoise is alive, Palaeophis is extinct, Palaeophis is extinct",
+          "candidate_reply": "Palaeophis is alive, Palaeophis is extinct."
+        }
+      ],
+      "decision": "held: instructions regressed (new F1 0.279 < old F1 0.313); held: conversation regressed (new F1 0.045 < old F1 0.054)"
+    },
+    {
+      "index": 2,
+      "status": "rejected",
+      "plan": {
+        "hypothesis": "Conversation skill lags instructions (conv F1 0.054 < instr F1 0.313). A small DailyDialog-heavy SFT stage should improve greeting/follow-up relevance without touching general weights.",
+        "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-231947-s3\\checkpoints\\step_00002024.pt",
+        "dataset": "dailydialog",
+        "mixture": null,
+        "target_tokens": 1000000,
+        "max_seconds": 3600.0,
+        "eval_plan": "assistant probes (greetings + follow-ups primary) + hygiene + capability regression check",
+        "expected_risks": "possible instruction-skill dip; promotion gate requires no regression",
+        "stop_conditions": "hygiene failure or capability regression beyond tolerance",
+        "config": ""
+      },
+      "run_dir": "C:\\AdamLM\\results\\research-20260918-024513-e77c-e2",
+      "started_at": 1789695956.5653148,
+      "supervisor_model": null,
+      "supervisor_attempts": [],
+      "checkpoint": "C:\\AdamLM\\results\\research-20260918-024513-e77c-e2\\checkpoints\\step_00000245.pt",
+      "tokens_trained": 1003520,
+      "trainer_state": "target_reached",
+      "eval_report": "C:\\AdamLM\\results\\evals\\research-20260918-024513-e77c-e2.json",
+      "eval": {
+        "instr_f1_old": 0.3129,
+        "instr_f1_new": 0.3158,
+        "conv_f1_old": 0.0541,
+        "conv_f1_new": 0.0455,
+        "suite_accuracy_old": 0.2222222222222222,
+        "suite_accuracy_new": 0.2222222222222222,
+        "promote": false,
+        "reason": "held: conversation regressed (new F1 0.045 < old F1 0.054)"
+      },
+      "examples": [
+        {
+          "id": "greet-heldout-dd",
+          "kind": "greeting",
+          "prompt": "Hello ! What are you reading about in the newspaper ?",
+          "reference": "Hello ! I was exhausted some studying , so I decided to read the newspaper to relax . Unfortunately , the news is so depressing . There has been another murder in the city center . I \u2019 m shocked that ",
+          "approved_reply": "I'm reading about it .",
+          "candidate_reply": "I'm reading about it ."
+        },
+        {
+          "id": "greet-hand-0",
+          "kind": "greeting",
+          "prompt": "hey",
+          "reference": "",
+          "approved_reply": "I'm afraid it's not far from the sun. They are the same for each other. It's the same as China. The sun's warmer and the elements are generally shorter.",
+          "candidate_reply": "I'm afraid it's not so badly ."
+        },
+        {
+          "id": "greet-hand-1",
+          "kind": "greeting",
+          "prompt": "Good morning! How are you today?",
+          "reference": "",
+          "approved_reply": "I'm the PA Van Goods. I love being a lot of exercise. You might enjoy being in the offices, and then you should start making any of them. Alady or I want to spend some time to go home. First, I need",
+          "candidate_reply": "I'm Yiking, Miss Harvard, and Olahja, and Harvard."
+        },
+        {
+          "id": "instr-heldout-classification",
+          "kind": "instruction",
+          "prompt": "Identify which animal species is alive or extinct: Palaeophis, Giant Tortoise",
+          "reference": "Giant Tortoise is alive, Palaeophis is extinct.",
+          "approved_reply": "Giant Tortoise is alive, Palaeophis is extinct, Palaeophis is extinct",
+          "candidate_reply": "Palaeophis is alive, Palaeophis is extinct."
+        }
+      ],
+      "decision": "held: conversation regressed (new F1 0.045 < old F1 0.054)"
+    },
+    {
+      "index": 3,
+      "status": "failed",
+      "plan": {
+        "hypothesis": "Conversation skill lags instructions (conv F1 0.054 < instr F1 0.313). A small DailyDialog-heavy SFT stage should improve greeting/follow-up relevance without touching general weights.",
+        "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-231947-s3\\checkpoints\\step_00002024.pt",
+        "dataset": "dailydialog",
+        "mixture": null,
+        "target_tokens": 1000000,
+        "max_seconds": 3600.0,
+        "eval_plan": "assistant probes (greetings + follow-ups primary) + hygiene + capability regression check",
+        "expected_risks": "possible instruction-skill dip; promotion gate requires no regression",
+        "stop_conditions": "hygiene failure or capability regression beyond tolerance",
+        "config": ""
+      },
+      "run_dir": "C:\\AdamLM\\results\\research-20260918-024513-e77c-e3",
+      "started_at": 1789695998.8971229,
+      "supervisor_model": null,
+      "supervisor_attempts": [],
+      "checkpoint": "C:\\AdamLM\\results\\research-20260918-024513-e77c-e3\\checkpoints\\step_00000200.pt",
+      "tokens_trained": 819200,
+      "trainer_state": "stopped",
+      "failure": "trainer ended as 'stopped'"
+    }
+  ],
+  "stop_reason": "Stopped by operator; completed work preserved, stages never duplicated on resume.",
+  "report": null,
+  "provider_state": {
+    "paused": false,
+    "reason": null,
+    "paused_at": null,
+    "attempts": [],
+    "last_model": null
+  }
+}

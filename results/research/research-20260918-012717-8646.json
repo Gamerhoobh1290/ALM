@@ -1,0 +1,65 @@
+{
+  "session_id": "research-20260918-012717-8646",
+  "created_at": 1789691237.8490376,
+  "started_at": 1789691237.8640397,
+  "updated_at": 1789691273.7235456,
+  "status": "stopped",
+  "goal": "",
+  "use_ai": false,
+  "limits": {
+    "max_tokens": 1000000,
+    "max_seconds": 3600.0,
+    "max_experiments": 3,
+    "max_api_requests": 25,
+    "max_api_cost_usd": 0.0,
+    "max_repetition": 3,
+    "allow_external_eval": false,
+    "require_manual_promotion": true,
+    "allowed_ops": [
+      "train",
+      "evaluate",
+      "compare"
+    ]
+  },
+  "budget_used": {
+    "tokens": 1003520,
+    "seconds": 0.0,
+    "api_requests": 0,
+    "failures": 1
+  },
+  "experiments": [
+    {
+      "index": 1,
+      "status": "failed",
+      "plan": {
+        "hypothesis": "Conversation skill lags instructions (conv F1 0.054 < instr F1 0.313). A small DailyDialog-heavy SFT stage should improve greeting/follow-up relevance without touching general weights.",
+        "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-231947-s3\\checkpoints\\step_00002024.pt",
+        "dataset": "dailydialog",
+        "mixture": null,
+        "target_tokens": 1000000,
+        "max_seconds": 3600.0,
+        "eval_plan": "assistant probes (greetings + follow-ups primary) + hygiene + capability regression check",
+        "expected_risks": "possible instruction-skill dip; promotion gate requires no regression",
+        "stop_conditions": "hygiene failure or capability regression beyond tolerance",
+        "config": ""
+      },
+      "run_dir": "C:\\AdamLM\\results\\research-20260918-012717-8646-e1",
+      "started_at": 1789691237.9834406,
+      "supervisor_model": null,
+      "supervisor_attempts": [],
+      "checkpoint": "C:\\AdamLM\\results\\research-20260918-012717-8646-e1\\checkpoints\\step_00000245.pt",
+      "tokens_trained": 1003520,
+      "trainer_state": "target_reached",
+      "failure": "evaluation failed: evaluate_checkpoints() got an unexpected keyword argument 'out'"
+    }
+  ],
+  "stop_reason": "Reached token budget",
+  "report": null,
+  "provider_state": {
+    "paused": false,
+    "reason": null,
+    "paused_at": null,
+    "attempts": [],
+    "last_model": null
+  }
+}

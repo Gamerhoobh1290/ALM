@@ -1,0 +1,12 @@
+{
+  "session_id": "research-20260918-153511-42c3",
+  "status": "stopped",
+  "stop_reason": "No useful next step: This repeats failed/rejected experiment research-20260918-024513-e77c#1 from the same parent without a meaningful change to dataset, mixture, token target, or hypothesis. Previous outcome: rejected (held: instructions regressed (new F1 0.279 < old F1 0.313); held: conversation regressed (new F1 0.045 < old F1 0.054)).",
+  "experiments": [
+    {
+      "index": 1,
+      "status": "declined",
+      "reason": "This repeats failed/rejected experiment research-20260918-024513-e77c#1 from the same parent without a meaningful change to dataset, mixture, token target, or hypothesis. Previous outcome: rejected (held: instructions regressed (new F1 0.279 < old F1 0.313); held: conversation regressed (new F1 0.045 < old F1 0.054))."
+    }
+  ]
+}

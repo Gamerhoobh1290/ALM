@@ -1,0 +1,522 @@
+{
+  "format_version": 1,
+  "compared_at": 1789692959.5157125,
+  "old_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-231947-s3\\checkpoints\\step_00002024.pt",
+  "new_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-012952-s3\\checkpoints\\step_00002024.pt",
+  "settings": "assistant probes: tokens=60 temp=0.8 top_k=40 seed=42 CPU; capability suite: greedy_argmax",
+  "scorecard": {
+    "old_label": "approved",
+    "new_label": "candidate",
+    "instr_f1_old": 0.3129,
+    "instr_f1_new": 0.3011,
+    "instr_n": 4,
+    "conv_f1_old": 0.0541,
+    "conv_f1_new": 0.1281,
+    "conv_n": 2,
+    "hygiene_problems": [],
+    "suite_accuracy_old": 0.2222222222222222,
+    "suite_accuracy_new": 0.18518518518518517,
+    "suite_delta": -0.037,
+    "suite_by_category_old": {
+      "coherence": {
+        "items": 3,
+        "scored": 3,
+        "correct": 3,
+        "accuracy": 1.0
+      },
+      "coherent_generation": {
+        "items": 2,
+        "scored": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      "computer_windows": {
+        "items": 5,
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "english_grammar": {
+        "items": 4,
+        "scored": 4,
+        "correct": 3,
+        "accuracy": 0.75
+      },
+      "general_knowledge": {
+        "items": 5,
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "reasoning_instruction": {
+        "items": 6,
+        "scored": 6,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "unsupported_questions": {
+        "items": 4,
+        "scored": 4,
+        "correct": 0,
+        "accuracy": 0.0
+      }
+    },
+    "suite_by_category_new": {
+      "coherence": {
+        "items": 3,
+        "scored": 3,
+        "correct": 3,
+        "accuracy": 1.0
+      },
+      "coherent_generation": {
+        "items": 2,
+        "scored": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      "computer_windows": {
+        "items": 5,
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "english_grammar": {
+        "items": 4,
+        "scored": 4,
+        "correct": 2,
+        "accuracy": 0.5
+      },
+      "general_knowledge": {
+        "items": 5,
+        "scored": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "reasoning_instruction": {
+        "items": 6,
+        "scored": 6,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "unsupported_questions": {
+        "items": 4,
+        "scored": 4,
+        "correct": 0,
+        "accuracy": 0.0
+      }
+    },
+    "old_validation_loss": null,
+    "new_validation_loss": null,
+    "promote": false,
+    "reasons": [
+      "held: instructions regressed (new F1 0.301 < old F1 0.313)",
+      "held: general capability regressed (0.222 \u2192 0.185)"
+    ],
+    "reason": "held: instructions regressed (new F1 0.301 < old F1 0.313); held: general capability regressed (0.222 \u2192 0.185)",
+    "note": "Unigram F1 is supplementary; inspect the saved example replies. Lower validation loss alone never promotes."
+  },
+  "examples": [
+    {
+      "id": "greet-heldout-dd",
+      "kind": "greeting",
+      "prompt": "Hello ! What are you reading about in the newspaper ?",
+      "reference": "Hello ! I was exhausted some studying , so I decided to read the newspaper to relax . Unfortunately , the news is so depressing . There has been another murder in the city center . I \u2019 m shocked that ",
+      "approved_reply": "I'm reading about it .",
+      "candidate_reply": "I'm here to walk . What's the problem ? I can't find the exact reason I've got it . Believe any further ."
+    },
+    {
+      "id": "greet-hand-0",
+      "kind": "greeting",
+      "prompt": "hey",
+      "reference": "",
+      "approved_reply": "I'm afraid it's not far from the sun. They are the same for each other. It's the same as China. The sun's warmer and the elements are generally shorter.",
+      "candidate_reply": "yes"
+    },
+    {
+      "id": "greet-hand-1",
+      "kind": "greeting",
+      "prompt": "Good morning! How are you today?",
+      "reference": "",
+      "approved_reply": "I'm the PA Van Goods. I love being a lot of exercise. You might enjoy being in the offices, and then you should start making any of them. Alady or I want to spend some time to go home. First, I need",
+      "candidate_reply": "I'm the PATH.. How much should I pay for for it?\nPATH.... but he doesn't have any differences. Washingtoning is great. Working on another computer will help you. But I hope"
+    },
+    {
+      "id": "instr-heldout-classification",
+      "kind": "instruction",
+      "prompt": "Identify which animal species is alive or extinct: Palaeophis, Giant Tortoise",
+      "reference": "Giant Tortoise is alive, Palaeophis is extinct.",
+      "approved_reply": "Giant Tortoise is alive, Palaeophis is extinct, Palaeophis is extinct",
+      "candidate_reply": "Giant Tortoise is alive, Palaeophis is extinct."
+    },
+    {
+      "id": "instr-heldout-open_qa",
+      "kind": "instruction",
+      "prompt": "What is a kite?",
+      "reference": "A kite is a toy that can be be purchased in a store or a specialty shop.  It is a craft that is lighter an air that is tied to a string that you can fly on wind currents.  The kite has wings that reac",
+      "approved_reply": "A kite, plane, Van Gogh, is the kite form of a kite, is the most popular kite in the world.",
+      "candidate_reply": "A kite, plane, Van Gogh, is the most popular kite in the world. There are many beaches in the world, with many beaches in itaving the best venome."
+    },
+    {
+      "id": "instr-heldout-brainstorming",
+      "kind": "instruction",
+      "prompt": "Name 10 colors",
+      "reference": "Fuschia, magenta, orange, green, blue, red, yellow, chartreuse, aquamarine, sienna",
+      "approved_reply": "Take the Property - 1950\nStephen Troperty  - 10 colors\nThe Biggest Suspection",
+      "candidate_reply": "Take the Property - 5 colors \u2014 10 rainbow colors\n\nHere are the color you look (240m paint): 12 colors (234 kg)\n\nHelening - 1"
+    }
+  ],
+  "old_rows": [
+    {
+      "id": "greet-heldout-dd",
+      "kind": "greeting",
+      "source": "held-out",
+      "instruction": "Hello ! What are you reading about in the newspaper ?",
+      "context": "",
+      "reference": "Hello ! I was exhausted some studying , so I decided to read the newspaper to relax . Unfortunately , the news is so depressing . There has been another murder in the city center . I \u2019 m shocked that ",
+      "reply": "I'm reading about it .",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "greet-hand-0",
+      "kind": "greeting",
+      "source": "hand-written",
+      "instruction": "hey",
+      "context": "",
+      "reference": "",
+      "reply": "I'm afraid it's not far from the sun. They are the same for each other. It's the same as China. The sun's warmer and the elements are generally shorter.",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "greet-hand-1",
+      "kind": "greeting",
+      "source": "hand-written",
+      "instruction": "Good morning! How are you today?",
+      "context": "",
+      "reference": "",
+      "reply": "I'm the PA Van Goods. I love being a lot of exercise. You might enjoy being in the offices, and then you should start making any of them. Alady or I want to spend some time to go home. First, I need",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "instr-heldout-classification",
+      "kind": "instruction",
+      "source": "held-out",
+      "instruction": "Identify which animal species is alive or extinct: Palaeophis, Giant Tortoise",
+      "context": "",
+      "reference": "Giant Tortoise is alive, Palaeophis is extinct.",
+      "reply": "Giant Tortoise is alive, Palaeophis is extinct, Palaeophis is extinct",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "instr-heldout-open_qa",
+      "kind": "instruction",
+      "source": "held-out",
+      "instruction": "What is a kite?",
+      "context": "",
+      "reference": "A kite is a toy that can be be purchased in a store or a specialty shop.  It is a craft that is lighter an air that is tied to a string that you can fly on wind currents.  The kite has wings that reac",
+      "reply": "A kite, plane, Van Gogh, is the kite form of a kite, is the most popular kite in the world.",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "instr-heldout-brainstorming",
+      "kind": "instruction",
+      "source": "held-out",
+      "instruction": "Name 10 colors",
+      "context": "",
+      "reference": "Fuschia, magenta, orange, green, blue, red, yellow, chartreuse, aquamarine, sienna",
+      "reply": "Take the Property - 1950\nStephen Troperty  - 10 colors\nThe Biggest Suspection",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "instr-heldout-general_qa",
+      "kind": "instruction",
+      "source": "held-out",
+      "instruction": "Did dinosaurs have lips?",
+      "context": "",
+      "reference": "Recent research suggests that the popular perception that dinosaurs had exposed teeth may be incorrect, and the current hypothesis is that the Tyrannosaurus rex did indeed have lips. A 2023 study by D",
+      "reply": "Each life is a 2.5 dinosaurs. They are known for their sides, while Honda has to have slenders in the body.",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "instr-hand-fruits",
+      "kind": "instruction",
+      "source": "hand-written",
+      "instruction": "Name three red fruits.",
+      "context": "",
+      "reference": "",
+      "reply": "Free red fruit.",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "follow-heldout-dd",
+      "kind": "follow-up",
+      "source": "held-out",
+      "instruction": "Sometimes , we , human beings , really had done something wrong , so we should admit it at first .",
+      "context": "User:\nEvery country should face the history .\nAssistant:\nYeah , we don \u2019 t live in the vacuum . We have traditional values and long but different history .",
+      "reference": "But there is always somebody who wants to turn his back on the true history .",
+      "reply": "I know . For many people , I believe that I can be very simpler than I believe that there is a good idea .",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "follow-hand-pizza",
+      "kind": "follow-up",
+      "source": "hand-written turns",
+      "turns": [
+        {
+          "user": "I love pizza.",
+          "reply": "I know the one that I can learn. Highly processed for meals. I use pizza and cheese. However, it takes a lot of time for many things."
+        },
+        {
+          "user": "What about you?",
+          "reply": "I know the one that I can learn. Highly processed for meals, it is the most popular pizza to have more pizza than TV."
+        }
+      ],
+      "checks": [
+        {
+          "non_empty": true,
+          "no_replacement_char": true,
+          "printable_ratio": 1.0,
+          "no_prompt_echo": true,
+          "no_runaway_repeat": true
+        },
+        {
+          "non_empty": true,
+          "no_replacement_char": true,
+          "printable_ratio": 1.0,
+          "no_prompt_echo": true,
+          "no_runaway_repeat": true
+        }
+      ]
+    }
+  ],
+  "new_rows": [
+    {
+      "id": "greet-heldout-dd",
+      "kind": "greeting",
+      "source": "held-out",
+      "instruction": "Hello ! What are you reading about in the newspaper ?",
+      "context": "",
+      "reference": "Hello ! I was exhausted some studying , so I decided to read the newspaper to relax . Unfortunately , the news is so depressing . There has been another murder in the city center . I \u2019 m shocked that ",
+      "reply": "I'm here to walk . What's the problem ? I can't find the exact reason I've got it . Believe any further .",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "greet-hand-0",
+      "kind": "greeting",
+      "source": "hand-written",
+      "instruction": "hey",
+      "context": "",
+      "reference": "",
+      "reply": "yes",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "greet-hand-1",
+      "kind": "greeting",
+      "source": "hand-written",
+      "instruction": "Good morning! How are you today?",
+      "context": "",
+      "reference": "",
+      "reply": "I'm the PATH.. How much should I pay for for it?\nPATH.... but he doesn't have any differences. Washingtoning is great. Working on another computer will help you. But I hope",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "instr-heldout-classification",
+      "kind": "instruction",
+      "source": "held-out",
+      "instruction": "Identify which animal species is alive or extinct: Palaeophis, Giant Tortoise",
+      "context": "",
+      "reference": "Giant Tortoise is alive, Palaeophis is extinct.",
+      "reply": "Giant Tortoise is alive, Palaeophis is extinct.",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "instr-heldout-open_qa",
+      "kind": "instruction",
+      "source": "held-out",
+      "instruction": "What is a kite?",
+      "context": "",
+      "reference": "A kite is a toy that can be be purchased in a store or a specialty shop.  It is a craft that is lighter an air that is tied to a string that you can fly on wind currents.  The kite has wings that reac",
+      "reply": "A kite, plane, Van Gogh, is the most popular kite in the world. There are many beaches in the world, with many beaches in itaving the best venome.",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "instr-heldout-brainstorming",
+      "kind": "instruction",
+      "source": "held-out",
+      "instruction": "Name 10 colors",
+      "context": "",
+      "reference": "Fuschia, magenta, orange, green, blue, red, yellow, chartreuse, aquamarine, sienna",
+      "reply": "Take the Property - 5 colors \u2014 10 rainbow colors\n\nHere are the color you look (240m paint): 12 colors (234 kg)\n\nHelening - 1",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "instr-heldout-general_qa",
+      "kind": "instruction",
+      "source": "held-out",
+      "instruction": "Did dinosaurs have lips?",
+      "context": "",
+      "reference": "Recent research suggests that the popular perception that dinosaurs had exposed teeth may be incorrect, and the current hypothesis is that the Tyrannosaurus rex did indeed have lips. A 2023 study by D",
+      "reply": "Essaid\nTigers - High Sun - The area\n\nPropellas - Hill\nFootball - Hill\nAll-Said - Hill\nTiger Wisconsin - Hill\nMonac",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "instr-hand-fruits",
+      "kind": "instruction",
+      "source": "hand-written",
+      "instruction": "Name three red fruits.",
+      "context": "",
+      "reference": "",
+      "reply": "Three red fruits are not only for the following:\nA brown fruit is red, white, yellow, blue, green, blue, yellow, orange, blue",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "follow-heldout-dd",
+      "kind": "follow-up",
+      "source": "held-out",
+      "instruction": "Sometimes , we , human beings , really had done something wrong , so we should admit it at first .",
+      "context": "User:\nEvery country should face the history .\nAssistant:\nYeah , we don \u2019 t live in the vacuum . We have traditional values and long but different history .",
+      "reference": "But there is always somebody who wants to turn his back on the true history .",
+      "reply": "I know . For example , I am good at him , but I am sure I will find some ways in heating the right place .",
+      "checks": {
+        "non_empty": true,
+        "no_replacement_char": true,
+        "printable_ratio": 1.0,
+        "no_prompt_echo": true,
+        "no_runaway_repeat": true
+      }
+    },
+    {
+      "id": "follow-hand-pizza",
+      "kind": "follow-up",
+      "source": "hand-written turns",
+      "turns": [
+        {
+          "user": "I love pizza.",
+          "reply": "I know the one who likes pizza too. How much should I bring a coffee coffee and make it the re-fall pizza to the pizza.  First, the convey must be a variety of pizza.  The second goal is to create a variet"
+        },
+        {
+          "user": "What about you?",
+          "reply": "I know the beginning of the pizza. The four fifth set of reduce it, and I believe you are very happy with pizza.  As the element is the \"ink of pizza\" is a very high quality pizza.  The first goal is"
+        }
+      ],
+      "checks": [
+        {
+          "non_empty": true,
+          "no_replacement_char": true,
+          "printable_ratio": 1.0,
+          "no_prompt_echo": true,
+          "no_runaway_repeat": true
+        },
+        {
+          "non_empty": true,
+          "no_replacement_char": true,
+          "printable_ratio": 1.0,
+          "no_prompt_echo": true,
+          "no_runaway_repeat": true
+        }
+      ]
+    }
+  ]
+}

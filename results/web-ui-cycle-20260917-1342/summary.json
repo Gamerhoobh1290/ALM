@@ -1,0 +1,22 @@
+{
+  "reason": "target_reached",
+  "step": 8,
+  "params": 8868096,
+  "new_tokens": 32768,
+  "total_tokens": 32768,
+  "seconds": 18.098312399997667,
+  "end_to_end_tokens_per_second": 1810.5555521300553,
+  "compute_tokens_per_second": 54417.801103668025,
+  "compute_seconds": 0.6021559000073466,
+  "data_seconds": 0.05845339999359567,
+  "validation_seconds": 0.22400539999944158,
+  "checkpoint_seconds": 2.402193800000532,
+  "allocated_mib": 562.853515625,
+  "reserved_mib": 592.0,
+  "initial_validation_loss": 1.8095224414188977,
+  "final_validation_loss": 1.8089237477478102,
+  "final_holdout_loss": 1.6490165884910777,
+  "last_train_loss": 1.6912003755569458,
+  "checkpoint": "C:\\AdamLM\\results\\web-ui-cycle-20260917-1342\\checkpoints\\step_00000008.pt",
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+}

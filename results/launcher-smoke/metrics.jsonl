@@ -1,0 +1,4 @@
+{"event": "start", "step": 0, "params": 8868096, "validation_loss": 8.417027049518483, "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4", "max_session_seconds": 60.0}
+{"event": "graceful_stop", "step": 63, "tokens": 258048, "checkpoint": "results\\launcher-smoke\\checkpoints\\step_00000063.pt"}
+{"event": "start", "step": 63, "params": 8868096, "validation_loss": 6.578498874434564, "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4", "max_session_seconds": 60.0}
+{"event": "graceful_stop", "step": 72, "tokens": 294912, "checkpoint": "results\\launcher-smoke\\checkpoints\\step_00000072.pt"}

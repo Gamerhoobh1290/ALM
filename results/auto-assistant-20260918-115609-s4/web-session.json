@@ -1,0 +1,9 @@
+{
+  "run_name": "auto-assistant-20260918-115609-s4",
+  "mode": "continuation",
+  "dataset": "dailydialog+dolly",
+  "started_at": 1789729395.2611148,
+  "max_seconds": 3179.0711262226105,
+  "target_tokens": 8294284,
+  "auto_plan": "auto-assistant-20260918-115609"
+}

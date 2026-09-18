@@ -1,0 +1,339 @@
+{
+  "plan_id": "auto-assistant-20260918-133731",
+  "head": {
+    "run": "auto-assistant-20260918-115609-s5",
+    "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-115609-s5\\checkpoints\\step_00002024.pt",
+    "step": 2024,
+    "tokens": 8290304
+  },
+  "foundation": {
+    "run": "general-training-500m",
+    "state": "target_reached",
+    "checkpoint": "C:\\AdamLM\\results\\general-training-500m\\checkpoints\\step_00015259.pt"
+  },
+  "diet": {
+    "manifest": "data/sft_assistant/processed-manifest.json",
+    "revision": "curated-mix-20260918",
+    "masking": "response-only (unchanged SFT template)",
+    "dailydialog": {
+      "rows": 34890,
+      "tokens": 5258299
+    },
+    "dolly": {
+      "rows": 13511,
+      "tokens": 3033000
+    }
+  },
+  "allocation": {
+    "dd_share": 0.75,
+    "dolly_share": 0.25,
+    "basis": "base 70% DailyDialog / 30% Dolly by sampled training tokens: conversation-majority reading diet with roughly balanced response supervision (Dolly rows carry ~3.3x the response tokens); tilted +5pp toward conversation on measured skill gap (conversation F1 0.054 < instructions F1 0.313)",
+    "requested_tokens": 99495588,
+    "effective_tokens": 99483648,
+    "scheduled_tokens": 99483648,
+    "source_epoch_tokens": 8291299,
+    "batchable_epoch_tokens": 8290304,
+    "discarded_tail_tokens": 995,
+    "pass_policy": "repeat",
+    "stage_count": 12,
+    "repeated_data": true,
+    "unique_tokens_upper_bound": 8290304,
+    "capped": true,
+    "cap_explanation": "Requested target rounded down to 99.48M tokens on 4.10K-token batch boundaries.",
+    "stage_chunks": [
+      {
+        "tokens": 8290304,
+        "epoch_label": "pass 1",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 8290304,
+        "epoch_label": "pass 2; rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 8290304,
+        "epoch_label": "pass 3; rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 8290304,
+        "epoch_label": "pass 4; rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 8290304,
+        "epoch_label": "pass 5; rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 8290304,
+        "epoch_label": "pass 6; rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 8290304,
+        "epoch_label": "pass 7; rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 8290304,
+        "epoch_label": "pass 8; rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 8290304,
+        "epoch_label": "pass 9; rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 8290304,
+        "epoch_label": "pass 10; rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 8290304,
+        "epoch_label": "pass 11; rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 8290304,
+        "epoch_label": "pass 12; rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      }
+    ]
+  },
+  "requested_tokens": 99495588,
+  "effective_tokens": 99483648,
+  "budget": {
+    "requested_tokens": 99495588,
+    "effective_tokens": 99483648,
+    "source_epoch_tokens": 8291299,
+    "batchable_epoch_tokens": 8290304,
+    "discarded_tail_tokens": 995,
+    "pass_policy": "repeat",
+    "stage_count": 12,
+    "capped": true,
+    "cap_explanation": "Requested target rounded down to 99.48M tokens on 4.10K-token batch boundaries.",
+    "repeated_data": true,
+    "unique_tokens_upper_bound": 8290304,
+    "note": "Each fresh pass has 8.29M source tokens; 8.29M fit complete batches and 995 tail tokens are not trained. Repeated passes are explicitly enabled; repeated tokens are not unique."
+  },
+  "stages": [
+    {
+      "index": 1,
+      "run_dir": "results/auto-assistant-20260918-133731-s1",
+      "target_tokens": 8290304,
+      "epoch_label": "pass 1",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "regression",
+      "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-115609-s5\\checkpoints\\step_00002024.pt",
+      "command": [
+        "C:\\AdamLM\\.venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "adamlm.bpe_train",
+        "--auto-resume",
+        "--config",
+        "C:\\AdamLM\\config\\sft-assistant.json",
+        "--run-dir",
+        "C:\\AdamLM\\results\\auto-assistant-20260918-133731-s1",
+        "--dataset",
+        "dailydialog",
+        "--target-tokens",
+        "8290304",
+        "--parent-checkpoint",
+        "C:\\AdamLM\\results\\auto-assistant-20260918-115609-s5\\checkpoints\\step_00002024.pt",
+        "--max-seconds",
+        "7199.998992681503"
+      ],
+      "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-133731-s1\\checkpoints\\step_00000050.pt",
+      "tokens": 204800
+    },
+    {
+      "index": 2,
+      "run_dir": "results/auto-assistant-20260918-133731-s2",
+      "target_tokens": 8290304,
+      "epoch_label": "pass 2; rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 1
+    },
+    {
+      "index": 3,
+      "run_dir": "results/auto-assistant-20260918-133731-s3",
+      "target_tokens": 8290304,
+      "epoch_label": "pass 3; rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 2
+    },
+    {
+      "index": 4,
+      "run_dir": "results/auto-assistant-20260918-133731-s4",
+      "target_tokens": 8290304,
+      "epoch_label": "pass 4; rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 3
+    },
+    {
+      "index": 5,
+      "run_dir": "results/auto-assistant-20260918-133731-s5",
+      "target_tokens": 8290304,
+      "epoch_label": "pass 5; rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 4
+    },
+    {
+      "index": 6,
+      "run_dir": "results/auto-assistant-20260918-133731-s6",
+      "target_tokens": 8290304,
+      "epoch_label": "pass 6; rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 5
+    },
+    {
+      "index": 7,
+      "run_dir": "results/auto-assistant-20260918-133731-s7",
+      "target_tokens": 8290304,
+      "epoch_label": "pass 7; rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 6
+    },
+    {
+      "index": 8,
+      "run_dir": "results/auto-assistant-20260918-133731-s8",
+      "target_tokens": 8290304,
+      "epoch_label": "pass 8; rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 7
+    },
+    {
+      "index": 9,
+      "run_dir": "results/auto-assistant-20260918-133731-s9",
+      "target_tokens": 8290304,
+      "epoch_label": "pass 9; rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 8
+    },
+    {
+      "index": 10,
+      "run_dir": "results/auto-assistant-20260918-133731-s10",
+      "target_tokens": 8290304,
+      "epoch_label": "pass 10; rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 9
+    },
+    {
+      "index": 11,
+      "run_dir": "results/auto-assistant-20260918-133731-s11",
+      "target_tokens": 8290304,
+      "epoch_label": "pass 11; rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 10
+    },
+    {
+      "index": 12,
+      "run_dir": "results/auto-assistant-20260918-133731-s12",
+      "target_tokens": 8290304,
+      "epoch_label": "pass 12; rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 11
+    }
+  ],
+  "storage": {
+    "project_gib": 24.906455729156733,
+    "est_new_gib": 6.6322174072265625,
+    "budget_gib": 32.0,
+    "free_gib": 126.33452987670898,
+    "floor_gib": 5.0,
+    "fits_budget": true,
+    "floor_ok": true,
+    "config": "config/sft-assistant.json"
+  },
+  "time": {
+    "max_seconds": 7200.0,
+    "max_duration": "2h 00m",
+    "est_seconds": 206.00823381872283,
+    "est_duration": "3m 26s"
+  },
+  "stopping": [
+    "overall time limit of 2h 00m (stages share one deadline)",
+    "Stop button: graceful stop with checkpoint, resumable without replanning",
+    "disk pause: stages halt safely on storage-guard trips, checkpoints intact"
+  ],
+  "validation_policy": {
+    "stage_compare_every": 1,
+    "regression_patience": 2,
+    "manual_promotion": true
+  },
+  "eval": null,
+  "warnings": [
+    "Requested target rounded down to 99.48M tokens on 4.10K-token batch boundaries."
+  ],
+  "status": "regression",
+  "created_at": 1789735052.6901627,
+  "started_at": 1789735052.7457802,
+  "updated_at": 1789735067.9684455,
+  "stop_reason": "Validation has not improved by 0.002 for 1 checks; best 2.733918 at step 0, current 3.873297. Best and latest checkpoints are preserved for review.",
+  "failure": null,
+  "produced_checkpoint": null,
+  "promotion": null
+}

@@ -1,0 +1,16 @@
+{
+  "state": "target_reached",
+  "stage": "sft",
+  "dataset": "dailydialog",
+  "source": "dailydialog",
+  "detail": "target_reached",
+  "updated_at": "2026-09-17 19:33:13",
+  "checkpoint": "results\\sft-assistant\\checkpoints\\step_00000245.pt",
+  "checkpoint_step": 245,
+  "step": 245,
+  "tokens": 1003520,
+  "target_tokens": 1000000,
+  "train_loss": 3.0427000522613525,
+  "validation_loss": 2.6824484553445136,
+  "learning_rate": 1.0582738181293923e-05
+}

@@ -1,0 +1,38 @@
+{"event": "start", "step": 0, "params": 8868096, "validation_loss": 2.7013482644716476, "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4", "max_session_seconds": 7200.0}
+{"event": "validation", "step": 500, "tokens": 16384000, "train_loss": 3.254610061645508, "validation_loss": 2.7602236751270826, "learning_rate": 0.00029941720676156334}
+{"event": "graceful_stop", "step": 995, "tokens": 32604160, "checkpoint": "results\\general-training-500m\\checkpoints\\step_00000995.pt"}
+{"event": "start", "step": 995, "params": 8868096, "validation_loss": 2.716364725016182, "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4", "max_session_seconds": 7200.0}
+{"event": "validation", "step": 1000, "tokens": 32768000, "train_loss": 3.0197691917419434, "validation_loss": 2.7250070184801887, "learning_rate": 0.00029740907210023133}
+{"event": "validation", "step": 1500, "tokens": 49152000, "train_loss": 3.1855993270874023, "validation_loss": 2.685780144051654, "learning_rate": 0.0002939897974668469}
+{"event": "validation", "step": 2000, "tokens": 65536000, "train_loss": 2.9555649757385254, "validation_loss": 2.6512325848242346, "learning_rate": 0.00028919582352996873}
+{"event": "validation", "step": 2500, "tokens": 81920000, "train_loss": 3.0509567260742188, "validation_loss": 2.6333800902776825, "learning_rate": 0.00028307824171513156}
+{"event": "validation", "step": 3000, "tokens": 98304000, "train_loss": 2.82232666015625, "validation_loss": 2.59978942693191, "learning_rate": 0.00027570224970172594}
+{"event": "validation", "step": 3500, "tokens": 114688000, "train_loss": 3.02085280418396, "validation_loss": 2.5868807266910396, "learning_rate": 0.00026714645658351395}
+{"event": "validation", "step": 4000, "tokens": 131072000, "train_loss": 2.9775805473327637, "validation_loss": 2.5610825184941493, "learning_rate": 0.00025750204509797885}
+{"event": "validation", "step": 4500, "tokens": 147456000, "train_loss": 2.9136407375335693, "validation_loss": 2.5396641001716396, "learning_rate": 0.00024687179985298995}
+{"event": "graceful_stop", "step": 4802, "tokens": 157351936, "checkpoint": "C:\\AdamLM\\results\\general-training-500m\\checkpoints\\step_00004802.pt"}
+{"event": "start", "step": 4802, "params": 8868096, "validation_loss": 2.528058292079799, "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4", "max_session_seconds": 18000.0}
+{"event": "validation", "step": 5000, "tokens": 163840000, "train_loss": 2.9413156509399414, "validation_loss": 2.523076066466623, "learning_rate": 0.00023536901190738467}
+{"event": "validation", "step": 5500, "tokens": 180224000, "train_loss": 2.9377365112304688, "validation_loss": 2.5119512817786465, "learning_rate": 0.0002231162713798205}
+{"event": "validation", "step": 6000, "tokens": 196608000, "train_loss": 2.928497314453125, "validation_loss": 2.492655501348884, "learning_rate": 0.00021024416095357873}
+{"event": "validation", "step": 6500, "tokens": 212992000, "train_loss": 2.77388858795166, "validation_loss": 2.4828077158948747, "learning_rate": 0.00019688986420119732}
+{"event": "validation", "step": 7000, "tokens": 229376000, "train_loss": 2.925032377243042, "validation_loss": 2.4675298461937785, "learning_rate": 0.00018319570356061055}
+{"event": "graceful_stop", "step": 7218, "tokens": 236519424, "checkpoint": "C:\\AdamLM\\results\\general-training-500m\\checkpoints\\step_00007218.pt"}
+{"event": "start", "step": 7218, "params": 8868096, "validation_loss": 2.4603591121919406, "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4", "max_session_seconds": 18000.0}
+{"event": "validation", "step": 7500, "tokens": 245760000, "train_loss": 3.1027419567108154, "validation_loss": 2.447402913080521, "learning_rate": 0.00016930762354420832}
+{"event": "validation", "step": 8000, "tokens": 262144000, "train_loss": 2.8605360984802246, "validation_loss": 2.443633278064634, "learning_rate": 0.00015537363534590153}
+{"event": "validation", "step": 8500, "tokens": 278528000, "train_loss": 2.8749351501464844, "validation_loss": 2.4340824790680418, "learning_rate": 0.00014154223942268194}
+{"event": "validation", "step": 9000, "tokens": 294912000, "train_loss": 2.7266557216644287, "validation_loss": 2.422948862043465, "learning_rate": 0.00012796084286189602}
+{"event": "validation", "step": 9500, "tokens": 311296000, "train_loss": 2.739344835281372, "validation_loss": 2.413551641875203, "learning_rate": 0.00011477418840102567}
+{"event": "validation", "step": 10000, "tokens": 327680000, "train_loss": 2.916954755783081, "validation_loss": 2.4074539986195655, "learning_rate": 0.00010212281184258212}
+{"event": "validation", "step": 10500, "tokens": 344064000, "train_loss": 2.789911985397339, "validation_loss": 2.3905688061597883, "learning_rate": 9.01415443041008e-05}
+{"event": "validation", "step": 11000, "tokens": 360448000, "train_loss": 2.6754465103149414, "validation_loss": 2.3819472480777746, "learning_rate": 7.895807526539788e-05}
+{"event": "validation", "step": 11500, "tokens": 376832000, "train_loss": 2.80379319190979, "validation_loss": 2.37331372429028, "learning_rate": 6.869159172730636e-05}
+{"event": "validation", "step": 12000, "tokens": 393216000, "train_loss": 2.796506881713867, "validation_loss": 2.3686004500218716, "learning_rate": 5.945150798495908e-05}
+{"event": "validation", "step": 12500, "tokens": 409600000, "train_loss": 2.7410030364990234, "validation_loss": 2.366494242153073, "learning_rate": 5.133629955296468e-05}
+{"event": "validation", "step": 13000, "tokens": 425984000, "train_loss": 2.9232935905456543, "validation_loss": 2.3577481323778557, "learning_rate": 4.443245366983554e-05}
+{"event": "validation", "step": 13500, "tokens": 442368000, "train_loss": 2.7505085468292236, "validation_loss": 2.354549614912646, "learning_rate": 3.8813547566587933e-05}
+{"event": "validation", "step": 14000, "tokens": 458752000, "train_loss": 2.804564952850342, "validation_loss": 2.350244442821706, "learning_rate": 3.4539464322800406e-05}
+{"event": "validation", "step": 14500, "tokens": 475136000, "train_loss": 2.7827937602996826, "validation_loss": 2.344937491408976, "learning_rate": 3.1655754667086385e-05}
+{"event": "validation", "step": 15000, "tokens": 491520000, "train_loss": 2.7019217014312744, "validation_loss": 2.34595592517394, "learning_rate": 3.0193151523545576e-05}
+{"reason": "target_reached", "step": 15259, "params": 8868096, "new_tokens": 263487488, "total_tokens": 500006912, "seconds": 1995.5662346999889, "end_to_end_tokens_per_second": 132036.45332253902, "compute_tokens_per_second": 199966.6445109984, "compute_seconds": 1317.657195500462, "data_seconds": 425.69447160031996, "validation_seconds": 8.254415799980052, "checkpoint_seconds": 63.24881900000037, "allocated_mib": 3484.767578125, "reserved_mib": 3554.0, "initial_validation_loss": 2.4603591121919406, "final_validation_loss": 2.344149675773666, "final_holdout_loss": 2.4009899979443285, "last_train_loss": 2.4211320877075195, "checkpoint": "C:\\AdamLM\\results\\general-training-500m\\checkpoints\\step_00015259.pt", "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"}

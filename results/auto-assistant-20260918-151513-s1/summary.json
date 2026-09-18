@@ -1,0 +1,37 @@
+{
+  "reason": "regression_pause",
+  "step": 1050,
+  "params": 8868096,
+  "new_tokens": 4300800,
+  "total_tokens": 4300800,
+  "seconds": 88.2392625999928,
+  "end_to_end_tokens_per_second": 48740.20785391684,
+  "compute_tokens_per_second": 136126.51039923806,
+  "compute_seconds": 31.5941397997085,
+  "data_seconds": 8.294503799843369,
+  "validation_seconds": 0.9284175999637228,
+  "checkpoint_seconds": 31.441723299998557,
+  "allocated_mib": 561.087890625,
+  "reserved_mib": 650.0,
+  "initial_validation_loss": 2.7339184090848074,
+  "final_validation_loss": 3.8056799338480225,
+  "final_holdout_loss": 4.061573581299364,
+  "last_train_loss": 1.3314859867095947,
+  "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-151513-s1\\checkpoints\\step_00001050.pt",
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4",
+  "validation_monitor": {
+    "best_loss": 2.7339184090848074,
+    "bad_validations": 2,
+    "best_step": 0,
+    "regression_streak": 2,
+    "deferred_checks": 19
+  },
+  "detail": "Validation exceeded the best by more than 0.08 on 2 consecutive settled checks; best 2.733918 at step 0, current 3.805680 at learning rate 1.47e-05. Best and latest checkpoints are preserved for review.",
+  "dataset_position": {
+    "epoch_index": 1,
+    "pass_number": 2,
+    "epoch_tokens": 4300800,
+    "byte_offset": 13705754,
+    "repeated_data": true
+  }
+}

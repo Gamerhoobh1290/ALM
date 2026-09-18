@@ -1,0 +1,22 @@
+{
+  "reason": "target_reached",
+  "step": 245,
+  "params": 8868096,
+  "new_tokens": 1003520,
+  "total_tokens": 1003520,
+  "seconds": 22.467249399996945,
+  "end_to_end_tokens_per_second": 44665.903784382994,
+  "compute_tokens_per_second": 151573.09650004862,
+  "compute_seconds": 6.62070000001404,
+  "data_seconds": 1.3500651998765534,
+  "validation_seconds": 0.20712500001536682,
+  "checkpoint_seconds": 8.188884800008964,
+  "allocated_mib": 561.087890625,
+  "reserved_mib": 650.0,
+  "initial_validation_loss": 2.5198454512732598,
+  "final_validation_loss": 2.5278891130612418,
+  "final_holdout_loss": 2.565193707534574,
+  "last_train_loss": 2.229788064956665,
+  "checkpoint": "C:\\AdamLM\\results\\research-20260918-012717-8646-e1\\checkpoints\\step_00000245.pt",
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+}

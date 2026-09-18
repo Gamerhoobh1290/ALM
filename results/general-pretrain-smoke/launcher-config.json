@@ -1,0 +1,22 @@
+{
+  "target_tokens": 32768,
+  "stage": "pretrain",
+  "dataset": "mixture",
+  "mixture": {
+    "components": [
+      {
+        "dataset": "tinystories",
+        "weight": 0.2
+      },
+      {
+        "dataset": "wikitext103",
+        "weight": 0.35
+      },
+      {
+        "dataset": "fineweb_edu",
+        "weight": 0.45
+      }
+    ]
+  },
+  "parent_checkpoint": null
+}

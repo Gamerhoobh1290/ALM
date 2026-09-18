@@ -1,0 +1,8 @@
+{
+  "run_name": "web-stage-20260917193033",
+  "mode": "continuation",
+  "dataset": "dailydialog",
+  "started_at": 1789674438.513359,
+  "max_seconds": 3600.0,
+  "target_tokens": 11599872
+}

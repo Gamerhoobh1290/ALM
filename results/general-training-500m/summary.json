@@ -1,0 +1,22 @@
+{
+  "reason": "target_reached",
+  "step": 15259,
+  "params": 8868096,
+  "new_tokens": 263487488,
+  "total_tokens": 500006912,
+  "seconds": 1995.5662346999889,
+  "end_to_end_tokens_per_second": 132036.45332253902,
+  "compute_tokens_per_second": 199966.6445109984,
+  "compute_seconds": 1317.657195500462,
+  "data_seconds": 425.69447160031996,
+  "validation_seconds": 8.254415799980052,
+  "checkpoint_seconds": 63.24881900000037,
+  "allocated_mib": 3484.767578125,
+  "reserved_mib": 3554.0,
+  "initial_validation_loss": 2.4603591121919406,
+  "final_validation_loss": 2.344149675773666,
+  "final_holdout_loss": 2.4009899979443285,
+  "last_train_loss": 2.4211320877075195,
+  "checkpoint": "C:\\AdamLM\\results\\general-training-500m\\checkpoints\\step_00015259.pt",
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+}

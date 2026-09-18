@@ -1,0 +1,357 @@
+{
+  "plan_id": "auto-assistant-20260918-135429",
+  "head": {
+    "run": "auto-assistant-20260918-115609-s5",
+    "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-115609-s5\\checkpoints\\step_00002024.pt",
+    "step": 2024,
+    "tokens": 8290304
+  },
+  "foundation": {
+    "run": "general-training-500m",
+    "state": "target_reached",
+    "checkpoint": "C:\\AdamLM\\results\\general-training-500m\\checkpoints\\step_00015259.pt"
+  },
+  "diet": {
+    "manifest": "data/sft_assistant/processed-manifest.json",
+    "revision": "curated-mix-20260918",
+    "masking": "response-only (unchanged SFT template)",
+    "dailydialog": {
+      "rows": 34890,
+      "tokens": 5258299
+    },
+    "dolly": {
+      "rows": 13511,
+      "tokens": 3033000
+    }
+  },
+  "allocation": {
+    "dd_share": 0.75,
+    "dolly_share": 0.25,
+    "basis": "base 70% DailyDialog / 30% Dolly by sampled training tokens: conversation-majority reading diet with roughly balanced response supervision (Dolly rows carry ~3.3x the response tokens); tilted +5pp toward conversation on measured skill gap (conversation F1 0.054 < instructions F1 0.313)",
+    "requested_tokens": 100000000,
+    "effective_tokens": 100003840,
+    "scheduled_tokens": 100003840,
+    "source_epoch_tokens": 8291299,
+    "batchable_epoch_tokens": 8290304,
+    "discarded_tail_tokens": 995,
+    "pass_policy": "repeat",
+    "stage_count": 13,
+    "repeated_data": true,
+    "unique_tokens_upper_bound": 7696384,
+    "capped": false,
+    "cap_explanation": "Requested target rounded up to 100.00M tokens on 4.10K-token batch boundaries.",
+    "stage_chunks": [
+      {
+        "tokens": 7696384,
+        "epoch_label": "pass 1 (partial, 92.8% of batchable source)",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 7692288,
+        "epoch_label": "pass 2 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 7692288,
+        "epoch_label": "pass 3 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 7692288,
+        "epoch_label": "pass 4 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 7692288,
+        "epoch_label": "pass 5 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 7692288,
+        "epoch_label": "pass 6 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 7692288,
+        "epoch_label": "pass 7 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 7692288,
+        "epoch_label": "pass 8 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 7692288,
+        "epoch_label": "pass 9 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 7692288,
+        "epoch_label": "pass 10 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 7692288,
+        "epoch_label": "pass 11 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 7692288,
+        "epoch_label": "pass 12 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      },
+      {
+        "tokens": 7692288,
+        "epoch_label": "pass 13 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "discarded_tail_tokens": 995
+      }
+    ]
+  },
+  "requested_tokens": 100000000,
+  "effective_tokens": 100003840,
+  "budget": {
+    "requested_tokens": 100000000,
+    "effective_tokens": 100003840,
+    "source_epoch_tokens": 8291299,
+    "batchable_epoch_tokens": 8290304,
+    "discarded_tail_tokens": 995,
+    "pass_policy": "repeat",
+    "stage_count": 13,
+    "capped": false,
+    "cap_explanation": "Requested target rounded up to 100.00M tokens on 4.10K-token batch boundaries.",
+    "repeated_data": true,
+    "unique_tokens_upper_bound": 7696384,
+    "note": "Each fresh pass has 8.29M source tokens; 8.29M fit complete batches and 995 tail tokens are not trained. Repeated passes are explicitly enabled; repeated tokens are not unique."
+  },
+  "stages": [
+    {
+      "index": 1,
+      "run_dir": "results/auto-assistant-20260918-135429-s1",
+      "target_tokens": 7696384,
+      "epoch_label": "pass 1 (partial, 92.8% of batchable source)",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "regression",
+      "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-115609-s5\\checkpoints\\step_00002024.pt",
+      "command": [
+        "C:\\AdamLM\\.venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "adamlm.bpe_train",
+        "--auto-resume",
+        "--config",
+        "C:\\AdamLM\\config\\sft-assistant.json",
+        "--run-dir",
+        "C:\\AdamLM\\results\\auto-assistant-20260918-135429-s1",
+        "--dataset",
+        "dailydialog",
+        "--target-tokens",
+        "7696384",
+        "--parent-checkpoint",
+        "C:\\AdamLM\\results\\auto-assistant-20260918-115609-s5\\checkpoints\\step_00002024.pt",
+        "--max-seconds",
+        "7199.9980001449585"
+      ],
+      "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-135429-s1\\checkpoints\\step_00000050.pt",
+      "tokens": 204800
+    },
+    {
+      "index": 2,
+      "run_dir": "results/auto-assistant-20260918-135429-s2",
+      "target_tokens": 7692288,
+      "epoch_label": "pass 2 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 1
+    },
+    {
+      "index": 3,
+      "run_dir": "results/auto-assistant-20260918-135429-s3",
+      "target_tokens": 7692288,
+      "epoch_label": "pass 3 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 2
+    },
+    {
+      "index": 4,
+      "run_dir": "results/auto-assistant-20260918-135429-s4",
+      "target_tokens": 7692288,
+      "epoch_label": "pass 4 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 3
+    },
+    {
+      "index": 5,
+      "run_dir": "results/auto-assistant-20260918-135429-s5",
+      "target_tokens": 7692288,
+      "epoch_label": "pass 5 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 4
+    },
+    {
+      "index": 6,
+      "run_dir": "results/auto-assistant-20260918-135429-s6",
+      "target_tokens": 7692288,
+      "epoch_label": "pass 6 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 5
+    },
+    {
+      "index": 7,
+      "run_dir": "results/auto-assistant-20260918-135429-s7",
+      "target_tokens": 7692288,
+      "epoch_label": "pass 7 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 6
+    },
+    {
+      "index": 8,
+      "run_dir": "results/auto-assistant-20260918-135429-s8",
+      "target_tokens": 7692288,
+      "epoch_label": "pass 8 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 7
+    },
+    {
+      "index": 9,
+      "run_dir": "results/auto-assistant-20260918-135429-s9",
+      "target_tokens": 7692288,
+      "epoch_label": "pass 9 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 8
+    },
+    {
+      "index": 10,
+      "run_dir": "results/auto-assistant-20260918-135429-s10",
+      "target_tokens": 7692288,
+      "epoch_label": "pass 10 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 9
+    },
+    {
+      "index": 11,
+      "run_dir": "results/auto-assistant-20260918-135429-s11",
+      "target_tokens": 7692288,
+      "epoch_label": "pass 11 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 10
+    },
+    {
+      "index": 12,
+      "run_dir": "results/auto-assistant-20260918-135429-s12",
+      "target_tokens": 7692288,
+      "epoch_label": "pass 12 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 11
+    },
+    {
+      "index": 13,
+      "run_dir": "results/auto-assistant-20260918-135429-s13",
+      "target_tokens": 7692288,
+      "epoch_label": "pass 13 (partial, 92.8% of batchable source); rows repeat from a fresh cursor",
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "pending",
+      "parent_stage": 12
+    }
+  ],
+  "storage": {
+    "project_gib": 25.170993234962225,
+    "est_new_gib": 7.184902191162109,
+    "budget_gib": 50.0,
+    "free_gib": 125.82910919189453,
+    "floor_gib": 5.0,
+    "fits_budget": true,
+    "floor_ok": true,
+    "config": "config/sft-assistant.json"
+  },
+  "time": {
+    "max_seconds": 7200.0,
+    "max_duration": "2h 00m",
+    "est_seconds": 191.24973880700603,
+    "est_duration": "3m 11s"
+  },
+  "stopping": [
+    "overall time limit of 2h 00m (stages share one deadline)",
+    "Stop button: graceful stop with checkpoint, resumable without replanning",
+    "disk pause: stages halt safely on storage-guard trips, checkpoints intact"
+  ],
+  "validation_policy": {
+    "stage_compare_every": 1,
+    "regression_patience": 2,
+    "manual_promotion": true
+  },
+  "eval": null,
+  "warnings": [
+    "Requested target rounded up to 100.00M tokens on 4.10K-token batch boundaries."
+  ],
+  "status": "regression",
+  "created_at": 1789736071.4840698,
+  "started_at": 1789736071.5645847,
+  "updated_at": 1789736086.8773942,
+  "stop_reason": "Validation has not improved by 0.002 for 1 checks; best 2.733918 at step 0, current 3.871392. Best and latest checkpoints are preserved for review.",
+  "failure": null,
+  "produced_checkpoint": null,
+  "promotion": null
+}

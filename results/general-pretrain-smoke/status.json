@@ -1,0 +1,14 @@
+{
+  "state": "target_reached",
+  "dataset": "mixture",
+  "source": "mixture",
+  "detail": "target_reached",
+  "updated_at": "2026-09-17 11:19:54",
+  "checkpoint": "results\\general-pretrain-smoke\\checkpoints\\step_00000001.pt",
+  "checkpoint_step": 1,
+  "step": 1,
+  "tokens": 32768,
+  "target_tokens": 32768,
+  "train_loss": 5.760540962219238,
+  "validation_loss": 6.184468282499929
+}

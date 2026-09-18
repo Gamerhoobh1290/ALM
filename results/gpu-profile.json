@@ -1,0 +1,34 @@
+[
+  {
+    "batch_size": 8,
+    "steps": 15,
+    "tokens_per_second": 172400.2469286737,
+    "step_seconds": 0.023758666666496234,
+    "peak_allocated_mib": 562.33740234375,
+    "mean_sampled_gpu_utilization_percent": 55.5
+  },
+  {
+    "batch_size": 32,
+    "steps": 15,
+    "tokens_per_second": 218497.26584986443,
+    "step_seconds": 0.07498492000013357,
+    "peak_allocated_mib": 1813.74365234375,
+    "mean_sampled_gpu_utilization_percent": 86.6
+  },
+  {
+    "batch_size": 64,
+    "steps": 15,
+    "tokens_per_second": 224798.07414211906,
+    "step_seconds": 0.14576637333326894,
+    "peak_allocated_mib": 3481.99365234375,
+    "mean_sampled_gpu_utilization_percent": 99.44444444444444
+  },
+  {
+    "batch_size": 128,
+    "steps": 15,
+    "tokens_per_second": 232065.2111172498,
+    "step_seconds": 0.2824033800003235,
+    "peak_allocated_mib": 6822.61865234375,
+    "mean_sampled_gpu_utilization_percent": 99.6470588235294
+  }
+]

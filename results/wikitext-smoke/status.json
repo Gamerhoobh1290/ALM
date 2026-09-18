@@ -1,0 +1,14 @@
+{
+  "state": "target_reached",
+  "dataset": "wikitext103",
+  "detail": "target_reached",
+  "updated_at": "2026-09-17 00:50:59",
+  "checkpoint": "results\\wikitext-smoke\\checkpoints\\step_00000001.pt",
+  "checkpoint_step": 1,
+  "step": 1,
+  "tokens": 4096,
+  "target_tokens": 4096,
+  "train_loss": null,
+  "validation_loss": 6.873188903285541,
+  "source": "wikitext103"
+}

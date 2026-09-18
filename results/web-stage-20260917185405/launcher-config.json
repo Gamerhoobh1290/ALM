@@ -1,0 +1,8 @@
+{
+  "config": "C:\\AdamLM\\config\\sft-dailydialog.json",
+  "target_tokens": 500000000,
+  "stage": "sft",
+  "dataset": "dailydialog",
+  "mixture": null,
+  "parent_checkpoint": "C:\\AdamLM\\results\\general-training-500m\\checkpoints\\step_00015259.pt"
+}

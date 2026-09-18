@@ -1,0 +1,8 @@
+# Install PyTorch separately from the CUDA wheel index; see README.md.
+requests>=2.32,<3
+truststore>=0.10,<1
+tokenizers>=0.22,<0.23
+filelock>=3,<4
+numpy>=2,<3
+pyarrow>=20,<24
+pytest>=8,<9

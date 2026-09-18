@@ -1,0 +1,22 @@
+{
+  "reason": "data_stop: [WinError 2] The system cannot find the file specified: 'C:\\\\AdamLM\\\\results\\\\gui-stage-20260917-131619\\\\.training.lock'",
+  "step": 9586,
+  "params": 8868096,
+  "new_tokens": 314114048,
+  "total_tokens": 314114048,
+  "seconds": 2338.5095614999955,
+  "end_to_end_tokens_per_second": 134322.32784993068,
+  "compute_tokens_per_second": 198134.3409293454,
+  "compute_seconds": 1585.358936399687,
+  "data_seconds": 468.5356456998852,
+  "validation_seconds": 9.095208099992306,
+  "checkpoint_seconds": 70.99830870002188,
+  "allocated_mib": 3484.267578125,
+  "reserved_mib": 4006.0,
+  "initial_validation_loss": 2.716364725016182,
+  "final_validation_loss": 2.4001404319456614,
+  "final_holdout_loss": 2.453412727519694,
+  "last_train_loss": 2.7401983737945557,
+  "checkpoint": "C:\\AdamLM\\results\\general-training-next2\\checkpoints\\step_00009586.pt",
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+}

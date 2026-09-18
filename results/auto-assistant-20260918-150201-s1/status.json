@@ -1,0 +1,8 @@
+{
+  "state": "error",
+  "stage": "sft",
+  "dataset": "dailydialog",
+  "source": "dailydialog",
+  "detail": "This stage asks for 8003584 tokens but only 0 remain in pass 1 (8290304 of 8290304 batchable tokens already trained; 995 tail tokens below one batch are never trained). Lower the target to fit the remaining data, or approve a repeat pass explicitly with --repeat-epoch, which records the rows as repeated.",
+  "updated_at": "2026-09-18 15:02:08"
+}

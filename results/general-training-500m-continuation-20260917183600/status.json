@@ -1,0 +1,15 @@
+{
+  "state": "stopped",
+  "stage": "pretrain",
+  "dataset": "mixture",
+  "source": "mixture",
+  "detail": "Graceful stop completed; full checkpoint saved.",
+  "updated_at": "2026-09-17 19:36:23",
+  "checkpoint": "C:\\AdamLM\\results\\general-training-500m-continuation-20260917183600\\checkpoints\\step_00000000.pt",
+  "checkpoint_step": 0,
+  "step": 0,
+  "tokens": 0,
+  "target_tokens": 10000000,
+  "train_loss": null,
+  "validation_loss": 2.344149675773666
+}

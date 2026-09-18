@@ -1,0 +1,8 @@
+{
+  "run_name": "sft-500m-dailydialog-1m-continuation-20260917191622",
+  "mode": "continuation",
+  "dataset": "dailydialog",
+  "started_at": 1789672589.4246538,
+  "max_seconds": 3600.0,
+  "target_tokens": 11005952
+}

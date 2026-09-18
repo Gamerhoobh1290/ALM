@@ -1,0 +1,40 @@
+{
+  "session_id": "research-20260918-012445-972b",
+  "created_at": 1789691085.5380795,
+  "started_at": null,
+  "updated_at": 1789691085.5380795,
+  "status": "created",
+  "goal": "",
+  "use_ai": false,
+  "limits": {
+    "max_tokens": 1000000,
+    "max_seconds": 3600.0,
+    "max_experiments": 3,
+    "max_api_requests": 25,
+    "max_api_cost_usd": 0.0,
+    "max_repetition": 3,
+    "allow_external_eval": false,
+    "require_manual_promotion": true,
+    "allowed_ops": [
+      "train",
+      "evaluate",
+      "compare"
+    ]
+  },
+  "budget_used": {
+    "tokens": 0,
+    "seconds": 0.0,
+    "api_requests": 0,
+    "failures": 0
+  },
+  "experiments": [],
+  "stop_reason": null,
+  "report": null,
+  "provider_state": {
+    "paused": false,
+    "reason": null,
+    "paused_at": null,
+    "attempts": [],
+    "last_model": null
+  }
+}

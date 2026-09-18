@@ -1,0 +1,419 @@
+[
+ {
+  "checkpoint": "A-default-1M",
+  "path": "results/sft-assistant/checkpoints/step_00000245.pt",
+  "prompt": "hi",
+  "reply": "I'm afraid it's not . And I'm afraid I'm afraid it's just old . But I don't think it's too fast .",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "A-default-1M",
+  "path": "results/sft-assistant/checkpoints/step_00000245.pt",
+  "prompt": "hello",
+  "reply": "I'm afraid it's not . And I'm afraid I'm afraid it's just old . But I don't think it's too fast .",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "A-default-1M",
+  "path": "results/sft-assistant/checkpoints/step_00000245.pt",
+  "prompt": "Good morning! How are you today?",
+  "reply": "I'm the PATHATICO WATIC DENCULESTING: Oh my name is STLSTIONALTION.",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "A-default-1M",
+  "path": "results/sft-assistant/checkpoints/step_00000245.pt",
+  "prompt": "What does the Windows Recycle Bin do?",
+  "reply": "I know, how to identify the company’s resources and the use of the company in the area. In case the company, there are five types of companies with European",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "A-default-1M",
+  "path": "results/sft-assistant/checkpoints/step_00000245.pt",
+  "prompt": "Name three red fruits.",
+  "reply": "Name one is a red fruit.\nIs it a good idea for your meal. It's the perfect food. You can have it with a few sugar. You can also be sure if you have enough to eat it.",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "A-default-1M",
+  "meta": {
+   "status.json": {
+    "state": "target_reached",
+    "stage": "sft",
+    "dataset": "dailydialog",
+    "source": "dailydialog",
+    "detail": "target_reached",
+    "updated_at": "2026-09-17 19:33:13",
+    "checkpoint": "results\\sft-assistant\\checkpoints\\step_00000245.pt",
+    "checkpoint_step": 245,
+    "step": 245,
+    "tokens": 1003520,
+    "target_tokens": 1000000,
+    "train_loss": 3.0427000522613525,
+    "validation_loss": 2.6824484553445136,
+    "learning_rate": 1.0582738181293923e-05
+   },
+   "summary.json": {
+    "reason": "target_reached",
+    "step": 245,
+    "params": 8868096,
+    "new_tokens": 1003520,
+    "total_tokens": 1003520,
+    "seconds": 20.079573700000765,
+    "end_to_end_tokens_per_second": 49977.15663654562,
+    "compute_tokens_per_second": 171034.15449289946,
+    "compute_seconds": 5.867366099919309,
+    "data_seconds": 1.3682962999737356,
+    "validation_seconds": 0.18115379998926073,
+    "checkpoint_seconds": 6.9198761000006925,
+    "allocated_mib": 561.087890625,
+    "reserved_mib": 650.0,
+    "initial_validation_loss": 2.965481155503054,
+    "final_validation_loss": 2.6824484553445136,
+    "final_holdout_loss": 2.727139237121612,
+    "last_train_loss": 3.0427000522613525,
+    "checkpoint": "results\\sft-assistant\\checkpoints\\step_00000245.pt",
+    "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+   }
+  },
+  "kind": "run-meta"
+ },
+ {
+  "checkpoint": "B-newer-8.29M",
+  "path": "results/auto-assistant-20260917-215605-s1/checkpoints/step_00002024.pt",
+  "prompt": "hi",
+  "reply": "yes",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "B-newer-8.29M",
+  "path": "results/auto-assistant-20260917-215605-s1/checkpoints/step_00002024.pt",
+  "prompt": "hello",
+  "reply": "I'm afraid it's not so bad.Is it safe?\nIt's not very warm and warm.But I'll have a good idea .",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "B-newer-8.29M",
+  "path": "results/auto-assistant-20260917-215605-s1/checkpoints/step_00002024.pt",
+  "prompt": "Good morning! How are you today?",
+  "reply": "I'm really glad to meet you too.I'm glad to hear that.It 'hi, you mean to go to the park and look out for my name.And what does it mean to be in there too much.So you know, I think I can go to the beach and",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "B-newer-8.29M",
+  "path": "results/auto-assistant-20260917-215605-s1/checkpoints/step_00002024.pt",
+  "prompt": "What does the Windows Recycle Bin do?",
+  "reply": "The Windows Van Denied is a U.S. Department of Honour. It is a U.S. School of Chicago and is a U.S. educational institution and is an aut",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "B-newer-8.29M",
+  "path": "results/auto-assistant-20260917-215605-s1/checkpoints/step_00002024.pt",
+  "prompt": "Name three red fruits.",
+  "reply": "I'm really glad to .",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "B-newer-8.29M",
+  "meta": {
+   "status.json": {
+    "state": "data_stop: SFT train exhausted",
+    "stage": "sft",
+    "dataset": "dailydialog",
+    "source": "dailydialog",
+    "detail": "data_stop: SFT train exhausted",
+    "updated_at": "2026-09-17 21:58:24",
+    "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-215605-s1\\checkpoints\\step_00002024.pt",
+    "checkpoint_step": 2024,
+    "step": 2024,
+    "tokens": 8290304,
+    "target_tokens": 8291299,
+    "train_loss": 2.5170514583587646,
+    "validation_loss": 2.5241722199992958,
+    "learning_rate": 1.0032788216960891e-05
+   },
+   "summary.json": {
+    "reason": "data_stop: SFT train exhausted",
+    "step": 2024,
+    "params": 8868096,
+    "new_tokens": 8290304,
+    "total_tokens": 8290304,
+    "seconds": 132.7948718000116,
+    "end_to_end_tokens_per_second": 62429.39872320638,
+    "compute_tokens_per_second": 148264.09154439796,
+    "compute_seconds": 55.91579129945603,
+    "data_seconds": 13.663263100082986,
+    "validation_seconds": 1.4724197999894386,
+    "checkpoint_seconds": 45.322117299976526,
+    "allocated_mib": 561.087890625,
+    "reserved_mib": 650.0,
+    "initial_validation_loss": 2.6824484553445136,
+    "final_validation_loss": 2.5241722199992958,
+    "final_holdout_loss": 2.6104308386702337,
+    "last_train_loss": 2.5170514583587646,
+    "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-215605-s1\\checkpoints\\step_00002024.pt",
+    "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+   }
+  },
+  "kind": "run-meta"
+ },
+ {
+  "checkpoint": "C-earlier",
+  "path": "results/sft-assistant/checkpoints/step_00000100.pt",
+  "prompt": "hi",
+  "reply": "I know .",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "C-earlier",
+  "path": "results/sft-assistant/checkpoints/step_00000100.pt",
+  "prompt": "hello",
+  "reply": "I know .",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "C-earlier",
+  "path": "results/sft-assistant/checkpoints/step_00000100.pt",
+  "prompt": "Good morning! How are you today?",
+  "reply": "I'm really starting to have a good dinner .",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "C-earlier",
+  "path": "results/sft-assistant/checkpoints/step_00000100.pt",
+  "prompt": "What does the Windows Recycle Bin do?",
+  "reply": "I know, how to ’ Vacuinely Mill Death, please .",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "C-earlier",
+  "path": "results/sft-assistant/checkpoints/step_00000100.pt",
+  "prompt": "Name three red fruits.",
+  "reply": "I know, how to ’ t a red fruit I can be very similar to .",
+  "checks": {
+   "non_empty": true,
+   "no_replacement_char": true,
+   "printable_ratio": 1.0,
+   "no_prompt_echo": true,
+   "no_runaway_repeat": true
+  },
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  }
+ },
+ {
+  "checkpoint": "C-earlier",
+  "meta": {
+   "status.json": {
+    "state": "target_reached",
+    "stage": "sft",
+    "dataset": "dailydialog",
+    "source": "dailydialog",
+    "detail": "target_reached",
+    "updated_at": "2026-09-17 19:33:13",
+    "checkpoint": "results\\sft-assistant\\checkpoints\\step_00000245.pt",
+    "checkpoint_step": 245,
+    "step": 245,
+    "tokens": 1003520,
+    "target_tokens": 1000000,
+    "train_loss": 3.0427000522613525,
+    "validation_loss": 2.6824484553445136,
+    "learning_rate": 1.0582738181293923e-05
+   },
+   "summary.json": {
+    "reason": "target_reached",
+    "step": 245,
+    "params": 8868096,
+    "new_tokens": 1003520,
+    "total_tokens": 1003520,
+    "seconds": 20.079573700000765,
+    "end_to_end_tokens_per_second": 49977.15663654562,
+    "compute_tokens_per_second": 171034.15449289946,
+    "compute_seconds": 5.867366099919309,
+    "data_seconds": 1.3682962999737356,
+    "validation_seconds": 0.18115379998926073,
+    "checkpoint_seconds": 6.9198761000006925,
+    "allocated_mib": 561.087890625,
+    "reserved_mib": 650.0,
+    "initial_validation_loss": 2.965481155503054,
+    "final_validation_loss": 2.6824484553445136,
+    "final_holdout_loss": 2.727139237121612,
+    "last_train_loss": 3.0427000522613525,
+    "checkpoint": "results\\sft-assistant\\checkpoints\\step_00000245.pt",
+    "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+   }
+  },
+  "kind": "run-meta"
+ }
+]

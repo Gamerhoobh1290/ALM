@@ -1,0 +1,8 @@
+{
+  "config": "config\\bpe512-local.json",
+  "target_tokens": 100000000,
+  "stage": "pretrain",
+  "dataset": "tinystories",
+  "mixture": null,
+  "parent_checkpoint": "results\\bpe512-local-run\\checkpoints\\step_00012208.pt"
+}

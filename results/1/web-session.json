@@ -1,0 +1,8 @@
+{
+  "run_name": "1",
+  "mode": "continuation",
+  "dataset": "dailydialog",
+  "started_at": 1789741811.035241,
+  "max_seconds": 3600.0,
+  "target_tokens": 9302016
+}

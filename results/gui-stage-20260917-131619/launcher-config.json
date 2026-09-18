@@ -1,0 +1,8 @@
+{
+  "config": "C:\\AdamLM\\config\\bpe512-local.json",
+  "target_tokens": 1000000,
+  "stage": "pretrain",
+  "dataset": "tinystories",
+  "mixture": null,
+  "parent_checkpoint": "C:\\AdamLM\\results\\wikitext-smoke\\checkpoints\\step_00000001.pt"
+}

@@ -1,0 +1,34 @@
+{
+  "file_manifest": "4b33408febf0fe9d339966d7bc3b0f1587953da1b0da207f7b0b74914c730e5e",
+  "revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+  "first_5000_corpus_hash": "50f95a7f7f2ac90d4cb9d1c1fe6da4cc6823c509ca28916e36836b62e94c39ce",
+  "checkpoints": [
+    {
+      "path": "results\\bpe512-run\\checkpoints\\step_00000089.pt",
+      "sha256": "e8adc8e5970024d73aa882439ddb5f85c4ac7d7635806a819b2ac68806b64e46",
+      "step": 89,
+      "next_row": 1700,
+      "tokens": 364544,
+      "buffer_tokens": 2992,
+      "verified": true
+    },
+    {
+      "path": "results\\bpe512-run\\checkpoints\\step_00000250.pt",
+      "sha256": "742e402a63f57b42035a533e7c9e945da44dc10c7fb3b49ea2ec894d39ca51bf",
+      "step": 250,
+      "next_row": 4900,
+      "tokens": 1024000,
+      "buffer_tokens": 10148,
+      "verified": true
+    },
+    {
+      "path": "results\\bpe512-run\\checkpoints\\step_00000325.pt",
+      "sha256": "26183ca4419b37ffd9d55fb9644ffbf69fb81340e9e000314ae6afae3105b246",
+      "step": 325,
+      "next_row": 6300,
+      "tokens": 1331200,
+      "buffer_tokens": 3050,
+      "verified": true
+    }
+  ]
+}

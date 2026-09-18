@@ -1,0 +1,20 @@
+{
+  "reason": "target_reached",
+  "step": 1,
+  "params": 8868096,
+  "new_tokens": 0,
+  "total_tokens": 4096,
+  "seconds": 11.883500099998855,
+  "end_to_end_tokens_per_second": 0.0,
+  "compute_tokens_per_second": null,
+  "compute_seconds": 0.0,
+  "data_seconds": 0.0,
+  "allocated_mib": 172.40478515625,
+  "reserved_mib": 180.0,
+  "initial_validation_loss": 6.873188903285541,
+  "final_validation_loss": 6.873188903285541,
+  "final_holdout_loss": 6.5139172990079315,
+  "last_train_loss": null,
+  "checkpoint": "results\\wikitext-smoke\\checkpoints\\step_00000001.pt",
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+}

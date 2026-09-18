@@ -1,0 +1,22 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/*
+data/*
+checkpoints/*
+results/**/checkpoints/
+!data/.gitkeep
+!checkpoints/.gitkeep
+*.log
+PAUSED_LOW_DISK
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Model weights
+*.pt
+*.pth
+*.ckpt
+*.safetensors

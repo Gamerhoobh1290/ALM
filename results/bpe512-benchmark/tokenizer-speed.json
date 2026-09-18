@@ -1,0 +1,16 @@
+[
+  {
+    "tokenizer": "byte",
+    "seconds": 1.000071399999797,
+    "rounds": 7617,
+    "tokens_per_second": 335344949.370683,
+    "utf8_bytes_per_second": 335344949.370683
+  },
+  {
+    "tokenizer": "bpe4096",
+    "seconds": 1.0088482000001022,
+    "rounds": 80,
+    "tokens_per_second": 881797.6777873122,
+    "utf8_bytes_per_second": 3491427.1542533785
+  }
+]

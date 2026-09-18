@@ -1,0 +1,5 @@
+{"event": "start", "step": 0, "params": 8868096, "validation_loss": 1.8095224414188977, "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4", "max_session_seconds": null}
+{"event": "graceful_stop", "step": 184, "tokens": 753664, "checkpoint": "results\\gui-smoke\\checkpoints\\step_00000184.pt"}
+{"event": "start", "step": 184, "params": 8868096, "validation_loss": 1.8984345725886553, "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4", "max_session_seconds": null}
+{"event": "validation", "step": 250, "tokens": 1024000, "train_loss": 1.8854587078094482, "validation_loss": 1.9400741551574017, "learning_rate": 0.0003}
+{"event": "graceful_stop", "step": 372, "tokens": 1523712, "checkpoint": "results\\gui-smoke\\checkpoints\\step_00000372.pt"}

@@ -1,0 +1,16 @@
+{
+  "state": "stopped",
+  "stage": "sft",
+  "dataset": "dailydialog",
+  "source": "dailydialog",
+  "detail": "Graceful stop completed; full checkpoint saved.",
+  "updated_at": "2026-09-18 02:47:02",
+  "checkpoint": "C:\\AdamLM\\results\\research-20260918-024513-e77c-e3\\checkpoints\\step_00000200.pt",
+  "checkpoint_step": 200,
+  "step": 200,
+  "tokens": 819200,
+  "target_tokens": 1000000,
+  "train_loss": 2.422051191329956,
+  "validation_loss": 2.5378164216603296,
+  "learning_rate": 2.5982100426872333e-05
+}

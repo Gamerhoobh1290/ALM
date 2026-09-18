@@ -1,0 +1,7 @@
+{
+  "target_tokens": 1048576,
+  "stage": "sft",
+  "dataset": "dolly",
+  "mixture": null,
+  "parent_checkpoint": null
+}

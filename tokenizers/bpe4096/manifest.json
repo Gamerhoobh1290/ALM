@@ -1,0 +1,27 @@
+{
+  "source": "roneneldan/TinyStories",
+  "split": "train",
+  "first_row": 0,
+  "rows_fetched": 5000,
+  "stories_used": 5000,
+  "bytes_used": 4187330,
+  "corpus_sha256": "50f95a7f7f2ac90d4cb9d1c1fe6da4cc6823c509ca28916e36836b62e94c39ce",
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4",
+  "vocabulary": 4096,
+  "boundary_id": 0,
+  "byte_alphabet_size": 256,
+  "validation_not_used_for_merges": true,
+  "evaluation": {
+    "stories": 64,
+    "bytes": 44029,
+    "bpe_text_tokens": 11120,
+    "bpe_tokens_with_boundaries": 11184,
+    "bytes_per_bpe_token": 3.9594424460431656,
+    "original_context_bytes": 256,
+    "new_context_tokens": 512,
+    "estimated_new_context_bytes": 2015.6337625178826,
+    "original_whole_stories_fitting": 0,
+    "new_whole_stories_fitting": 64,
+    "roundtrip_stories": 64
+  }
+}

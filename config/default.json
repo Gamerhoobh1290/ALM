@@ -1,0 +1,25 @@
+{
+  "seed": 1337,
+  "model": {
+    "vocab_size": 256,
+    "block_size": 256,
+    "n_layer": 4,
+    "n_head": 6,
+    "n_embd": 384,
+    "dropout": 0.0
+  },
+  "data": {
+    "dataset": "roneneldan/TinyStories",
+    "config": "default",
+    "split": "train",
+    "page_size": 8,
+    "request_timeout_seconds": 30
+  },
+  "storage": {
+    "project_budget_gb": 15.0,
+    "cache_limit_gb": 2.0,
+    "minimum_free_disk_gb": 5.0,
+    "checkpoint_keep": 3,
+    "disk_poll_seconds": 30
+  }
+}

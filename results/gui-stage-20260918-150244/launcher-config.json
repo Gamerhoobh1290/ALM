@@ -1,0 +1,9 @@
+{
+  "config": "C:\\AdamLM\\config\\bpe512-local.json",
+  "target_tokens": 1000000,
+  "stage": "pretrain",
+  "dataset": "tinystories",
+  "mixture": null,
+  "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-012952-s3\\checkpoints\\step_00002024.pt",
+  "repeat_epoch": false
+}

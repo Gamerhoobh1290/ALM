@@ -1,0 +1,14 @@
+{
+  "state": "target_reached",
+  "dataset": "dolly",
+  "source": "dolly",
+  "detail": "target_reached",
+  "updated_at": "2026-09-17 11:13:52",
+  "checkpoint": "results\\sft-smoke\\checkpoints\\step_00000032.pt",
+  "checkpoint_step": 32,
+  "step": 32,
+  "tokens": 1048576,
+  "target_tokens": 1048576,
+  "train_loss": 4.839526653289795,
+  "validation_loss": 4.893345600608605
+}

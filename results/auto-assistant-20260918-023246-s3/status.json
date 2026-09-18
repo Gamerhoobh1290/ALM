@@ -1,0 +1,16 @@
+{
+  "state": "data_stop: SFT train exhausted",
+  "stage": "sft",
+  "dataset": "dailydialog",
+  "source": "dailydialog",
+  "detail": "data_stop: SFT train exhausted",
+  "updated_at": "2026-09-18 02:40:23",
+  "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s3\\checkpoints\\step_00002024.pt",
+  "checkpoint_step": 2024,
+  "step": 2024,
+  "tokens": 8290304,
+  "target_tokens": 8293289,
+  "train_loss": 2.8010733127593994,
+  "validation_loss": 2.665383423332328,
+  "learning_rate": 1.0032788216960891e-05
+}

@@ -1,0 +1,16 @@
+{
+  "state": "data_stop: [WinError 2] The system cannot find the file specified: 'C:\\\\AdamLM\\\\results\\\\gui-stage-20260917-131619\\\\.training.lock'",
+  "stage": "pretrain",
+  "dataset": "mixture",
+  "source": "mixture",
+  "detail": "data_stop: [WinError 2] The system cannot find the file specified: 'C:\\\\AdamLM\\\\results\\\\gui-stage-20260917-131619\\\\.training.lock'",
+  "updated_at": "2026-09-17 15:12:03",
+  "checkpoint": "C:\\AdamLM\\results\\general-training-next2\\checkpoints\\step_00009586.pt",
+  "checkpoint_step": 9586,
+  "step": 9586,
+  "tokens": 314114048,
+  "target_tokens": 500000000,
+  "train_loss": 2.7401983737945557,
+  "validation_loss": 2.4001404319456614,
+  "learning_rate": 0.00011255620411564173
+}

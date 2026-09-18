@@ -1,0 +1,11 @@
+{
+  "dataset": "databricks/databricks-dolly-15k",
+  "revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+  "license": "CC-BY-SA-3.0",
+  "source": "https://huggingface.co/datasets/databricks/databricks-dolly-15k",
+  "train": {
+    "name": "databricks-dolly-15k.jsonl",
+    "size": 13085339,
+    "sha256": "2df9083338b4abd6bceb5635764dab5d833b393b55759dffb0959b6fcbf794ec"
+  }
+}

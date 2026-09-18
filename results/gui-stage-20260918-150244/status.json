@@ -1,0 +1,8 @@
+{
+  "state": "error",
+  "stage": "pretrain",
+  "dataset": "tinystories",
+  "source": "tinystories",
+  "detail": "project storage budget exceeded",
+  "updated_at": "2026-09-18 15:02:58"
+}

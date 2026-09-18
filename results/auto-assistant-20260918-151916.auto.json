@@ -1,0 +1,151 @@
+{
+  "plan_id": "auto-assistant-20260918-151916",
+  "head": {
+    "run": "auto-assistant-20260918-115609-s5",
+    "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-115609-s5\\checkpoints\\step_00002024.pt",
+    "step": 2024,
+    "tokens": 8290304
+  },
+  "foundation": {
+    "run": "general-training-500m",
+    "state": "target_reached",
+    "checkpoint": "C:\\AdamLM\\results\\general-training-500m\\checkpoints\\step_00015259.pt"
+  },
+  "diet": {
+    "manifest": "data/sft_assistant/processed-manifest.json",
+    "revision": "curated-mix-20260918",
+    "masking": "response-only (unchanged SFT template)",
+    "dailydialog": {
+      "rows": 34890,
+      "tokens": 5258299
+    },
+    "dolly": {
+      "rows": 13511,
+      "tokens": 3033000
+    }
+  },
+  "allocation": {
+    "dd_share": 0.75,
+    "dolly_share": 0.25,
+    "basis": "base 70% DailyDialog / 30% Dolly by sampled training tokens: conversation-majority reading diet with roughly balanced response supervision (Dolly rows carry ~3.3x the response tokens); tilted +5pp toward conversation on measured skill gap (conversation F1 0.054 < instructions F1 0.313)",
+    "requested_tokens": 5000000,
+    "effective_tokens": 5001216,
+    "scheduled_tokens": 5001216,
+    "source_epoch_tokens": 8291299,
+    "batchable_epoch_tokens": 8290304,
+    "discarded_tail_tokens": 995,
+    "epoch_index": 0,
+    "consumed_tokens": 8290304,
+    "remaining_epoch_tokens": 0,
+    "first_stage_repeats": true,
+    "pass_policy": "repeat",
+    "stage_count": 1,
+    "repeated_data": true,
+    "unique_tokens_upper_bound": 0,
+    "capped": false,
+    "cap_explanation": "Requested target rounded up to 5.00M tokens on 4.10K-token batch boundaries.",
+    "stage_chunks": [
+      {
+        "tokens": 5001216,
+        "epoch_label": "pass 2 (partial, 60.3% of the tokens available to this stage); repeated data \u2014 rows already trained in an earlier pass",
+        "pass_number": 2,
+        "repeated_data": true,
+        "source_tokens": 8291299,
+        "batchable_tokens": 8290304,
+        "remaining_before": 0,
+        "discarded_tail_tokens": 995
+      }
+    ]
+  },
+  "requested_tokens": 5000000,
+  "effective_tokens": 5001216,
+  "budget": {
+    "requested_tokens": 5000000,
+    "effective_tokens": 5001216,
+    "source_epoch_tokens": 8291299,
+    "batchable_epoch_tokens": 8290304,
+    "discarded_tail_tokens": 995,
+    "pass_policy": "repeat",
+    "stage_count": 1,
+    "capped": false,
+    "cap_explanation": "Requested target rounded up to 5.00M tokens on 4.10K-token batch boundaries.",
+    "repeated_data": true,
+    "unique_tokens_upper_bound": 0,
+    "note": "Each fresh pass has 8.29M source tokens; 8.29M fit complete batches and 995 tail tokens are not trained. Repeated passes are explicitly enabled; repeated tokens are not unique."
+  },
+  "stages": [
+    {
+      "index": 1,
+      "run_dir": "results/auto-assistant-20260918-151916-s1",
+      "target_tokens": 5001216,
+      "epoch_label": "pass 2 (partial, 60.3% of the tokens available to this stage); repeated data \u2014 rows already trained in an earlier pass",
+      "pass_number": 2,
+      "repeat_epoch": true,
+      "source_tokens": 8291299,
+      "batchable_tokens": 8290304,
+      "discarded_tail_tokens": 995,
+      "status": "regression",
+      "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-115609-s5\\checkpoints\\step_00002024.pt",
+      "command": [
+        "C:\\AdamLM\\.venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "adamlm.bpe_train",
+        "--auto-resume",
+        "--config",
+        "C:\\AdamLM\\config\\sft-assistant.json",
+        "--run-dir",
+        "C:\\AdamLM\\results\\auto-assistant-20260918-151916-s1",
+        "--dataset",
+        "dailydialog",
+        "--target-tokens",
+        "5001216",
+        "--parent-checkpoint",
+        "C:\\AdamLM\\results\\auto-assistant-20260918-115609-s5\\checkpoints\\step_00002024.pt",
+        "--max-seconds",
+        "7199.998002767563",
+        "--repeat-epoch"
+      ],
+      "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-151916-s1\\checkpoints\\step_00001050.pt",
+      "tokens": 4300800
+    }
+  ],
+  "storage": {
+    "project_gib": 25.899955526925623,
+    "est_new_gib": 0.5526847839355469,
+    "budget_gib": 50.0,
+    "free_gib": 125.02663803100586,
+    "floor_gib": 5.0,
+    "fits_budget": true,
+    "floor_ok": true,
+    "config": "config/sft-assistant.json"
+  },
+  "time": {
+    "max_seconds": 7200.0,
+    "max_duration": "2h 00m",
+    "est_seconds": 124.27670627107736,
+    "est_duration": "2m 04s"
+  },
+  "stopping": [
+    "overall time limit of 2h 00m (stages share one deadline)",
+    "Stop button: graceful stop with checkpoint, resumable without replanning",
+    "disk pause: stages halt safely on storage-guard trips, checkpoints intact"
+  ],
+  "validation_policy": {
+    "stage_compare_every": 1,
+    "regression_patience": 2,
+    "manual_promotion": true
+  },
+  "eval": null,
+  "warnings": [
+    "Requested target rounded up to 5.00M tokens on 4.10K-token batch boundaries."
+  ],
+  "status": "regression",
+  "created_at": 1789741158.8293009,
+  "started_at": 1789741158.918405,
+  "updated_at": 1789741249.3165271,
+  "stop_reason": "Validation exceeded the best by more than 0.08 on 2 consecutive settled checks; best 2.733918 at step 0, current 3.803240 at learning rate 1.47e-05. Best and latest checkpoints are preserved for review.",
+  "failure": null,
+  "produced_checkpoint": null,
+  "promotion": null
+}

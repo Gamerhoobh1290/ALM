@@ -1,0 +1,10 @@
+﻿{
+    "parent_checkpoint":  "C:\\AdamLM\\results\\general-training-next1\\checkpoints\\step_00001526.pt",
+    "run_name":  "general-training-500m",
+    "max_seconds":  7200,
+    "started_at":  1789651657,
+    "mixture":  "tinystories=0.20,wikitext103=0.35,fineweb_edu=0.45",
+    "mode":  "continuation",
+    "dataset":  "mixture",
+    "target_tokens":  500000000
+}

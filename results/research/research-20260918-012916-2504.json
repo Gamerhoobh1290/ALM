@@ -1,0 +1,59 @@
+{
+  "session_id": "research-20260918-012916-2504",
+  "created_at": 1789691356.0985477,
+  "started_at": 1789691356.1135476,
+  "updated_at": 1789691356.4082665,
+  "status": "stopped",
+  "goal": "",
+  "use_ai": true,
+  "limits": {
+    "max_tokens": 1000000,
+    "max_seconds": 3600.0,
+    "max_experiments": 3,
+    "max_api_requests": 25,
+    "max_api_cost_usd": 0.0,
+    "max_repetition": 3,
+    "allow_external_eval": false,
+    "require_manual_promotion": true,
+    "allowed_ops": [
+      "train",
+      "evaluate",
+      "compare"
+    ]
+  },
+  "budget_used": {
+    "tokens": 0,
+    "seconds": 0.0,
+    "api_requests": 0,
+    "failures": 3
+  },
+  "experiments": [
+    {
+      "index": 1,
+      "status": "failed",
+      "phase": "propose",
+      "failure": "AI proposal unavailable (AI planner is disabled; enable it or use local-only mode.); state preserved, no training started."
+    },
+    {
+      "index": 2,
+      "status": "failed",
+      "phase": "propose",
+      "failure": "AI proposal unavailable (AI planner is disabled; enable it or use local-only mode.); state preserved, no training started."
+    },
+    {
+      "index": 3,
+      "status": "failed",
+      "phase": "propose",
+      "failure": "AI proposal unavailable (AI planner is disabled; enable it or use local-only mode.); state preserved, no training started."
+    }
+  ],
+  "stop_reason": "Repeated failures \u2014 stopping for review",
+  "report": null,
+  "provider_state": {
+    "paused": false,
+    "reason": null,
+    "paused_at": null,
+    "attempts": [],
+    "last_model": null
+  }
+}

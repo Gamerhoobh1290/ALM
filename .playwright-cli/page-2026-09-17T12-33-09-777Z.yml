@@ -1,0 +1,165 @@
+- generic [ref=f1e2]:
+  - banner [ref=f1e3]:
+    - generic [ref=f1e9]:
+      - generic [ref=f1e10]: AdamLM
+      - generic [ref=f1e11]: LOCAL TRAINING STUDIO
+    - generic [ref=f1e12]:
+      - generic [ref=f1e14]: Connecting
+      - code [ref=f1e15]: 127.0.0.1:8765
+  - navigation "Main navigation" [ref=f1e16]:
+    - button "Training 0" [ref=f1e17] [cursor=pointer]
+    - button "Playground" [ref=f1e18] [cursor=pointer]
+  - main [ref=f1e19]:
+    - generic [ref=f1e20]:
+      - generic [ref=f1e21]:
+        - generic [ref=f1e22]:
+          - generic [ref=f1e23]: OPERATIONS
+          - heading "Training overview" [level=1] [ref=f1e24]
+          - paragraph [ref=f1e25]: Monitor the selected lineage and prepare the next safe session.
+        - generic [ref=f1e26]:
+          - text: Last refresh
+          - strong [ref=f1e27]: —
+      - region "Training telemetry" [ref=f1e28]:
+        - generic [ref=f1e29]:
+          - generic [ref=f1e30]: STATE
+          - strong [ref=f1e31]: IDLE
+          - generic [ref=f1e32]: No active trainer
+        - generic [ref=f1e33]:
+          - generic [ref=f1e34]: STEP
+          - strong [ref=f1e35]: —
+          - generic [ref=f1e36]: optimizer updates
+        - generic [ref=f1e37]:
+          - generic [ref=f1e38]: PROCESSED
+          - strong [ref=f1e39]: —
+          - generic [ref=f1e40]: of target
+        - generic [ref=f1e41]:
+          - generic [ref=f1e42]: THROUGHPUT
+          - strong [ref=f1e43]: —
+          - generic [ref=f1e44]: ETA —
+        - generic [ref=f1e45]:
+          - generic [ref=f1e46]: GPU
+          - strong [ref=f1e47]: —
+          - generic [ref=f1e48]: utilization
+        - generic [ref=f1e49]:
+          - generic [ref=f1e50]: VRAM / TEMP
+          - strong [ref=f1e51]: —
+          - generic [ref=f1e52]: temperature —
+        - generic [ref=f1e53]:
+          - generic [ref=f1e54]: STORAGE
+          - strong [ref=f1e55]: —
+          - generic [ref=f1e56]: free
+      - generic [ref=f1e57]:
+        - generic [ref=f1e58]:
+          - generic [ref=f1e59]:
+            - generic [ref=f1e60]:
+              - generic [ref=f1e61]: CONTROL PLANE
+              - heading "Training configuration" [level=2] [ref=f1e62]
+            - generic [ref=f1e63]: SAFE PREFLIGHT
+          - generic [ref=f1e64]:
+            - generic [ref=f1e65]:
+              - generic [ref=f1e66]: Action
+              - combobox "Action Resume keeps the existing target and learning-rate schedule immutable." [ref=f1e67]:
+                - option "New continuation stage" [selected]
+                - option "Resume selected run"
+              - generic [ref=f1e68]: Resume keeps the existing target and learning-rate schedule immutable.
+            - generic [ref=f1e69]:
+              - generic [ref=f1e70]: Existing run
+              - combobox "Existing run Select a saved lineage." [ref=f1e71]
+              - generic [ref=f1e72]: Select a saved lineage.
+            - generic [ref=f1e73]:
+              - generic [ref=f1e74]: Dataset / stage
+              - combobox "Dataset / stage Dolly uses the prepared instruction-tuning stage." [ref=f1e75]:
+                - option "TinyStories · pretrain" [selected]
+                - option "WikiText-103 · pretrain"
+                - option "FineWeb-Edu · pretrain"
+                - option "Dolly · SFT"
+                - option "Custom mixture · pretrain"
+              - generic [ref=f1e76]: Dolly uses the prepared instruction-tuning stage.
+            - generic [ref=f1e77]:
+              - generic [ref=f1e78]: Parent checkpoint
+              - combobox "Parent checkpoint Actual saved path and lineage progress appear below." [ref=f1e79]
+              - generic [ref=f1e80]: Actual saved path and lineage progress appear below.
+            - generic [ref=f1e81]:
+              - text: SELECTED CHECKPOINT
+              - strong [ref=f1e82]: —
+              - generic [ref=f1e83]:
+                - generic [ref=f1e84]: —
+                - generic [ref=f1e85]: —
+            - generic [ref=f1e87]:
+              - generic [ref=f1e88]: Additional training tokens
+              - generic [ref=f1e89]:
+                - textbox "Additional training tokens tokens Token presets" [ref=f1e90]: "1000000"
+                - generic [ref=f1e91]: tokens
+              - generic "Token presets" [ref=f1e92]:
+                - button "1M" [ref=f1e93] [cursor=pointer]
+                - button "10M" [ref=f1e94] [cursor=pointer]
+                - button "50M" [ref=f1e95] [cursor=pointer]
+                - button "100M" [ref=f1e96] [cursor=pointer]
+            - generic [ref=f1e97]:
+              - generic [ref=f1e98]: Session duration
+              - generic [ref=f1e99]:
+                - spinbutton "Session duration minutes" [ref=f1e100]: "60"
+                - combobox [ref=f1e101]:
+                  - option "minutes" [selected]
+                  - option "hours"
+            - generic [ref=f1e102]:
+              - generic [ref=f1e103]: Session mode
+              - generic [ref=f1e104]:
+                - checkbox "Session mode Run until manually stopped Graceful stop saves at an optimizer-safe boundary." [ref=f1e105]
+                - generic [ref=f1e107]: Run until manually stopped
+              - generic [ref=f1e108]: Graceful stop saves at an optimizer-safe boundary.
+            - generic [ref=f1e109]:
+              - generic [ref=f1e110]: Mixture weights
+              - textbox "Mixture weights Use name=weight pairs; required only for Custom mixture." [ref=f1e111]: tinystories=0.20,wikitext103=0.35,fineweb_edu=0.45
+              - generic [ref=f1e112]: Use name=weight pairs; required only for Custom mixture.
+            - generic [ref=f1e113]:
+              - generic [ref=f1e114]: New continuation stage name
+              - textbox "New continuation stage name A new folder is created under results\\; existing checkpoints are never overwritten." [ref=f1e115]: web-stage-20260917123309
+              - generic [ref=f1e116]:
+                - text: A new folder is created under
+                - code [ref=f1e117]: results\
+                - text: ; existing checkpoints are never overwritten.
+          - generic [ref=f1e118]:
+            - button "Start training" [ref=f1e119] [cursor=pointer]
+            - button "Graceful stop" [disabled] [ref=f1e120]
+            - generic [ref=f1e121]: No training starts during preflight.
+        - generic [ref=f1e122]:
+          - generic [ref=f1e123]:
+            - generic [ref=f1e124]:
+              - generic [ref=f1e125]: PREFLIGHT
+              - heading "Effective plan" [level=2] [ref=f1e126]
+            - generic [ref=f1e127]: READY
+          - generic [ref=f1e128]:
+            - strong [ref=f1e129]: Choose a checkpoint to prepare a stage.
+            - generic [ref=f1e130]: —
+          - generic [ref=f1e131]:
+            - generic [ref=f1e132]:
+              - generic [ref=f1e133]: Additional
+              - strong [ref=f1e134]: —
+            - generic [ref=f1e135]:
+              - generic [ref=f1e136]: Cumulative
+              - strong [ref=f1e137]: —
+            - generic [ref=f1e138]:
+              - generic [ref=f1e139]: Effective target
+              - strong [ref=f1e140]: —
+            - generic [ref=f1e141]:
+              - generic [ref=f1e142]: Est. completion
+              - strong [ref=f1e143]: —
+            - generic [ref=f1e144]:
+              - generic [ref=f1e145]: LR schedule
+              - strong [ref=f1e146]: —
+            - generic [ref=f1e147]:
+              - generic [ref=f1e148]: Model
+              - strong [ref=f1e149]: —
+          - generic [ref=f1e150]:
+            - generic [ref=f1e151]:
+              - heading "Loss" [level=3] [ref=f1e152]
+              - text: Selected run metrics only
+            - generic [ref=f1e153]: Train Validation
+          - img "Training and validation loss chart" [ref=f1e157]
+          - generic [ref=f1e158]:
+            - generic [ref=f1e159]: step —
+            - generic [ref=f1e160]: actual metric steps
+            - generic [ref=f1e161]: step —
+          - generic [ref=f1e162]: Checkpoint —Run folder —
+      - generic [ref=f1e163]: The dashboard reads local status and metrics files. The browser can close without stopping training.

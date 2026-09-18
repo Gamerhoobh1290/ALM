@@ -1,0 +1,8 @@
+{
+  "config": "C:\\AdamLM\\config\\sft-assistant.json",
+  "target_tokens": 8291299,
+  "stage": "sft",
+  "dataset": "dailydialog",
+  "mixture": null,
+  "parent_checkpoint": "C:\\AdamLM\\results\\sft-assistant\\checkpoints\\step_00000245.pt"
+}

@@ -1,0 +1,2066 @@
+{
+  "format_version": 1,
+  "created_at": "2026-09-17T10:18:11.707448+00:00",
+  "suite": {
+    "path": "C:\\AdamLM\\config\\eval-suite.json",
+    "sha256": "42fdf159d700da186b89710e7dc5787fc40dfee9a6a44e32571fc68bae815ce7",
+    "name": "AdamLM compact capability evaluation",
+    "version": 1
+  },
+  "settings": {
+    "device": "cuda",
+    "decoding": "greedy_argmax",
+    "choice_scoring": "mean conditional log probability per separately encoded choice token",
+    "max_new_tokens_override": null
+  },
+  "checkpoints": [
+    {
+      "checkpoint": {
+        "path": "C:\\AdamLM\\results\\bpe512-local-run\\checkpoints\\step_00012208.pt",
+        "sha256": "a7fd831e6db31dcffddb212175fa5c7a492392bce1a0c2018e9d5b0e094d8db9",
+        "step": 12208,
+        "model_config": {
+          "vocab_size": 4096,
+          "block_size": 512,
+          "n_layer": 4,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.0
+        },
+        "tokenizer": {
+          "kind": "bpe",
+          "path": "C:\\AdamLM\\tokenizers\\bpe4096\\tokenizer.json",
+          "sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+        }
+      },
+      "summary": {
+        "items": 29,
+        "scored": 27,
+        "correct": 7,
+        "accuracy": 0.25925925925925924,
+        "labels": {
+          "answer": 7,
+          "prompt_continuation": 22
+        },
+        "by_category": {
+          "coherence": {
+            "items": 3,
+            "scored": 3,
+            "correct": 3,
+            "accuracy": 1.0
+          },
+          "coherent_generation": {
+            "items": 2,
+            "scored": 0,
+            "correct": 0,
+            "accuracy": null
+          },
+          "computer_windows": {
+            "items": 5,
+            "scored": 5,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "english_grammar": {
+            "items": 4,
+            "scored": 4,
+            "correct": 4,
+            "accuracy": 1.0
+          },
+          "general_knowledge": {
+            "items": 5,
+            "scored": 5,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "reasoning_instruction": {
+            "items": 6,
+            "scored": 6,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "unsupported_questions": {
+            "items": 4,
+            "scored": 4,
+            "correct": 0,
+            "accuracy": 0.0
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "grammar-subject-verb",
+          "category": "english_grammar",
+          "task": "paired_choice",
+          "prompt": "Choose the grammatically correct continuation.\n",
+          "choices": [
+            {
+              "choice": "She goes to school every day.",
+              "token_count": 7,
+              "mean_log_probability": -3.2285892963409424,
+              "sum_log_probability": -22.60012435913086
+            },
+            {
+              "choice": "She go to school every day.",
+              "token_count": 7,
+              "mean_log_probability": -3.8808207511901855,
+              "sum_log_probability": -27.16574478149414
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 0,
+          "completion": "She goes to school every day.",
+          "raw_output": "Choose the grammatically correct continuation.\nShe goes to school every day.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "grammar-plural-verb",
+          "category": "english_grammar",
+          "task": "paired_choice",
+          "prompt": "Choose the grammatically correct continuation.\n",
+          "choices": [
+            {
+              "choice": "The children is playing outside.",
+              "token_count": 6,
+              "mean_log_probability": -4.7719831466674805,
+              "sum_log_probability": -28.63189697265625
+            },
+            {
+              "choice": "The children are playing outside.",
+              "token_count": 6,
+              "mean_log_probability": -4.194631576538086,
+              "sum_log_probability": -25.167789459228516
+            }
+          ],
+          "correct_choice": 1,
+          "selected_choice": 1,
+          "completion": "The children are playing outside.",
+          "raw_output": "Choose the grammatically correct continuation.\nThe children are playing outside.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "grammar-past-tense",
+          "category": "english_grammar",
+          "task": "paired_choice",
+          "prompt": "Choose the grammatically correct continuation.\n",
+          "choices": [
+            {
+              "choice": "Yesterday, we walked home.",
+              "token_count": 9,
+              "mean_log_probability": -4.2002272605896,
+              "sum_log_probability": -37.80204391479492
+            },
+            {
+              "choice": "Yesterday, we walk home.",
+              "token_count": 9,
+              "mean_log_probability": -4.27799129486084,
+              "sum_log_probability": -38.501922607421875
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 0,
+          "completion": "Yesterday, we walked home.",
+          "raw_output": "Choose the grammatically correct continuation.\nYesterday, we walked home.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "grammar-agreement",
+          "category": "english_grammar",
+          "task": "paired_choice",
+          "prompt": "Choose the grammatically correct continuation.\n",
+          "choices": [
+            {
+              "choice": "The dog do not bark at night.",
+              "token_count": 8,
+              "mean_log_probability": -5.087159633636475,
+              "sum_log_probability": -40.6972770690918
+            },
+            {
+              "choice": "The dog does not bark at night.",
+              "token_count": 8,
+              "mean_log_probability": -3.8922863006591797,
+              "sum_log_probability": -31.138290405273438
+            }
+          ],
+          "correct_choice": 1,
+          "selected_choice": 1,
+          "completion": "The dog does not bark at night.",
+          "raw_output": "Choose the grammatically correct continuation.\nThe dog does not bark at night.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "coherence-rain",
+          "category": "coherence",
+          "task": "paired_choice",
+          "prompt": "Dark clouds gathered, and rain began to fall. ",
+          "choices": [
+            {
+              "choice": "Nora opened her umbrella to stay dry.",
+              "token_count": 12,
+              "mean_log_probability": -3.225640058517456,
+              "sum_log_probability": -38.707679748535156
+            },
+            {
+              "choice": "Nora put the sunlight under a sandwich.",
+              "token_count": 10,
+              "mean_log_probability": -5.609706878662109,
+              "sum_log_probability": -56.097068786621094
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 0,
+          "completion": "Nora opened her umbrella to stay dry.",
+          "raw_output": "Dark clouds gathered, and rain began to fall. Nora opened her umbrella to stay dry.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "coherence-key",
+          "category": "coherence",
+          "task": "paired_choice",
+          "prompt": "Omar could not unlock the front door. ",
+          "choices": [
+            {
+              "choice": "He checked his pockets for the missing key.",
+              "token_count": 12,
+              "mean_log_probability": -3.9295566082000732,
+              "sum_log_probability": -47.15467834472656
+            },
+            {
+              "choice": "The door drank a cloud and became Tuesday.",
+              "token_count": 12,
+              "mean_log_probability": -4.793722152709961,
+              "sum_log_probability": -57.52466583251953
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 0,
+          "completion": "He checked his pockets for the missing key.",
+          "raw_output": "Omar could not unlock the front door. He checked his pockets for the missing key.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "coherence-thirst",
+          "category": "coherence",
+          "task": "paired_choice",
+          "prompt": "After the long run, Mei was very thirsty. ",
+          "choices": [
+            {
+              "choice": "She poured herself a glass of water.",
+              "token_count": 9,
+              "mean_log_probability": -4.162145137786865,
+              "sum_log_probability": -37.45930480957031
+            },
+            {
+              "choice": "She mailed her shoes to the moon for breakfast.",
+              "token_count": 11,
+              "mean_log_probability": -4.4344940185546875,
+              "sum_log_probability": -48.77943420410156
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 0,
+          "completion": "She poured herself a glass of water.",
+          "raw_output": "After the long run, Mei was very thirsty. She poured herself a glass of water.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "sample-story",
+          "category": "coherent_generation",
+          "task": "sample",
+          "prompt": "Once upon a time, a curious fox found a brass key.",
+          "max_new_tokens": 64,
+          "evaluation_rule": {
+            "manual_review": true
+          },
+          "completion": " He wanted to find out what the key could open. He tried and tried, but he could not open it. He was very sad.\nThen, a little bird came and saw the fox. The bird said, \"I can help you open the key.\" The fox used his beak to open the key.",
+          "raw_output": "Once upon a time, a curious fox found a brass key. He wanted to find out what the key could open. He tried and tried, but he could not open it. He was very sad.\nThen, a little bird came and saw the fox. The bird said, \"I can help you open the key.\" The fox used his beak to open the key.",
+          "label": "prompt_continuation",
+          "correct": null,
+          "reason": "qualitative sample; inspect the saved raw output"
+        },
+        {
+          "id": "sample-explanation",
+          "category": "coherent_generation",
+          "task": "sample",
+          "prompt": "Write two clear sentences about why people wear coats in winter.\nResponse:",
+          "max_new_tokens": 64,
+          "evaluation_rule": {
+            "manual_review": true
+          },
+          "completion": " \"I'm going to be a very special day. I'm going to be a special day. I'm going to be a special day. I'm going to be a special day. I'm going to be a special day. I'm going to be a special day. I'm going to be a special day",
+          "raw_output": "Write two clear sentences about why people wear coats in winter.\nResponse: \"I'm going to be a very special day. I'm going to be a special day. I'm going to be a special day. I'm going to be a special day. I'm going to be a special day. I'm going to be a special day. I'm going to be a special day",
+          "label": "prompt_continuation",
+          "correct": null,
+          "reason": "qualitative sample; inspect the saved raw output"
+        },
+        {
+          "id": "knowledge-france",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: What is the capital of France?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "Paris"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " \"I'm sorry, I didn't mean to break it. I just wanted to see what's inside.\"\nThe",
+          "raw_output": "Question: What is the capital of France?\nAnswer: \"I'm sorry, I didn't mean to break it. I just wanted to see what's inside.\"\nThe",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "knowledge-water-freezing",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: At what temperature does pure water freeze in degrees Celsius?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "0",
+              "zero degrees",
+              "zero celsius"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " \"I'm sorry, I didn't mean to make you sick. I just wanted to see the water from the tem",
+          "raw_output": "Question: At what temperature does pure water freeze in degrees Celsius?\nAnswer: \"I'm sorry, I didn't mean to make you sick. I just wanted to see the water from the tem",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "knowledge-largest-planet",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: What is the largest planet in our solar system?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "Jupiter"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " \"I can help you find the planet. It's very special to see the planets. It's very",
+          "raw_output": "Question: What is the largest planet in our solar system?\nAnswer: \"I can help you find the planet. It's very special to see the planets. It's very",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "knowledge-hamlet",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: Who wrote Hamlet?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "William Shakespeare",
+              "Shakespeare"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " \"I'm sorry, I was wrong. I didn't mean to make you sad. I just wanted to play with",
+          "raw_output": "Question: Who wrote Hamlet?\nAnswer: \"I'm sorry, I was wrong. I didn't mean to make you sad. I just wanted to play with",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "knowledge-week",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: How many days are in one week?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "7",
+              "seven"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " \"I'm going to visit the zoo. I'm going to see the zoo. I'm going to see the zoo",
+          "raw_output": "Question: How many days are in one week?\nAnswer: \"I'm going to visit the zoo. I'm going to see the zoo. I'm going to see the zoo",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "windows-recycle-bin",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What does the Recycle Bin in Windows hold?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "deleted files",
+              "deleted items",
+              "files you delete"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " \"I'm sorry, Birdy. I didn't mean to break anything. I just wanted to see you.\"",
+          "raw_output": "Question: What does the Recycle Bin in Windows hold?\nAnswer: \"I'm sorry, Birdy. I didn't mean to break anything. I just wanted to see you.\"",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "windows-task-manager",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What can Windows Task Manager show you?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "running processes",
+              "running applications",
+              "apps and processes",
+              "processes"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " \"I can show you how to make things with the laundry. It's very important to be careful and not to make",
+          "raw_output": "Question: What can Windows Task Manager show you?\nAnswer: \"I can show you how to make things with the laundry. It's very important to be careful and not to make",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "windows-copy-shortcut",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What keyboard shortcut copies selected text on Windows?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "Ctrl+C",
+              "Control+C"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " \"I want to go to the park and play with my friends!\"\nThe two friends ran to the park and started",
+          "raw_output": "Question: What keyboard shortcut copies selected text on Windows?\nAnswer: \"I want to go to the park and play with my friends!\"\nThe two friends ran to the park and started",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "computer-text-extension",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What common file extension is used for a plain text file?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              ".txt",
+              "txt"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " \"I'm sorry, I'm sorry. I didn't mean to break anything. I just wanted to have fun.",
+          "raw_output": "Question: What common file extension is used for a plain text file?\nAnswer: \"I'm sorry, I'm sorry. I didn't mean to break anything. I just wanted to have fun.",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "computer-folder",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What is a folder used for on a computer?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "organize files",
+              "store files",
+              "contain files"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " \"Is this one for you. It is a special folder. It is a special folder. It is a special",
+          "raw_output": "Question: What is a folder used for on a computer?\nAnswer: \"Is this one for you. It is a special folder. It is a special folder. It is a special",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "reasoning-apples",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Question: Mia has 3 apples and gets 2 more. How many apples does she have?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "5",
+              "five"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " \"I have a surprise for you. I have a surprise for you. I have a surprise for you. I have",
+          "raw_output": "Question: Mia has 3 apples and gets 2 more. How many apples does she have?\nAnswer: \"I have a surprise for you. I have a surprise for you. I have a surprise for you. I have",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "reasoning-sequence",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Question: What number comes next: 2, 4, 6, ?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "8",
+              "eight"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " \"I'm going to the store. I'm going to buy some food for you.\"\nThe storekeeper smiled and",
+          "raw_output": "Question: What number comes next: 2, 4, 6, ?\nAnswer: \"I'm going to the store. I'm going to buy some food for you.\"\nThe storekeeper smiled and",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "reasoning-syllogism",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "All robins are birds. Pip is a robin. Is Pip a bird?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "yes"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " \"I am a bird, Pip. I can fly and sing. Do you want to be my friend?\"\n",
+          "raw_output": "All robins are birds. Pip is a robin. Is Pip a bird?\nAnswer: \"I am a bird, Pip. I can fly and sing. Do you want to be my friend?\"\n",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "instruction-blue",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Follow this instruction: Write only the word blue.\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "blue"
+            ],
+            "match": "exact",
+            "expect_abstention": false
+          },
+          "completion": " \"Friends, if you want to try something different, you can try to make a difference. You",
+          "raw_output": "Follow this instruction: Write only the word blue.\nAnswer: \"Friends, if you want to try something different, you can try to make a difference. You",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "instruction-ok",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Reply with exactly OK and nothing else.\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "OK"
+            ],
+            "match": "exact",
+            "expect_abstention": false
+          },
+          "completion": " \"I know, but I know you can't do it. I know you can do something that is not yours.",
+          "raw_output": "Reply with exactly OK and nothing else.\nAnswer: \"I know, but I know you can't do it. I know you can do something that is not yours.",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "instruction-opposite",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Question: What is the opposite of hot? Answer with one word.\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "cold"
+            ],
+            "match": "exact",
+            "expect_abstention": false
+          },
+          "completion": " \"I want to make a fire for the opposion. It is very hot and it is very hot.\"",
+          "raw_output": "Question: What is the opposite of hot? Answer with one word.\nAnswer: \"I want to make a fire for the opposion. It is very hot and it is very hot.\"",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no expected answer was given; output continued as narrative"
+        },
+        {
+          "id": "unsupported-zorblax",
+          "category": "unsupported_questions",
+          "task": "generation",
+          "prompt": "Question: What is the birthday of Zorblax, the invisible king of Mars?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [],
+            "match": "contains",
+            "expect_abstention": true
+          },
+          "completion": " \"I have a surprise for you, Miss Rose. I have a surprise for you!\"\nMiss R",
+          "raw_output": "Question: What is the birthday of Zorblax, the invisible king of Mars?\nAnswer: \"I have a surprise for you, Miss Rose. I have a surprise for you!\"\nMiss R",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no answer or a narrative continuation was produced"
+        },
+        {
+          "id": "unsupported-box-color",
+          "category": "unsupported_questions",
+          "task": "generation",
+          "prompt": "Question: I put an object in a closed box but did not describe it. What color is it?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [],
+            "match": "contains",
+            "expect_abstention": true
+          },
+          "completion": " \"I want to make a picture of this.\"\nAnger: \"I want to make a picture of a cat",
+          "raw_output": "Question: I put an object in a closed box but did not describe it. What color is it?\nAnswer: \"I want to make a picture of this.\"\nAnger: \"I want to make a picture of a cat",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no answer or a narrative continuation was produced"
+        },
+        {
+          "id": "unsupported-future-lottery",
+          "category": "unsupported_questions",
+          "task": "generation",
+          "prompt": "Question: What will the winning lottery numbers be next week?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [],
+            "match": "contains",
+            "expect_abstention": true
+          },
+          "completion": " \"I'm going to winter. I'm going to winter. I'm going to winter. I'm",
+          "raw_output": "Question: What will the winning lottery numbers be next week?\nAnswer: \"I'm going to winter. I'm going to winter. I'm going to winter. I'm",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no answer or a narrative continuation was produced"
+        },
+        {
+          "id": "unsupported-private-file",
+          "category": "unsupported_questions",
+          "task": "generation",
+          "prompt": "Question: Which file did I delete from my computer yesterday? No file list was provided.\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [],
+            "match": "contains",
+            "expect_abstention": true
+          },
+          "completion": " \"I have a surprise for you. I have a surprise for you. I have a surprise for you.\"\nThe",
+          "raw_output": "Question: Which file did I delete from my computer yesterday? No file list was provided.\nAnswer: \"I have a surprise for you. I have a surprise for you. I have a surprise for you.\"\nThe",
+          "label": "prompt_continuation",
+          "correct": false,
+          "reason": "no answer or a narrative continuation was produced"
+        }
+      ]
+    },
+    {
+      "checkpoint": {
+        "path": "C:\\AdamLM\\results\\sft-benchmark\\checkpoints\\step_00000092.pt",
+        "sha256": "7d946811acb9490dac2bd5721582f34098f8071df3b615c9eecfadce0a507a22",
+        "step": 92,
+        "model_config": {
+          "vocab_size": 4096,
+          "block_size": 512,
+          "n_layer": 4,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.0
+        },
+        "tokenizer": {
+          "kind": "bpe",
+          "path": "C:\\AdamLM\\tokenizers\\bpe4096\\tokenizer.json",
+          "sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+        }
+      },
+      "summary": {
+        "items": 29,
+        "scored": 27,
+        "correct": 6,
+        "accuracy": 0.2222222222222222,
+        "labels": {
+          "answer": 6,
+          "hallucination": 21,
+          "prompt_continuation": 2
+        },
+        "by_category": {
+          "coherence": {
+            "items": 3,
+            "scored": 3,
+            "correct": 3,
+            "accuracy": 1.0
+          },
+          "coherent_generation": {
+            "items": 2,
+            "scored": 0,
+            "correct": 0,
+            "accuracy": null
+          },
+          "computer_windows": {
+            "items": 5,
+            "scored": 5,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "english_grammar": {
+            "items": 4,
+            "scored": 4,
+            "correct": 3,
+            "accuracy": 0.75
+          },
+          "general_knowledge": {
+            "items": 5,
+            "scored": 5,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "reasoning_instruction": {
+            "items": 6,
+            "scored": 6,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "unsupported_questions": {
+            "items": 4,
+            "scored": 4,
+            "correct": 0,
+            "accuracy": 0.0
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "grammar-subject-verb",
+          "category": "english_grammar",
+          "task": "paired_choice",
+          "prompt": "Choose the grammatically correct continuation.\n",
+          "choices": [
+            {
+              "choice": "She goes to school every day.",
+              "token_count": 7,
+              "mean_log_probability": -3.8268303871154785,
+              "sum_log_probability": -26.787811279296875
+            },
+            {
+              "choice": "She go to school every day.",
+              "token_count": 7,
+              "mean_log_probability": -4.403977394104004,
+              "sum_log_probability": -30.827838897705078
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 0,
+          "completion": "She goes to school every day.",
+          "raw_output": "Choose the grammatically correct continuation.\nShe goes to school every day.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "grammar-plural-verb",
+          "category": "english_grammar",
+          "task": "paired_choice",
+          "prompt": "Choose the grammatically correct continuation.\n",
+          "choices": [
+            {
+              "choice": "The children is playing outside.",
+              "token_count": 6,
+              "mean_log_probability": -5.288763999938965,
+              "sum_log_probability": -31.732582092285156
+            },
+            {
+              "choice": "The children are playing outside.",
+              "token_count": 6,
+              "mean_log_probability": -4.422161102294922,
+              "sum_log_probability": -26.53296661376953
+            }
+          ],
+          "correct_choice": 1,
+          "selected_choice": 1,
+          "completion": "The children are playing outside.",
+          "raw_output": "Choose the grammatically correct continuation.\nThe children are playing outside.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "grammar-past-tense",
+          "category": "english_grammar",
+          "task": "paired_choice",
+          "prompt": "Choose the grammatically correct continuation.\n",
+          "choices": [
+            {
+              "choice": "Yesterday, we walked home.",
+              "token_count": 9,
+              "mean_log_probability": -4.7662034034729,
+              "sum_log_probability": -42.89582824707031
+            },
+            {
+              "choice": "Yesterday, we walk home.",
+              "token_count": 9,
+              "mean_log_probability": -4.646975994110107,
+              "sum_log_probability": -41.822784423828125
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 1,
+          "completion": "Yesterday, we walk home.",
+          "raw_output": "Choose the grammatically correct continuation.\nYesterday, we walk home.",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "grammar-agreement",
+          "category": "english_grammar",
+          "task": "paired_choice",
+          "prompt": "Choose the grammatically correct continuation.\n",
+          "choices": [
+            {
+              "choice": "The dog do not bark at night.",
+              "token_count": 8,
+              "mean_log_probability": -5.194342136383057,
+              "sum_log_probability": -41.55473709106445
+            },
+            {
+              "choice": "The dog does not bark at night.",
+              "token_count": 8,
+              "mean_log_probability": -4.329280853271484,
+              "sum_log_probability": -34.634246826171875
+            }
+          ],
+          "correct_choice": 1,
+          "selected_choice": 1,
+          "completion": "The dog does not bark at night.",
+          "raw_output": "Choose the grammatically correct continuation.\nThe dog does not bark at night.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "coherence-rain",
+          "category": "coherence",
+          "task": "paired_choice",
+          "prompt": "Dark clouds gathered, and rain began to fall. ",
+          "choices": [
+            {
+              "choice": "Nora opened her umbrella to stay dry.",
+              "token_count": 12,
+              "mean_log_probability": -3.874458074569702,
+              "sum_log_probability": -46.49349594116211
+            },
+            {
+              "choice": "Nora put the sunlight under a sandwich.",
+              "token_count": 10,
+              "mean_log_probability": -5.487683296203613,
+              "sum_log_probability": -54.8768310546875
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 0,
+          "completion": "Nora opened her umbrella to stay dry.",
+          "raw_output": "Dark clouds gathered, and rain began to fall. Nora opened her umbrella to stay dry.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "coherence-key",
+          "category": "coherence",
+          "task": "paired_choice",
+          "prompt": "Omar could not unlock the front door. ",
+          "choices": [
+            {
+              "choice": "He checked his pockets for the missing key.",
+              "token_count": 12,
+              "mean_log_probability": -4.201941967010498,
+              "sum_log_probability": -50.423301696777344
+            },
+            {
+              "choice": "The door drank a cloud and became Tuesday.",
+              "token_count": 12,
+              "mean_log_probability": -5.298408508300781,
+              "sum_log_probability": -63.580902099609375
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 0,
+          "completion": "He checked his pockets for the missing key.",
+          "raw_output": "Omar could not unlock the front door. He checked his pockets for the missing key.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "coherence-thirst",
+          "category": "coherence",
+          "task": "paired_choice",
+          "prompt": "After the long run, Mei was very thirsty. ",
+          "choices": [
+            {
+              "choice": "She poured herself a glass of water.",
+              "token_count": 9,
+              "mean_log_probability": -4.620808124542236,
+              "sum_log_probability": -41.58727264404297
+            },
+            {
+              "choice": "She mailed her shoes to the moon for breakfast.",
+              "token_count": 11,
+              "mean_log_probability": -5.305537700653076,
+              "sum_log_probability": -58.36091232299805
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 0,
+          "completion": "She poured herself a glass of water.",
+          "raw_output": "After the long run, Mei was very thirsty. She poured herself a glass of water.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "sample-story",
+          "category": "coherent_generation",
+          "task": "sample",
+          "prompt": "Once upon a time, a curious fox found a brass key.",
+          "max_new_tokens": 64,
+          "evaluation_rule": {
+            "manual_review": true
+          },
+          "completion": " The fox was a key, and the key was used to unlock the key.\nThe fox was a key to unlock the key. The key was used to unlock the key.\nThe fox was used to unlock the key.\nThe key unlock was unlocking. The key was unl",
+          "raw_output": "Once upon a time, a curious fox found a brass key. The fox was a key, and the key was used to unlock the key.\nThe fox was a key to unlock the key. The key was used to unlock the key.\nThe fox was used to unlock the key.\nThe key unlock was unlocking. The key was unl",
+          "label": "prompt_continuation",
+          "correct": null,
+          "reason": "qualitative sample; inspect the saved raw output"
+        },
+        {
+          "id": "sample-explanation",
+          "category": "coherent_generation",
+          "task": "sample",
+          "prompt": "Write two clear sentences about why people wear coats in winter.\nResponse:",
+          "max_new_tokens": 64,
+          "evaluation_rule": {
+            "manual_review": true
+          },
+          "completion": "\nRopes:\nRopes:\nRopes:\nRopes:\nRopes:\nRopes:\nRopes:\nRopes:\nRopes:\nRopes:\nRop",
+          "raw_output": "Write two clear sentences about why people wear coats in winter.\nResponse:\nRopes:\nRopes:\nRopes:\nRopes:\nRopes:\nRopes:\nRopes:\nRopes:\nRopes:\nRopes:\nRop",
+          "label": "prompt_continuation",
+          "correct": null,
+          "reason": "qualitative sample; inspect the saved raw output"
+        },
+        {
+          "id": "knowledge-france",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: What is the capital of France?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "Paris"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " Arance of France is a 10000000000000",
+          "raw_output": "Question: What is the capital of France?\nAnswer: Arance of France is a 10000000000000",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "knowledge-water-freezing",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: At what temperature does pure water freeze in degrees Celsius?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "0",
+              "zero degrees",
+              "zero celsius"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": "\nThe Celodododododododododod",
+          "raw_output": "Question: At what temperature does pure water freeze in degrees Celsius?\nAnswer:\nThe Celodododododododododod",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "knowledge-largest-planet",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: What is the largest planet in our solar system?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "Jupiter"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": "\nThe largest planet is a largestal planet in the world. It is a largestal plane",
+          "raw_output": "Question: What is the largest planet in our solar system?\nAnswer:\nThe largest planet is a largestal planet in the world. It is a largestal plane",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "knowledge-hamlet",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: Who wrote Hamlet?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "William Shakespeare",
+              "Shakespeare"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": "\nThe Hamber:\nThe Hamber:\nThe Hamber:\nThe H",
+          "raw_output": "Question: Who wrote Hamlet?\nAnswer:\nThe Hamber:\nThe Hamber:\nThe Hamber:\nThe H",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "knowledge-week",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: How many days are in one week?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "7",
+              "seven"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": "\nThe most of the most of the world is a few days of the world.\nThe most of the world is",
+          "raw_output": "Question: How many days are in one week?\nAnswer:\nThe most of the most of the world is a few days of the world.\nThe most of the world is",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "windows-recycle-bin",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What does the Recycle Bin in Windows hold?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "deleted files",
+              "deleted items",
+              "files you delete"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": "\nThe Recin is a Recin of Recin, Recin, Recin, R",
+          "raw_output": "Question: What does the Recycle Bin in Windows hold?\nAnswer:\nThe Recin is a Recin of Recin, Recin, Recin, R",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "windows-task-manager",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What can Windows Task Manager show you?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "running processes",
+              "running applications",
+              "apps and processes",
+              "processes"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": "\nThe Many Tager Many Many Many Many Many M",
+          "raw_output": "Question: What can Windows Task Manager show you?\nAnswer:\nThe Many Tager Many Many Many Many Many M",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "windows-copy-shortcut",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What keyboard shortcut copies selected text on Windows?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "Ctrl+C",
+              "Control+C"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": "\nThe Narters are a coperation of the Narters, and the Narter",
+          "raw_output": "Question: What keyboard shortcut copies selected text on Windows?\nAnswer:\nThe Narters are a coperation of the Narters, and the Narter",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "computer-text-extension",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What common file extension is used for a plain text file?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              ".txt",
+              "txt"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": "\nThesection of the most of the most of the most of the world.\n\nThesection",
+          "raw_output": "Question: What common file extension is used for a plain text file?\nAnswer:\nThesection of the most of the most of the most of the world.\n\nThesection",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "computer-folder",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What is a folder used for on a computer?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "organize files",
+              "store files",
+              "contain files"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " A computer is a computer. It is a computer, a computer, a computer, a computer, a computer, a",
+          "raw_output": "Question: What is a folder used for on a computer?\nAnswer: A computer is a computer. It is a computer, a computer, a computer, a computer, a computer, a",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "reasoning-apples",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Question: Mia has 3 apples and gets 2 more. How many apples does she have?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "5",
+              "five"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " 20000000000000000000000",
+          "raw_output": "Question: Mia has 3 apples and gets 2 more. How many apples does she have?\nAnswer: 20000000000000000000000",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "reasoning-sequence",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Question: What number comes next: 2, 4, 6, ?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "8",
+              "eight"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " 2, 2, 2, 2, 1, 1, 1, 1,",
+          "raw_output": "Question: What number comes next: 2, 4, 6, ?\nAnswer: 2, 2, 2, 2, 1, 1, 1, 1,",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "reasoning-syllogism",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "All robins are birds. Pip is a robin. Is Pip a bird?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "yes"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " Piper is a bird, Piper, Piper, Piper, Piper, P",
+          "raw_output": "All robins are birds. Pip is a robin. Is Pip a bird?\nAnswer: Piper is a bird, Piper, Piper, Piper, Piper, P",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "instruction-blue",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Follow this instruction: Write only the word blue.\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "blue"
+            ],
+            "match": "exact",
+            "expect_abstention": false
+          },
+          "completion": " 20000000000000000000000",
+          "raw_output": "Follow this instruction: Write only the word blue.\nAnswer: 20000000000000000000000",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "instruction-ok",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Reply with exactly OK and nothing else.\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "OK"
+            ],
+            "match": "exact",
+            "expect_abstention": false
+          },
+          "completion": " Anter is a local produced in the world.",
+          "raw_output": "Reply with exactly OK and nothing else.\nAnswer: Anter is a local produced in the world.",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "instruction-opposite",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Question: What is the opposite of hot? Answer with one word.\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "cold"
+            ],
+            "match": "exact",
+            "expect_abstention": false
+          },
+          "completion": "\nThe opposity is a recious to the opposity of the opposity of",
+          "raw_output": "Question: What is the opposite of hot? Answer with one word.\nAnswer:\nThe opposity is a recious to the opposity of the opposity of",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "unsupported-zorblax",
+          "category": "unsupported_questions",
+          "task": "generation",
+          "prompt": "Question: What is the birthday of Zorblax, the invisible king of Mars?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [],
+            "match": "contains",
+            "expect_abstention": true
+          },
+          "completion": " Manylica, Many, Many, Many, Many, M",
+          "raw_output": "Question: What is the birthday of Zorblax, the invisible king of Mars?\nAnswer: Manylica, Many, Many, Many, Many, M",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the model asserted an answer to an unsupported question"
+        },
+        {
+          "id": "unsupported-box-color",
+          "category": "unsupported_questions",
+          "task": "generation",
+          "prompt": "Question: I put an object in a closed box but did not describe it. What color is it?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [],
+            "match": "contains",
+            "expect_abstention": true
+          },
+          "completion": " Anteral is a very special object that is a special object that is a damage of a dam",
+          "raw_output": "Question: I put an object in a closed box but did not describe it. What color is it?\nAnswer: Anteral is a very special object that is a special object that is a damage of a dam",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the model asserted an answer to an unsupported question"
+        },
+        {
+          "id": "unsupported-future-lottery",
+          "category": "unsupported_questions",
+          "task": "generation",
+          "prompt": "Question: What will the winning lottery numbers be next week?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [],
+            "match": "contains",
+            "expect_abstention": true
+          },
+          "completion": "\nThe winter of the most popular team is a team of teams. The team is a team, a",
+          "raw_output": "Question: What will the winning lottery numbers be next week?\nAnswer:\nThe winter of the most popular team is a team of teams. The team is a team, a",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the model asserted an answer to an unsupported question"
+        },
+        {
+          "id": "unsupported-private-file",
+          "category": "unsupported_questions",
+          "task": "generation",
+          "prompt": "Question: Which file did I delete from my computer yesterday? No file list was provided.\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [],
+            "match": "contains",
+            "expect_abstention": true
+          },
+          "completion": " Crincess, Crincess, Crin, Crin, Crin, Cr",
+          "raw_output": "Question: Which file did I delete from my computer yesterday? No file list was provided.\nAnswer: Crincess, Crincess, Crin, Crin, Crin, Cr",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the model asserted an answer to an unsupported question"
+        }
+      ]
+    },
+    {
+      "checkpoint": {
+        "path": "C:\\AdamLM\\results\\sft-benchmark-v2\\checkpoints\\step_00000733.pt",
+        "sha256": "a4a5304f7be3d4615a64b1e1138759fdb683d223b4909da4a8e5ac5a39eafc45",
+        "step": 733,
+        "model_config": {
+          "vocab_size": 4096,
+          "block_size": 512,
+          "n_layer": 4,
+          "n_head": 6,
+          "n_embd": 384,
+          "dropout": 0.0
+        },
+        "tokenizer": {
+          "kind": "bpe",
+          "path": "C:\\AdamLM\\tokenizers\\bpe4096\\tokenizer.json",
+          "sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+        }
+      },
+      "summary": {
+        "items": 29,
+        "scored": 27,
+        "correct": 6,
+        "accuracy": 0.2222222222222222,
+        "labels": {
+          "answer": 6,
+          "hallucination": 21,
+          "prompt_continuation": 2
+        },
+        "by_category": {
+          "coherence": {
+            "items": 3,
+            "scored": 3,
+            "correct": 3,
+            "accuracy": 1.0
+          },
+          "coherent_generation": {
+            "items": 2,
+            "scored": 0,
+            "correct": 0,
+            "accuracy": null
+          },
+          "computer_windows": {
+            "items": 5,
+            "scored": 5,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "english_grammar": {
+            "items": 4,
+            "scored": 4,
+            "correct": 3,
+            "accuracy": 0.75
+          },
+          "general_knowledge": {
+            "items": 5,
+            "scored": 5,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "reasoning_instruction": {
+            "items": 6,
+            "scored": 6,
+            "correct": 0,
+            "accuracy": 0.0
+          },
+          "unsupported_questions": {
+            "items": 4,
+            "scored": 4,
+            "correct": 0,
+            "accuracy": 0.0
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "grammar-subject-verb",
+          "category": "english_grammar",
+          "task": "paired_choice",
+          "prompt": "Choose the grammatically correct continuation.\n",
+          "choices": [
+            {
+              "choice": "She goes to school every day.",
+              "token_count": 7,
+              "mean_log_probability": -3.651890516281128,
+              "sum_log_probability": -25.563232421875
+            },
+            {
+              "choice": "She go to school every day.",
+              "token_count": 7,
+              "mean_log_probability": -4.256616115570068,
+              "sum_log_probability": -29.79631233215332
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 0,
+          "completion": "She goes to school every day.",
+          "raw_output": "Choose the grammatically correct continuation.\nShe goes to school every day.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "grammar-plural-verb",
+          "category": "english_grammar",
+          "task": "paired_choice",
+          "prompt": "Choose the grammatically correct continuation.\n",
+          "choices": [
+            {
+              "choice": "The children is playing outside.",
+              "token_count": 6,
+              "mean_log_probability": -5.001483917236328,
+              "sum_log_probability": -30.00890350341797
+            },
+            {
+              "choice": "The children are playing outside.",
+              "token_count": 6,
+              "mean_log_probability": -4.1704511642456055,
+              "sum_log_probability": -25.022705078125
+            }
+          ],
+          "correct_choice": 1,
+          "selected_choice": 1,
+          "completion": "The children are playing outside.",
+          "raw_output": "Choose the grammatically correct continuation.\nThe children are playing outside.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "grammar-past-tense",
+          "category": "english_grammar",
+          "task": "paired_choice",
+          "prompt": "Choose the grammatically correct continuation.\n",
+          "choices": [
+            {
+              "choice": "Yesterday, we walked home.",
+              "token_count": 9,
+              "mean_log_probability": -5.168842792510986,
+              "sum_log_probability": -46.51958465576172
+            },
+            {
+              "choice": "Yesterday, we walk home.",
+              "token_count": 9,
+              "mean_log_probability": -5.090397357940674,
+              "sum_log_probability": -45.813575744628906
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 1,
+          "completion": "Yesterday, we walk home.",
+          "raw_output": "Choose the grammatically correct continuation.\nYesterday, we walk home.",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "grammar-agreement",
+          "category": "english_grammar",
+          "task": "paired_choice",
+          "prompt": "Choose the grammatically correct continuation.\n",
+          "choices": [
+            {
+              "choice": "The dog do not bark at night.",
+              "token_count": 8,
+              "mean_log_probability": -4.7529802322387695,
+              "sum_log_probability": -38.023841857910156
+            },
+            {
+              "choice": "The dog does not bark at night.",
+              "token_count": 8,
+              "mean_log_probability": -4.236833572387695,
+              "sum_log_probability": -33.89466857910156
+            }
+          ],
+          "correct_choice": 1,
+          "selected_choice": 1,
+          "completion": "The dog does not bark at night.",
+          "raw_output": "Choose the grammatically correct continuation.\nThe dog does not bark at night.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "coherence-rain",
+          "category": "coherence",
+          "task": "paired_choice",
+          "prompt": "Dark clouds gathered, and rain began to fall. ",
+          "choices": [
+            {
+              "choice": "Nora opened her umbrella to stay dry.",
+              "token_count": 12,
+              "mean_log_probability": -3.898514747619629,
+              "sum_log_probability": -46.78217697143555
+            },
+            {
+              "choice": "Nora put the sunlight under a sandwich.",
+              "token_count": 10,
+              "mean_log_probability": -5.647632122039795,
+              "sum_log_probability": -56.476318359375
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 0,
+          "completion": "Nora opened her umbrella to stay dry.",
+          "raw_output": "Dark clouds gathered, and rain began to fall. Nora opened her umbrella to stay dry.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "coherence-key",
+          "category": "coherence",
+          "task": "paired_choice",
+          "prompt": "Omar could not unlock the front door. ",
+          "choices": [
+            {
+              "choice": "He checked his pockets for the missing key.",
+              "token_count": 12,
+              "mean_log_probability": -4.429976463317871,
+              "sum_log_probability": -53.15971374511719
+            },
+            {
+              "choice": "The door drank a cloud and became Tuesday.",
+              "token_count": 12,
+              "mean_log_probability": -5.480085372924805,
+              "sum_log_probability": -65.76102447509766
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 0,
+          "completion": "He checked his pockets for the missing key.",
+          "raw_output": "Omar could not unlock the front door. He checked his pockets for the missing key.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "coherence-thirst",
+          "category": "coherence",
+          "task": "paired_choice",
+          "prompt": "After the long run, Mei was very thirsty. ",
+          "choices": [
+            {
+              "choice": "She poured herself a glass of water.",
+              "token_count": 9,
+              "mean_log_probability": -4.892916202545166,
+              "sum_log_probability": -44.0362434387207
+            },
+            {
+              "choice": "She mailed her shoes to the moon for breakfast.",
+              "token_count": 11,
+              "mean_log_probability": -5.459908485412598,
+              "sum_log_probability": -60.058990478515625
+            }
+          ],
+          "correct_choice": 0,
+          "selected_choice": 0,
+          "completion": "She poured herself a glass of water.",
+          "raw_output": "After the long run, Mei was very thirsty. She poured herself a glass of water.",
+          "label": "answer",
+          "correct": true,
+          "reason": "selected the highest mean conditional token log probability"
+        },
+        {
+          "id": "sample-story",
+          "category": "coherent_generation",
+          "task": "sample",
+          "prompt": "Once upon a time, a curious fox found a brass key.",
+          "max_new_tokens": 64,
+          "evaluation_rule": {
+            "manual_review": true
+          },
+          "completion": " The key was a key to unlock a key to unlock the key. The key was used to unlock the key to unlock the key.\nIn the key, the key unlock was unlocked. The key was unlocked. The key was unlocked. The key was unlocked.",
+          "raw_output": "Once upon a time, a curious fox found a brass key. The key was a key to unlock a key to unlock the key. The key was used to unlock the key to unlock the key.\nIn the key, the key unlock was unlocked. The key was unlocked. The key was unlocked. The key was unlocked.",
+          "label": "prompt_continuation",
+          "correct": null,
+          "reason": "qualitative sample; inspect the saved raw output"
+        },
+        {
+          "id": "sample-explanation",
+          "category": "coherent_generation",
+          "task": "sample",
+          "prompt": "Write two clear sentences about why people wear coats in winter.\nResponse:",
+          "max_new_tokens": 64,
+          "evaluation_rule": {
+            "manual_review": true
+          },
+          "completion": "\nRespon, Russon, Russon, Russon, Russon, Russon, Russon, Russon, Russon, Russon, Russon, Russon, Russ",
+          "raw_output": "Write two clear sentences about why people wear coats in winter.\nResponse:\nRespon, Russon, Russon, Russon, Russon, Russon, Russon, Russon, Russon, Russon, Russon, Russon, Russ",
+          "label": "prompt_continuation",
+          "correct": null,
+          "reason": "qualitative sample; inspect the saved raw output"
+        },
+        {
+          "id": "knowledge-france",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: What is the capital of France?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "Paris"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " The capital of France is a 1999999999999",
+          "raw_output": "Question: What is the capital of France?\nAnswer: The capital of France is a 1999999999999",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "knowledge-water-freezing",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: At what temperature does pure water freeze in degrees Celsius?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "0",
+              "zero degrees",
+              "zero celsius"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " 19999999999999999999999",
+          "raw_output": "Question: At what temperature does pure water freeze in degrees Celsius?\nAnswer: 19999999999999999999999",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "knowledge-largest-planet",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: What is the largest planet in our solar system?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "Jupiter"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " Valalalalalalalalalalalalalalalalalalalalalal",
+          "raw_output": "Question: What is the largest planet in our solar system?\nAnswer: Valalalalalalalalalalalalalalalalalalalalalal",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "knowledge-hamlet",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: Who wrote Hamlet?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "William Shakespeare",
+              "Shakespeare"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " American, American, American, American, American",
+          "raw_output": "Question: Who wrote Hamlet?\nAnswer: American, American, American, American, American",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "knowledge-week",
+          "category": "general_knowledge",
+          "task": "generation",
+          "prompt": "Question: How many days are in one week?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "7",
+              "seven"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " Americaaaaaaaaaaaaaaaaaaaaa",
+          "raw_output": "Question: How many days are in one week?\nAnswer: Americaaaaaaaaaaaaaaaaaaaaa",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "windows-recycle-bin",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What does the Recycle Bin in Windows hold?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "deleted files",
+              "deleted items",
+              "files you delete"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " The Recyle is a very popularly popular popular popular popular popular popular pop",
+          "raw_output": "Question: What does the Recycle Bin in Windows hold?\nAnswer: The Recyle is a very popularly popular popular popular popular popular popular pop",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "windows-task-manager",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What can Windows Task Manager show you?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "running processes",
+              "running applications",
+              "apps and processes",
+              "processes"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " Toys, Toys, Toys, Toys, Toys, Toys,",
+          "raw_output": "Question: What can Windows Task Manager show you?\nAnswer: Toys, Toys, Toys, Toys, Toys, Toys,",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "windows-copy-shortcut",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What keyboard shortcut copies selected text on Windows?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "Ctrl+C",
+              "Control+C"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " 19999999999999999999999",
+          "raw_output": "Question: What keyboard shortcut copies selected text on Windows?\nAnswer: 19999999999999999999999",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "computer-text-extension",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What common file extension is used for a plain text file?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              ".txt",
+              "txt"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " 19999999999999999999999",
+          "raw_output": "Question: What common file extension is used for a plain text file?\nAnswer: 19999999999999999999999",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "computer-folder",
+          "category": "computer_windows",
+          "task": "generation",
+          "prompt": "Question: What is a folder used for on a computer?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "organize files",
+              "store files",
+              "contain files"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " A computer is a computer that is used to be used to a computer.",
+          "raw_output": "Question: What is a folder used for on a computer?\nAnswer: A computer is a computer that is used to be used to a computer.",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "reasoning-apples",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Question: Mia has 3 apples and gets 2 more. How many apples does she have?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "5",
+              "five"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " 20000000000000000000000",
+          "raw_output": "Question: Mia has 3 apples and gets 2 more. How many apples does she have?\nAnswer: 20000000000000000000000",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "reasoning-sequence",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Question: What number comes next: 2, 4, 6, ?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "8",
+              "eight"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " 2, 2, 2, 2, 2, 2, 2, 2,",
+          "raw_output": "Question: What number comes next: 2, 4, 6, ?\nAnswer: 2, 2, 2, 2, 2, 2, 2, 2,",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "reasoning-syllogism",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "All robins are birds. Pip is a robin. Is Pip a bird?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "yes"
+            ],
+            "match": "contains",
+            "expect_abstention": false
+          },
+          "completion": " Pippo is a bird.",
+          "raw_output": "All robins are birds. Pip is a robin. Is Pip a bird?\nAnswer: Pippo is a bird.",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "instruction-blue",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Follow this instruction: Write only the word blue.\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "blue"
+            ],
+            "match": "exact",
+            "expect_abstention": false
+          },
+          "completion": " 20000000000000000000000",
+          "raw_output": "Follow this instruction: Write only the word blue.\nAnswer: 20000000000000000000000",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "instruction-ok",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Reply with exactly OK and nothing else.\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "OK"
+            ],
+            "match": "exact",
+            "expect_abstention": false
+          },
+          "completion": " The Rep Rep Rep Rep Rep Rep Rep Rep Rep Rep Rep R",
+          "raw_output": "Reply with exactly OK and nothing else.\nAnswer: The Rep Rep Rep Rep Rep Rep Rep Rep Rep Rep Rep R",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "instruction-opposite",
+          "category": "reasoning_instruction",
+          "task": "generation",
+          "prompt": "Question: What is the opposite of hot? Answer with one word.\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [
+              "cold"
+            ],
+            "match": "exact",
+            "expect_abstention": false
+          },
+          "completion": " 20000000000000000000000",
+          "raw_output": "Question: What is the opposite of hot? Answer with one word.\nAnswer: 20000000000000000000000",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the completion did not match an accepted answer"
+        },
+        {
+          "id": "unsupported-zorblax",
+          "category": "unsupported_questions",
+          "task": "generation",
+          "prompt": "Question: What is the birthday of Zorblax, the invisible king of Mars?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [],
+            "match": "contains",
+            "expect_abstention": true
+          },
+          "completion": " The Porblical is a great birthday party in the world.",
+          "raw_output": "Question: What is the birthday of Zorblax, the invisible king of Mars?\nAnswer: The Porblical is a great birthday party in the world.",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the model asserted an answer to an unsupported question"
+        },
+        {
+          "id": "unsupported-box-color",
+          "category": "unsupported_questions",
+          "task": "generation",
+          "prompt": "Question: I put an object in a closed box but did not describe it. What color is it?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [],
+            "match": "contains",
+            "expect_abstention": true
+          },
+          "completion": " I am a very good thing to do. I am going to a new place to be a good place to be a",
+          "raw_output": "Question: I put an object in a closed box but did not describe it. What color is it?\nAnswer: I am a very good thing to do. I am going to a new place to be a good place to be a",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the model asserted an answer to an unsupported question"
+        },
+        {
+          "id": "unsupported-future-lottery",
+          "category": "unsupported_questions",
+          "task": "generation",
+          "prompt": "Question: What will the winning lottery numbers be next week?\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [],
+            "match": "contains",
+            "expect_abstention": true
+          },
+          "completion": "\nThe winter of the most popular process in the world. The winter of the most popular pro",
+          "raw_output": "Question: What will the winning lottery numbers be next week?\nAnswer:\nThe winter of the most popular process in the world. The winter of the most popular pro",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the model asserted an answer to an unsupported question"
+        },
+        {
+          "id": "unsupported-private-file",
+          "category": "unsupported_questions",
+          "task": "generation",
+          "prompt": "Question: Which file did I delete from my computer yesterday? No file list was provided.\nAnswer:",
+          "max_new_tokens": 24,
+          "evaluation_rule": {
+            "expected": [],
+            "match": "contains",
+            "expect_abstention": true
+          },
+          "completion": " Vengor Vengor Vengor Vengor Veng",
+          "raw_output": "Question: Which file did I delete from my computer yesterday? No file list was provided.\nAnswer: Vengor Vengor Vengor Vengor Veng",
+          "label": "hallucination",
+          "correct": false,
+          "reason": "the model asserted an answer to an unsupported question"
+        }
+      ]
+    }
+  ]
+}

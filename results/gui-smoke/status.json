@@ -1,0 +1,16 @@
+{
+  "state": "stopped",
+  "stage": "pretrain",
+  "dataset": "tinystories",
+  "source": "tinystories",
+  "detail": "Graceful stop completed; full checkpoint saved.",
+  "updated_at": "2026-09-17 13:07:55",
+  "checkpoint": "results\\gui-smoke\\checkpoints\\step_00000372.pt",
+  "checkpoint_step": 372,
+  "step": 372,
+  "tokens": 1523712,
+  "target_tokens": 100000000,
+  "train_loss": 1.8323400020599365,
+  "validation_loss": 1.9400741551574017,
+  "learning_rate": 0.0002999832971068009
+}

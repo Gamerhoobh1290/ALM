@@ -1,0 +1,376 @@
+[
+ {
+  "label": "old",
+  "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-012952-s3\\checkpoints\\step_00002024.pt",
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  },
+  "rows": [
+   {
+    "id": "greet-heldout-dd",
+    "kind": "greeting",
+    "source": "held-out",
+    "instruction": "Hello ! What are you reading about in the newspaper ?",
+    "context": "",
+    "reference": "Hello ! I was exhausted some studying , so I decided to read the newspaper to relax . Unfortunately , the news is so depressing . There has been another murder in the city center . I ’ m shocked that ",
+    "reply": "I'm here to walk . What's the problem ? I can't find the exact reason I've got it . Believe any further .",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "greet-hand-0",
+    "kind": "greeting",
+    "source": "hand-written",
+    "instruction": "hey",
+    "context": "",
+    "reference": "",
+    "reply": "yes",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "greet-hand-1",
+    "kind": "greeting",
+    "source": "hand-written",
+    "instruction": "Good morning! How are you today?",
+    "context": "",
+    "reference": "",
+    "reply": "I'm the PATH.. How much should I pay for for it?\nPATH.... but he doesn't have any differences. Washingtoning is great. Working on another computer will help you. But I hope",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "instr-heldout-classification",
+    "kind": "instruction",
+    "source": "held-out",
+    "instruction": "Identify which animal species is alive or extinct: Palaeophis, Giant Tortoise",
+    "context": "",
+    "reference": "Giant Tortoise is alive, Palaeophis is extinct.",
+    "reply": "Giant Tortoise is alive, Palaeophis is extinct.",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "instr-heldout-open_qa",
+    "kind": "instruction",
+    "source": "held-out",
+    "instruction": "What is a kite?",
+    "context": "",
+    "reference": "A kite is a toy that can be be purchased in a store or a specialty shop.  It is a craft that is lighter an air that is tied to a string that you can fly on wind currents.  The kite has wings that reac",
+    "reply": "A kite, plane, Van Gogh, is the most popular kite in the world. There are many beaches in the world, with many beaches in itaving the best venome.",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "instr-heldout-brainstorming",
+    "kind": "instruction",
+    "source": "held-out",
+    "instruction": "Name 10 colors",
+    "context": "",
+    "reference": "Fuschia, magenta, orange, green, blue, red, yellow, chartreuse, aquamarine, sienna",
+    "reply": "Take the Property - 5 colors — 10 rainbow colors\n\nHere are the color you look (240m paint): 12 colors (234 kg)\n\nHelening - 1",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "instr-heldout-general_qa",
+    "kind": "instruction",
+    "source": "held-out",
+    "instruction": "Did dinosaurs have lips?",
+    "context": "",
+    "reference": "Recent research suggests that the popular perception that dinosaurs had exposed teeth may be incorrect, and the current hypothesis is that the Tyrannosaurus rex did indeed have lips. A 2023 study by D",
+    "reply": "Essaid\nTigers - High Sun - The area\n\nPropellas - Hill\nFootball - Hill\nAll-Said - Hill\nTiger Wisconsin - Hill\nMonac",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "instr-hand-fruits",
+    "kind": "instruction",
+    "source": "hand-written",
+    "instruction": "Name three red fruits.",
+    "context": "",
+    "reference": "",
+    "reply": "Three red fruits are not only for the following:\nA brown fruit is red, white, yellow, blue, green, blue, yellow, orange, blue",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "follow-heldout-dd",
+    "kind": "follow-up",
+    "source": "held-out",
+    "instruction": "Sometimes , we , human beings , really had done something wrong , so we should admit it at first .",
+    "context": "User:\nEvery country should face the history .\nAssistant:\nYeah , we don ’ t live in the vacuum . We have traditional values and long but different history .",
+    "reference": "But there is always somebody who wants to turn his back on the true history .",
+    "reply": "I know . For example , I am good at him , but I am sure I will find some ways in heating the right place .",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "follow-hand-pizza",
+    "kind": "follow-up",
+    "source": "hand-written turns",
+    "turns": [
+     {
+      "user": "I love pizza.",
+      "reply": "I know the one who likes pizza too. How much should I bring a coffee coffee and make it the re-fall pizza to the pizza.  First, the convey must be a variety of pizza.  The second goal is to create a variet"
+     },
+     {
+      "user": "What about you?",
+      "reply": "I know the beginning of the pizza. The four fifth set of reduce it, and I believe you are very happy with pizza.  As the element is the \"ink of pizza\" is a very high quality pizza.  The first goal is"
+     }
+    ],
+    "checks": [
+     {
+      "non_empty": true,
+      "no_replacement_char": true,
+      "printable_ratio": 1.0,
+      "no_prompt_echo": true,
+      "no_runaway_repeat": true
+     },
+     {
+      "non_empty": true,
+      "no_replacement_char": true,
+      "printable_ratio": 1.0,
+      "no_prompt_echo": true,
+      "no_runaway_repeat": true
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "label": "new",
+  "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-023246-s3\\checkpoints\\step_00002024.pt",
+  "settings": {
+   "tokens": 60,
+   "temperature": 0.8,
+   "top_k": 40,
+   "seed": 42
+  },
+  "rows": [
+   {
+    "id": "greet-heldout-dd",
+    "kind": "greeting",
+    "source": "held-out",
+    "instruction": "Hello ! What are you reading about in the newspaper ?",
+    "context": "",
+    "reference": "Hello ! I was exhausted some studying , so I decided to read the newspaper to relax . Unfortunately , the news is so depressing . There has been another murder in the city center . I ’ m shocked that ",
+    "reply": "I'm here to walk . What about Huanjibajo ?",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "greet-hand-0",
+    "kind": "greeting",
+    "source": "hand-written",
+    "instruction": "hey",
+    "context": "",
+    "reference": "",
+    "reply": "yes",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "greet-hand-1",
+    "kind": "greeting",
+    "source": "hand-written",
+    "instruction": "Good morning! How are you today?",
+    "context": "",
+    "reference": "",
+    "reply": "I'm the Personal Motion companet Indian Perimone, the Hall of Nuclear Expost for many of us who can operate their work on a large community, and the Fascuit I",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "instr-heldout-classification",
+    "kind": "instruction",
+    "source": "held-out",
+    "instruction": "Identify which animal species is alive or extinct: Palaeophis, Giant Tortoise",
+    "context": "",
+    "reference": "Giant Tortoise is alive, Palaeophis is extinct.",
+    "reply": "Giant Tortoise is alive, Palaeophis is extinct.",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "instr-heldout-open_qa",
+    "kind": "instruction",
+    "source": "held-out",
+    "instruction": "What is a kite?",
+    "context": "",
+    "reference": "A kite is a toy that can be be purchased in a store or a specialty shop.  It is a craft that is lighter an air that is tied to a string that you can fly on wind currents.  The kite has wings that reac",
+    "reply": "A kite, plane, Van Gogh, is the most popular and example of Hydracuse bikes in Canada.",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "instr-heldout-brainstorming",
+    "kind": "instruction",
+    "source": "held-out",
+    "instruction": "Name 10 colors",
+    "context": "",
+    "reference": "Fuschia, magenta, orange, green, blue, red, yellow, chartreuse, aquamarine, sienna",
+    "reply": "Take the Property - 5 colors\nAdditional\n2, 31 colors\n21 color\n22",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "instr-heldout-general_qa",
+    "kind": "instruction",
+    "source": "held-out",
+    "instruction": "Did dinosaurs have lips?",
+    "context": "",
+    "reference": "Recent research suggests that the popular perception that dinosaurs had exposed teeth may be incorrect, and the current hypothesis is that the Tyrannosaurus rex did indeed have lips. A 2023 study by D",
+    "reply": "The Indian Factors have had a wife’s behavior and not usually went to school and with a few day.  In Chinese, they are quite different or restless.  These are some of the best current people",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "instr-hand-fruits",
+    "kind": "instruction",
+    "source": "hand-written",
+    "instruction": "Name three red fruits.",
+    "context": "",
+    "reference": "",
+    "reply": "Three red fruits are not only for dinner. The red fruits are good for bread, it is processed and for dinner is good. Believe the yellow fruits has become a good choice for dinner and dinner is a good place for us.",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "follow-heldout-dd",
+    "kind": "follow-up",
+    "source": "held-out",
+    "instruction": "Sometimes , we , human beings , really had done something wrong , so we should admit it at first .",
+    "context": "User:\nEvery country should face the history .\nAssistant:\nYeah , we don ’ t live in the vacuum . We have traditional values and long but different history .",
+    "reference": "But there is always somebody who wants to turn his back on the true history .",
+    "reply": "I know . For this one , I ’ m very interested in the results .",
+    "checks": {
+     "non_empty": true,
+     "no_replacement_char": true,
+     "printable_ratio": 1.0,
+     "no_prompt_echo": true,
+     "no_runaway_repeat": true
+    }
+   },
+   {
+    "id": "follow-hand-pizza",
+    "kind": "follow-up",
+    "source": "hand-written turns",
+    "turns": [
+     {
+      "user": "I love pizza.",
+      "reply": "I know the one who likes pizza too. How much you eat the pizza you eaten\nPlan pizza is an pizza toast and pizza in the fridge. You should eat your pizza, and then salt with your pizza.\n\nThis pizza is a food with curly f"
+     },
+     {
+      "user": "What about you?",
+      "reply": "I know the Plan pizza has pizza on a local bar formade pizza. While you are already planning to eat pizza with a pizza vinya. The pizza is a very popular pizza with curly fried dough, and it can also be pizza\n\n"
+     }
+    ],
+    "checks": [
+     {
+      "non_empty": true,
+      "no_replacement_char": true,
+      "printable_ratio": 1.0,
+      "no_prompt_echo": true,
+      "no_runaway_repeat": true
+     },
+     {
+      "non_empty": true,
+      "no_replacement_char": true,
+      "printable_ratio": 1.0,
+      "no_prompt_echo": true,
+      "no_runaway_repeat": true
+     }
+    ]
+   }
+  ]
+ }
+]

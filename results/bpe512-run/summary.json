@@ -1,0 +1,20 @@
+{
+  "reason": "data_stop: 429 Client Error: Too Many Requests for url: https://datasets-server.huggingface.co/rows?dataset=roneneldan%2FTinyStories&config=default&split=train&offset=6300&length=100",
+  "step": 325,
+  "params": 8868096,
+  "new_tokens": 966656,
+  "total_tokens": 1331200,
+  "seconds": 38.753814100000454,
+  "end_to_end_tokens_per_second": 24943.506141244266,
+  "compute_tokens_per_second": 165024.27010273133,
+  "compute_seconds": 5.857659599998442,
+  "data_seconds": 22.45295570000144,
+  "allocated_mib": 561.212890625,
+  "reserved_mib": 588.0,
+  "initial_validation_loss": 5.796230869067572,
+  "final_validation_loss": 3.8928279575427216,
+  "final_holdout_loss": 3.940395264908674,
+  "last_train_loss": 4.519336700439453,
+  "checkpoint": "results\\bpe512-run\\checkpoints\\step_00000325.pt",
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+}

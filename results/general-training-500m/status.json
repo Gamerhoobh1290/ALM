@@ -1,0 +1,16 @@
+{
+  "state": "target_reached",
+  "stage": "pretrain",
+  "dataset": "mixture",
+  "source": "mixture",
+  "detail": "target_reached",
+  "updated_at": "2026-09-17 18:58:51",
+  "checkpoint": "C:\\AdamLM\\results\\general-training-500m\\checkpoints\\step_00015259.pt",
+  "checkpoint_step": 15259,
+  "step": 15259,
+  "tokens": 500006912,
+  "target_tokens": 500000000,
+  "train_loss": 2.4211320877075195,
+  "validation_loss": 2.344149675773666,
+  "learning_rate": 3.0000025920578733e-05
+}

@@ -1,0 +1,57 @@
+{
+  "session_id": "research-20260918-150548-c909",
+  "created_at": 1789740348.7562377,
+  "started_at": 1789740348.7722414,
+  "updated_at": 1789740348.9121192,
+  "status": "stopped",
+  "goal": "",
+  "use_ai": false,
+  "limits": {
+    "max_tokens": 1000000,
+    "max_seconds": 3600.0,
+    "max_experiments": 3,
+    "max_api_requests": 25,
+    "max_api_cost_usd": 0.0,
+    "max_repetition": 3,
+    "allow_external_eval": false,
+    "require_manual_promotion": true,
+    "allowed_ops": [
+      "train",
+      "evaluate",
+      "compare"
+    ],
+    "allowed_datasets": [
+      "dolly",
+      "dailydialog",
+      "tinystories",
+      "wikitext103",
+      "fineweb_edu",
+      "mixture"
+    ],
+    "stage_token_cap": 1000000,
+    "allow_repetition": false,
+    "mixture": ""
+  },
+  "budget_used": {
+    "tokens": 0,
+    "seconds": 0.0,
+    "api_requests": 0,
+    "failures": 0
+  },
+  "experiments": [
+    {
+      "index": 1,
+      "status": "declined",
+      "reason": "This repeats failed/rejected experiment research-20260918-024513-e77c#1 from the same parent without a meaningful change to dataset, mixture, token target, or hypothesis. Previous outcome: rejected (held: instructions regressed (new F1 0.279 < old F1 0.313); held: conversation regressed (new F1 0.045 < old F1 0.054))."
+    }
+  ],
+  "stop_reason": "No useful next step: This repeats failed/rejected experiment research-20260918-024513-e77c#1 from the same parent without a meaningful change to dataset, mixture, token target, or hypothesis. Previous outcome: rejected (held: instructions regressed (new F1 0.279 < old F1 0.313); held: conversation regressed (new F1 0.045 < old F1 0.054)).",
+  "report": null,
+  "provider_state": {
+    "paused": false,
+    "reason": null,
+    "paused_at": null,
+    "attempts": [],
+    "last_model": null
+  }
+}

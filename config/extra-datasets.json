@@ -1,0 +1,21 @@
+{
+  "wikitext103": {
+    "kind": "parquet",
+    "display_name": "WikiText-103",
+    "train": [
+      {"path":"data/extra/wikitext103/train-00000-of-00002.parquet","rows":900675,"size":156987808,"sha256":"74da360f23826045b3e6ac6375411fdb15f003030aa74f2596ed08b857cb9212"},
+      {"path":"data/extra/wikitext103/train-00001-of-00002.parquet","rows":900675,"size":157088770,"sha256":"ba090ac30dbf5461e8dcbdd1a1b8e6f3cf9c2c756d64f0c1220450acd514f720"}
+    ],
+    "validation": [{"path":"data/extra/wikitext103/validation-00000-of-00001.parquet","rows":3760,"size":657209,"sha256":"204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c"}],
+    "text_column":"text", "boundary":"wikitext_article", "validation_rows":3760,
+    "quality":{"min_words":40,"min_letter_ratio":0.2,"min_unique_word_ratio":0.08,"max_duplicate_line_ratio":0.5}
+  },
+  "fineweb_edu": {
+    "kind": "parquet",
+    "display_name": "FineWeb-Edu",
+    "train": [{"path":"data/extra/013_00000.parquet","rows":182101,"size":540632672,"sha256":"b393f51fefab26cd6f4c8f65707c1924f6666c4961a0ebebe04bb57f7ec832de"}],
+    "validation": [], "validation_rows":2000, "validation_from_tail":true,
+    "text_column":"text", "boundary":"row_document",
+    "quality":{"min_words":50,"min_letter_ratio":0.2,"min_unique_word_ratio":0.08,"max_duplicate_line_ratio":0.5}
+  }
+}

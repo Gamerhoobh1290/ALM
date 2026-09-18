@@ -1,0 +1,62 @@
+{
+  "reason": "token_target",
+  "step": 1024,
+  "tokens": 2097152,
+  "invocation_tokens": 1835008,
+  "invocation_tokens_per_second": 47152.636355103605,
+  "elapsed_seconds": 245.95363320000024,
+  "invocation_seconds": 38.91634030000023,
+  "end_to_end_tokens_per_second": 8526.615251479838,
+  "compute_tokens_per_second": 173478.92407415388,
+  "data_seconds": 11.847620999993978,
+  "compute_seconds": 12.088799900001504,
+  "final_training_batch_loss": 1.3817219734191895,
+  "validation_loss": 1.495133638381958,
+  "holdout_loss": 1.5079989433288574,
+  "holdout_byte_perplexity": 4.5176816064482805,
+  "validation_tokens": 20480,
+  "holdout_tokens": 20480,
+  "allocated_mib": 251.27978515625,
+  "reserved_mib": 286.0,
+  "gpu_snapshots": [
+    "2, 1144, 40, 44.98",
+    "2, 1151, 40, 44.86",
+    "2, 1144, 41, 44.96",
+    "1, 1150, 41, 47.60",
+    "1, 1143, 41, 45.46",
+    "1, 1144, 42, 45.95",
+    "1, 1144, 42, 46.45"
+  ],
+  "stories_read": 2400,
+  "requests": 24,
+  "checkpoint": "C:\\AdamLM\\results\\first-run\\checkpoints\\step_00001024.pt",
+  "bytes_per_word": 5.005001705126748,
+  "mean_story_bytes": 687.953125,
+  "samples": [
+    "Once upon a time, a little girl day, Lily. They said, \"Cant's made are bing for inno, but the dad and to of the betack. Anden bates on and to want tair it its and happer and from and ean on the cothe snings.\n\nTim was ad bed and hed didn't keeOn and Lily and Lily said. She to the started the it on it was the farmy tooll on theok o",
+    "The dog found a red ball. He dad some it he be back to to brock and bing for innifelt brack and to the frow ham and to to lean the bad to can stoart it its and hand run it go and bed. They they are nother sorrow the bad their tood and the fellie on it to time sion. She taked the kite stialw on it and the farme them and tziok o",
+    "Lily was sad because dand and soll her to it with brocks anout a fistinngs and to butthe stad of the betack. They learn to take onew as tair it its and happ room ange and bech othen fiss a snices. They with dis with and the croome Oni day, Lila and a can amey inting. She said she it on it was the farmy tooll on theok o"
+  ],
+  "protocol": {
+    "model": {
+      "vocab_size": 256,
+      "block_size": 256,
+      "n_layer": 4,
+      "n_head": 6,
+      "n_embd": 384,
+      "dropout": 0.0
+    },
+    "tokenizer": "utf8-byte-v1",
+    "precision": "bf16",
+    "batch": 8,
+    "accumulation": 1,
+    "validation_sha256": "29f0b37fc02bb9ece6991f39dbc85b320ed287f7da0041f51003d2587f6a17bf",
+    "lr": 0.0003,
+    "seed": 1337,
+    "dataset": [
+      "roneneldan/TinyStories",
+      "default",
+      "train"
+    ]
+  }
+}

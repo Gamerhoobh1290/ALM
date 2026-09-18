@@ -1,0 +1,18 @@
+{
+  "status": "prepared_not_started",
+  "parent_checkpoint": "results/general-pretrain-extended/checkpoints/step_00001526.pt",
+  "parent_checkpoint_sha256": "129d4666579c2c8f6fcc5a6ead3e8ce74dd7d60f84f633c4482a3d8307a3ec70",
+  "parent_step": 1526,
+  "stage_target_tokens": 50000000,
+  "tokens_per_update": 32768,
+  "estimated_updates": 1526,
+  "effective_target_tokens": 50003968,
+  "optimizer": "fresh AdamW state",
+  "schedule": {
+    "warmup_updates": 50,
+    "peak_learning_rate": 0.00005,
+    "minimum_learning_rate": 0.000005,
+    "decay": "cosine over 1526 updates"
+  },
+  "validation_sha256": "e51a25c95c8fc237f54ef3d1c6cd75e890b26d8bcd85ede18f089942ad3bd3e0"
+}

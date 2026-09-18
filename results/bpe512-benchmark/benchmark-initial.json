@@ -1,0 +1,20 @@
+{
+  "reason": "session_limit",
+  "step": 238,
+  "params": 8868096,
+  "new_tokens": 974848,
+  "total_tokens": 974848,
+  "seconds": 32.47032020000006,
+  "end_to_end_tokens_per_second": 30022.740582644397,
+  "compute_tokens_per_second": 149566.5774620568,
+  "compute_seconds": 6.517819799997142,
+  "data_seconds": 17.852907799998775,
+  "allocated_mib": 562.837890625,
+  "reserved_mib": 592.0,
+  "initial_validation_loss": 8.417027049518483,
+  "final_validation_loss": 4.15861456525392,
+  "final_holdout_loss": 4.1372413711843885,
+  "last_train_loss": 4.440093040466309,
+  "checkpoint": "results\\bpe512-benchmark\\checkpoints\\step_00000238.pt",
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+}

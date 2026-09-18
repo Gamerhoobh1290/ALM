@@ -1,0 +1,43 @@
+{
+  "seed": 1337,
+  "stage": "pretrain",
+  "dataset": "mixture",
+  "parent_checkpoint": "results/general-pretrain-extended/checkpoints/step_00001526.pt",
+  "model": {
+    "vocab_size": 4096,
+    "block_size": 512,
+    "n_layer": 4,
+    "n_head": 6,
+    "n_embd": 384,
+    "dropout": 0.0
+  },
+  "tokenizer": "tokenizers/bpe4096/tokenizer.json",
+  "validation": "data/tinystories-v2/validation-snapshot.json",
+  "run_dir": "results/general-pretrain-extended-50m",
+  "precision": "bf16",
+  "batch_size": 64,
+  "accumulation": 1,
+  "target_tokens": 50000000,
+  "learning_rate": 0.00005,
+  "minimum_learning_rate": 0.000005,
+  "warmup_steps": 50,
+  "checkpoint_every": 250,
+  "validation_every": 500,
+  "sample_every": 500,
+  "max_session_seconds": 3600,
+  "data": {"split": "train"},
+  "mixture": {
+    "components": [
+      {"dataset": "tinystories", "weight": 0.20},
+      {"dataset": "wikitext103", "weight": 0.35},
+      {"dataset": "fineweb_edu", "weight": 0.45}
+    ]
+  },
+  "storage": {
+    "project_budget_gb": 15,
+    "cache_limit_gb": 2,
+    "minimum_free_disk_gb": 5,
+    "checkpoint_keep": 3,
+    "disk_poll_seconds": 30
+  }
+}

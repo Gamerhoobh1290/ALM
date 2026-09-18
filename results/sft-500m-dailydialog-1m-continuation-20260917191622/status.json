@@ -1,0 +1,16 @@
+{
+  "state": "disk_pause",
+  "stage": "sft",
+  "dataset": "dailydialog",
+  "source": "dailydialog",
+  "detail": "project storage budget exceeded",
+  "updated_at": "2026-09-17 20:16:59",
+  "checkpoint": "C:\\AdamLM\\results\\sft-500m-dailydialog-1m-continuation-20260917191622\\checkpoints\\step_00000300.pt",
+  "checkpoint_step": 300,
+  "step": 390,
+  "tokens": 1597440,
+  "target_tokens": 10000000,
+  "train_loss": 2.9161624908447266,
+  "validation_loss": 2.6253655513193763,
+  "learning_rate": 9.558745626655961e-05
+}

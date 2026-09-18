@@ -1,0 +1,8 @@
+{
+  "run_name": "web-stage-20260918140224",
+  "mode": "continuation",
+  "dataset": "mixture",
+  "started_at": 1789740304.9434748,
+  "max_seconds": 3600.0,
+  "target_tokens": 550010880
+}

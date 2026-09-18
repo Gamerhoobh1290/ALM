@@ -1,0 +1,25 @@
+{
+  "session_id": "research-20260918-012806-1cd5",
+  "status": "stopped",
+  "stop_reason": "Repeated failures \u2014 stopping for review",
+  "experiments": [
+    {
+      "index": 1,
+      "status": "failed",
+      "phase": "propose",
+      "failure": "AI proposal unavailable (AI planner is disabled; enable it or use local-only mode.); state preserved, no training started."
+    },
+    {
+      "index": 2,
+      "status": "failed",
+      "phase": "propose",
+      "failure": "AI proposal unavailable (AI planner is disabled; enable it or use local-only mode.); state preserved, no training started."
+    },
+    {
+      "index": 3,
+      "status": "failed",
+      "phase": "propose",
+      "failure": "AI proposal unavailable (AI planner is disabled; enable it or use local-only mode.); state preserved, no training started."
+    }
+  ]
+}

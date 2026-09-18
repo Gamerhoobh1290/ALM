@@ -1,0 +1,9 @@
+{
+  "run_name": "research-20260918-024054-6961-e1",
+  "mode": "continuation",
+  "dataset": "dailydialog",
+  "started_at": 1789695654.7644193,
+  "max_seconds": 3599.7973804473877,
+  "target_tokens": 1000000,
+  "research_session": "research-20260918-024054-6961"
+}

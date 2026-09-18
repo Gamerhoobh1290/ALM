@@ -1,0 +1,15 @@
+{
+  "state": "target_reached",
+  "stage": "pretrain",
+  "dataset": "mixture",
+  "source": "mixture",
+  "detail": "target_reached",
+  "updated_at": "2026-09-17 12:59:42",
+  "checkpoint": "results\\general-pretrain-extended-50m\\checkpoints\\step_00001526.pt",
+  "checkpoint_step": 1526,
+  "step": 1526,
+  "tokens": 50003968,
+  "target_tokens": 50000000,
+  "train_loss": 3.1693778038024902,
+  "validation_loss": 2.8047504292851193
+}

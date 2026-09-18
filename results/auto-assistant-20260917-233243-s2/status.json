@@ -1,0 +1,16 @@
+{
+  "state": "target_reached",
+  "stage": "sft",
+  "dataset": "dailydialog",
+  "source": "dailydialog",
+  "detail": "target_reached",
+  "updated_at": "2026-09-17 23:35:31",
+  "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-233243-s2\\checkpoints\\step_00000418.pt",
+  "checkpoint_step": 418,
+  "step": 418,
+  "tokens": 1712128,
+  "target_tokens": 1709696,
+  "train_loss": 1.5066779851913452,
+  "validation_loss": 2.816770389445901,
+  "learning_rate": 1.0473066366022559e-05
+}

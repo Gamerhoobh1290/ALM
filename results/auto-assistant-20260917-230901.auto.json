@@ -1,0 +1,156 @@
+{
+  "plan_id": "auto-assistant-20260917-230901",
+  "head": {
+    "run": "auto-assistant-20260917-215605-s1",
+    "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-215605-s1\\checkpoints\\step_00002024.pt",
+    "step": 2024,
+    "tokens": 8290304
+  },
+  "foundation": {
+    "run": "general-training-500m",
+    "state": "target_reached",
+    "checkpoint": "C:\\AdamLM\\results\\general-training-500m\\checkpoints\\step_00015259.pt"
+  },
+  "diet": {
+    "manifest": "data/sft_assistant/processed-manifest.json",
+    "revision": "curated-mix-20260918",
+    "masking": "response-only (unchanged SFT template)",
+    "dailydialog": {
+      "rows": 34890,
+      "tokens": 5258299
+    },
+    "dolly": {
+      "rows": 13511,
+      "tokens": 3033000
+    }
+  },
+  "allocation": {
+    "dd_share": 0.7,
+    "dolly_share": 0.30000000000000004,
+    "basis": "base 70% DailyDialog / 30% Dolly by sampled training tokens: conversation-majority reading diet with roughly balanced response supervision (Dolly rows carry ~3.3x the response tokens); no evaluated skill profile yet, no tilt applied",
+    "requested_tokens": 10000000,
+    "effective_tokens": 10000000,
+    "capped": false,
+    "cap_explanation": null,
+    "stage_chunks": [
+      {
+        "tokens": 8291299,
+        "epoch_label": "pass 1"
+      },
+      {
+        "tokens": 1708701,
+        "epoch_label": "pass 2 (partial, 21% of the mixed file); rows repeat after each full pass"
+      }
+    ]
+  },
+  "requested_tokens": 10000000,
+  "effective_tokens": 10000000,
+  "stages": [
+    {
+      "index": 1,
+      "run_dir": "results/auto-assistant-20260917-230901-s1",
+      "target_tokens": 8291299,
+      "epoch_label": "pass 1",
+      "status": "done",
+      "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-215605-s1\\checkpoints\\step_00002024.pt",
+      "command": [
+        "C:\\AdamLM\\.venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "adamlm.bpe_train",
+        "--auto-resume",
+        "--config",
+        "C:\\AdamLM\\config\\sft-assistant.json",
+        "--run-dir",
+        "C:\\AdamLM\\results\\auto-assistant-20260917-230901-s1",
+        "--dataset",
+        "dailydialog",
+        "--target-tokens",
+        "8291299",
+        "--parent-checkpoint",
+        "C:\\AdamLM\\results\\auto-assistant-20260917-215605-s1\\checkpoints\\step_00002024.pt",
+        "--max-seconds",
+        "3599.9990000724792"
+      ],
+      "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-230901-s1\\checkpoints\\step_00002024.pt",
+      "tokens": 8290304,
+      "note": "full-pass boundary: data exhausted 995 tokens short of target (< one batch of 4096); advancing with actual 8290304 tokens from step_00002024.pt"
+    },
+    {
+      "index": 2,
+      "run_dir": "results/auto-assistant-20260917-230901-s2",
+      "target_tokens": 1709696,
+      "epoch_label": "pass 2 (partial, 21% of the mixed file); rows repeat after each full pass",
+      "status": "done",
+      "parent_stage": 1,
+      "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-230901-s1\\checkpoints\\step_00002024.pt",
+      "note": "absorbs 995 tail tokens from stage 1 full-pass boundary to preserve overall 10000000 budget (original stage-2 target 1708701)",
+      "command": [
+        "C:\\AdamLM\\.venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "adamlm.bpe_train",
+        "--auto-resume",
+        "--config",
+        "C:\\AdamLM\\config\\sft-assistant.json",
+        "--run-dir",
+        "C:\\AdamLM\\results\\auto-assistant-20260917-230901-s2",
+        "--dataset",
+        "dailydialog",
+        "--target-tokens",
+        "1709696",
+        "--parent-checkpoint",
+        "C:\\AdamLM\\results\\auto-assistant-20260917-230901-s1\\checkpoints\\step_00002024.pt",
+        "--max-seconds",
+        "3599.961055278778"
+      ],
+      "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-230901-s2\\checkpoints\\step_00000418.pt",
+      "tokens": 1712128
+    }
+  ],
+  "storage": {
+    "project_gib": 15.78000834863633,
+    "est_new_gib": 1.1053695678710938,
+    "budget_gib": 25.0,
+    "free_gib": 131.1800308227539,
+    "floor_gib": 5.0,
+    "fits_budget": true,
+    "floor_ok": true,
+    "config": "config/sft-assistant.json"
+  },
+  "time": {
+    "max_seconds": 3600.0,
+    "max_duration": "1h 00m",
+    "est_seconds": 502.6463160952434,
+    "est_duration": "8m 22s"
+  },
+  "stopping": [
+    "overall time limit of 1h 00m (stages share one deadline)",
+    "Stop button: graceful stop with checkpoint, resumable without replanning",
+    "disk pause: stages halt safely on storage-guard trips, checkpoints intact"
+  ],
+  "eval": {
+    "old_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-215605-s1\\checkpoints\\step_00002024.pt",
+    "new_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-230901-s2\\checkpoints\\step_00000418.pt",
+    "report": "C:\\AdamLM\\results\\auto-assistant-20260917-230901-s2\\auto_eval.json",
+    "instr_f1_old": 0.2827,
+    "instr_f1_new": 0.2695,
+    "instr_n": 4,
+    "conv_f1_old": 0.0345,
+    "conv_f1_new": 0.1132,
+    "conv_n": 2,
+    "hygiene_problems": []
+  },
+  "warnings": [],
+  "status": "done",
+  "created_at": 1789682943.487252,
+  "started_at": 1789683523.1739404,
+  "updated_at": 1789683571.0914676,
+  "stop_reason": null,
+  "failure": null,
+  "produced_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-230901-s2\\checkpoints\\step_00000418.pt",
+  "promotion": {
+    "promoted": false,
+    "reason": "held: instructions regressed (new F1 0.269 < old F1 0.283); default unchanged"
+  }
+}

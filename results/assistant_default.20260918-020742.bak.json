@@ -1,0 +1,19 @@
+{
+  "run": "auto-assistant-20260917-231947-s3",
+  "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-231947-s3\\checkpoints\\step_00002024.pt",
+  "promoted_at": 1789684068.811158,
+  "plan_id": "auto-assistant-20260917-231947",
+  "eval": {
+    "instr_f1_old": 0.2716,
+    "instr_f1_new": 0.3129,
+    "instr_n": 4,
+    "conv_f1_old": 0.0,
+    "conv_f1_new": 0.0541,
+    "conv_n": 2,
+    "hygiene_problems": []
+  },
+  "previous": {
+    "run": "auto-assistant-20260917-230901-s1",
+    "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-230901-s1\\checkpoints\\step_00002024.pt"
+  }
+}

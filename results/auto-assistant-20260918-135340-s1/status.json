@@ -1,0 +1,16 @@
+{
+  "state": "regression_pause",
+  "stage": "sft",
+  "dataset": "dailydialog",
+  "source": "dailydialog",
+  "detail": "Validation has not improved by 0.002 for 1 checks; best 2.733918 at step 0, current 3.872458. Best and latest checkpoints are preserved for review.",
+  "updated_at": "2026-09-18 13:53:57",
+  "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-135340-s1\\checkpoints\\step_00000050.pt",
+  "checkpoint_step": 50,
+  "step": 50,
+  "tokens": 204800,
+  "target_tokens": 7696384,
+  "train_loss": 0.2649594843387604,
+  "validation_loss": 3.872457696099974,
+  "learning_rate": 6e-05
+}

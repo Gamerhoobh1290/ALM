@@ -1,0 +1,22 @@
+{
+  "reason": "target_reached",
+  "step": 1526,
+  "params": 8868096,
+  "new_tokens": 50003968,
+  "total_tokens": 50003968,
+  "seconds": 379.63758670000243,
+  "end_to_end_tokens_per_second": 131715.0086077072,
+  "compute_tokens_per_second": 204885.88810374358,
+  "compute_seconds": 244.0576482001561,
+  "data_seconds": 75.35113209996052,
+  "validation_seconds": 2.0378585000071325,
+  "checkpoint_seconds": 13.598497000013595,
+  "allocated_mib": 3484.267578125,
+  "reserved_mib": 4006.0,
+  "initial_validation_loss": 2.845597399616091,
+  "final_validation_loss": 2.8047504292851193,
+  "final_holdout_loss": 2.8673375253317057,
+  "last_train_loss": 3.1693778038024902,
+  "checkpoint": "results\\general-pretrain-extended-50m\\checkpoints\\step_00001526.pt",
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4"
+}

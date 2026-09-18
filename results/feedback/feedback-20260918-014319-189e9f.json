@@ -1,0 +1,11 @@
+{
+  "feedback_id": "feedback-20260918-014319-189e9f",
+  "conversation_id": "",
+  "created_at": 1789692199.8200364,
+  "status": "approved",
+  "assistant_text": "1/World",
+  "corrected_text": "=2",
+  "note": "",
+  "training_use": "approved \u2014 eligible for a future SFT stage with response-only loss masking; held-out feedback stays held out",
+  "reviewed_at": 1789692202.6020184
+}

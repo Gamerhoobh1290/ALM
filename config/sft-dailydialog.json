@@ -1,0 +1,38 @@
+{
+  "seed": 1337,
+  "stage": "sft",
+  "dataset": "dailydialog",
+  "model": {
+    "vocab_size": 4096,
+    "block_size": 512,
+    "n_layer": 4,
+    "n_head": 6,
+    "n_embd": 384,
+    "dropout": 0.0
+  },
+  "tokenizer": "tokenizers/bpe4096/tokenizer.json",
+  "validation": "data/dailydialog/processed-manifest.json",
+  "run_dir": "results/sft-dailydialog-run",
+  "precision": "bf16",
+  "batch_size": 8,
+  "accumulation": 1,
+  "target_tokens": 1000000,
+  "learning_rate": 0.0001,
+  "minimum_learning_rate": 0.00001,
+  "warmup_steps": 50,
+  "checkpoint_every": 100,
+  "validation_every": 50,
+  "sample_every": 100,
+  "max_session_seconds": 3600,
+  "data": {
+    "manifest": "data/dailydialog/processed-manifest.json",
+    "page_size": 64
+  },
+  "storage": {
+    "project_budget_gb": 25,
+    "cache_limit_gb": 2,
+    "minimum_free_disk_gb": 5,
+    "checkpoint_keep": 3,
+    "disk_poll_seconds": 30
+  }
+}

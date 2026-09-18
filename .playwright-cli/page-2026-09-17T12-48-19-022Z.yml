@@ -1,0 +1,71 @@
+- generic [ref=f8e2]:
+  - banner [ref=f8e3]:
+    - generic [ref=f8e9]:
+      - generic [ref=f8e10]: AdamLM
+      - generic [ref=f8e11]: LOCAL TRAINING STUDIO
+    - generic [ref=f8e12]:
+      - generic [ref=f8e14]: Backend online
+      - code [ref=f8e15]: 127.0.0.1:8765
+  - navigation "Main navigation" [ref=f8e16]:
+    - button "Training 0" [ref=f8e2491] [cursor=pointer]
+    - button "Playground" [active] [ref=f8e18] [cursor=pointer]
+  - main [ref=f8e19]:
+    - generic [ref=f8e2614]:
+      - generic [ref=f8e2616]:
+        - generic [ref=f8e2617]: LOCAL INFERENCE
+        - heading "Model playground" [level=1] [ref=f8e2618]
+        - paragraph [ref=f8e2619]: Generate from a trusted checkpoint without mixing inference and training GPU sessions.
+      - generic [ref=f8e2620]:
+        - generic [ref=f8e2621]:
+          - generic [ref=f8e2623]:
+            - generic [ref=f8e2624]: CHECKPOINT
+            - heading "Generation settings" [level=2] [ref=f8e2625]
+          - generic [ref=f8e2626]:
+            - generic [ref=f8e2627]: Saved checkpoint
+            - combobox "Saved checkpoint" [ref=f8e2628]:
+              - option "PRODUCTION · bpe512-local-run · step 12,208" [selected]
+              - option "general-pretrain-run · step 1,526"
+              - option "general-pretrain-extended · step 1,526"
+              - option "general-pretrain-extended-50m · step 1,526"
+              - option "first-run · step 1,024"
+              - option "bpe512-run · step 325"
+              - option "web-ui-stop2-20260917-1347 · step 256"
+              - option "gui-stage-20260917-131619 · step 245"
+              - option "web-ui-stop-20260917-1345 · step 64"
+              - option "web-ui-cycle-20260917-1342 · step 8"
+              - option "SMOKE · sft-benchmark-v2 · step 733"
+              - option "SMOKE · local-delivery-smoke · step 427"
+              - option "SMOKE · gui-smoke · step 372"
+              - option "SMOKE · bpe512-benchmark · step 242"
+              - option "SMOKE · sft-benchmark · step 92"
+              - option "SMOKE · launcher-smoke · step 72"
+              - option "SMOKE · sft-smoke · step 32"
+              - option "SMOKE · wikitext-smoke · step 1"
+              - option "SMOKE · general-pretrain-smoke · step 1"
+          - generic [ref=f8e2629]:
+            - generic [ref=f8e2630]: Mode
+            - combobox "Mode" [ref=f8e2631]:
+              - option "Story completion" [selected]
+              - option "Conversation"
+          - generic [ref=f8e2632]:
+            - generic [ref=f8e2633]:
+              - generic [ref=f8e2634]: Temperature
+              - spinbutton "Temperature" [ref=f8e2635]: "0.8"
+            - generic [ref=f8e2636]:
+              - generic [ref=f8e2637]: Top-K
+              - spinbutton "Top-K" [ref=f8e2638]: "40"
+          - generic [ref=f8e2639]:
+            - generic [ref=f8e2640]: New tokens
+            - spinbutton "New tokens" [ref=f8e2641]: "160"
+          - generic [ref=f8e2642]:
+            - generic [ref=f8e2643]: Prompt
+            - textbox "Prompt" [ref=f8e2644]: Once upon a time, a curious fox
+          - button "Generate locally" [ref=f8e2645] [cursor=pointer]
+          - generic [ref=f8e2646]: Only saved checkpoints listed by the backend can be loaded.
+        - generic [ref=f8e2647]:
+          - generic [ref=f8e2648]:
+            - generic [ref=f8e2649]:
+              - generic [ref=f8e2650]: OUTPUT
+              - heading "Generated text" [level=2] [ref=f8e2651]
+            - generic [ref=f8e2652]: LOCAL
+          - generic [ref=f8e2653]: Generated output will appear here.

@@ -1,0 +1,28 @@
+{
+  "reason": "regression_pause",
+  "step": 50,
+  "params": 8868096,
+  "new_tokens": 204800,
+  "total_tokens": 204800,
+  "seconds": 10.18028550001327,
+  "end_to_end_tokens_per_second": 20117.31399868236,
+  "compute_tokens_per_second": 148368.45771243883,
+  "compute_seconds": 1.380347299942514,
+  "data_seconds": 0.2866309999662917,
+  "validation_seconds": 0.08740220000618137,
+  "checkpoint_seconds": 3.2278523999848403,
+  "allocated_mib": 561.087890625,
+  "reserved_mib": 650.0,
+  "initial_validation_loss": 2.7339184090848074,
+  "final_validation_loss": 3.8732968504347838,
+  "final_holdout_loss": 4.172628794506471,
+  "last_train_loss": 0.2650623619556427,
+  "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260918-133731-s1\\checkpoints\\step_00000050.pt",
+  "tokenizer_sha256": "76ac1863baadb1067f53589809022ea9dfa82eb822b7ab63d9b89994056a94e4",
+  "validation_monitor": {
+    "best_loss": 2.7339184090848074,
+    "bad_validations": 1,
+    "best_step": 0
+  },
+  "detail": "Validation has not improved by 0.002 for 1 checks; best 2.733918 at step 0, current 3.873297. Best and latest checkpoints are preserved for review."
+}

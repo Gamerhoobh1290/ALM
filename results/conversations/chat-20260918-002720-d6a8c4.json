@@ -1,0 +1,18 @@
+{
+  "conversation_id": "chat-20260918-002720-d6a8c4",
+  "title": "hey",
+  "saved_at": 1789687640.8346417,
+  "approved_version": "auto-assistant-20260917-231947-s3@step-00002024",
+  "message_count": 2,
+  "messages": [
+    {
+      "role": "user",
+      "text": "hey"
+    },
+    {
+      "role": "assistant",
+      "text": "Malebia and North Carolina"
+    }
+  ],
+  "training_use": "never \u2014 saved history only; promotion to a training example requires explicit feedback approval"
+}

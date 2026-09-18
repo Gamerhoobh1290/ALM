@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adamlm"
+version = "0.1.0"
+description = "A from-scratch language-model training baseline for a local RTX 3060"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "requests>=2.32,<3",
+    "truststore>=0.10,<1",
+    "tokenizers>=0.22,<0.23",
+    "filelock>=3,<4",
+    "numpy>=2,<3",
+    "pyarrow>=20,<24",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

@@ -1,0 +1,121 @@
+{
+  "plan_id": "auto-assistant-20260917-215605",
+  "head": {
+    "run": "sft-assistant",
+    "checkpoint": "C:\\AdamLM\\results\\sft-assistant\\checkpoints\\step_00000245.pt",
+    "step": 245,
+    "tokens": 1003520
+  },
+  "foundation": {
+    "run": "general-training-500m",
+    "state": "target_reached",
+    "checkpoint": "C:\\AdamLM\\results\\general-training-500m\\checkpoints\\step_00015259.pt"
+  },
+  "diet": {
+    "manifest": "data/sft_assistant/processed-manifest.json",
+    "revision": "curated-mix-20260918",
+    "masking": "response-only (unchanged SFT template)",
+    "dailydialog": {
+      "rows": 34890,
+      "tokens": 5258299
+    },
+    "dolly": {
+      "rows": 13511,
+      "tokens": 3033000
+    }
+  },
+  "allocation": {
+    "dd_share": 0.7,
+    "dolly_share": 0.30000000000000004,
+    "basis": "base 70% DailyDialog / 30% Dolly by sampled training tokens: conversation-majority reading diet with roughly balanced response supervision (Dolly rows carry ~3.3x the response tokens); no evaluated skill profile yet, no tilt applied",
+    "requested_tokens": 10000000,
+    "effective_tokens": 10000000,
+    "capped": false,
+    "cap_explanation": null,
+    "stage_chunks": [
+      {
+        "tokens": 8291299,
+        "epoch_label": "pass 1"
+      },
+      {
+        "tokens": 1708701,
+        "epoch_label": "pass 2 (partial, 21% of the mixed file); rows repeat after each full pass"
+      }
+    ]
+  },
+  "requested_tokens": 10000000,
+  "effective_tokens": 10000000,
+  "stages": [
+    {
+      "index": 1,
+      "run_dir": "results/auto-assistant-20260917-215605-s1",
+      "target_tokens": 8291299,
+      "epoch_label": "pass 1",
+      "status": "done",
+      "parent_checkpoint": "C:\\AdamLM\\results\\sft-assistant\\checkpoints\\step_00000245.pt",
+      "command": [
+        "C:\\AdamLM\\.venv\\Scripts\\python.exe",
+        "-u",
+        "-m",
+        "adamlm.bpe_train",
+        "--auto-resume",
+        "--config",
+        "C:\\AdamLM\\config\\sft-assistant.json",
+        "--run-dir",
+        "C:\\AdamLM\\results\\auto-assistant-20260917-215605-s1",
+        "--dataset",
+        "dailydialog",
+        "--target-tokens",
+        "8291299",
+        "--parent-checkpoint",
+        "C:\\AdamLM\\results\\sft-assistant\\checkpoints\\step_00000245.pt",
+        "--max-seconds",
+        "3599.9979989528656"
+      ],
+      "checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-215605-s1\\checkpoints\\step_00002024.pt",
+      "tokens": 8290304,
+      "note": "full-pass boundary: data exhausted 995 tokens short of target (< one batch of 4096); advancing with actual 8290304 tokens from step_00002024.pt"
+    },
+    {
+      "index": 2,
+      "run_dir": "results/auto-assistant-20260917-215605-s2",
+      "target_tokens": 1709696,
+      "epoch_label": "pass 2 (partial, 21% of the mixed file); rows repeat after each full pass",
+      "status": "pending",
+      "parent_stage": 1,
+      "parent_checkpoint": "C:\\AdamLM\\results\\auto-assistant-20260917-215605-s1\\checkpoints\\step_00002024.pt",
+      "note": "absorbs 995 tail tokens from stage 1 full-pass boundary to preserve overall 10000000 budget (original stage-2 target 1708701)"
+    }
+  ],
+  "storage": {
+    "project_gib": 15.482332261279225,
+    "est_new_gib": 1.1053695678710938,
+    "budget_gib": 25.0,
+    "free_gib": 133.09648513793945,
+    "floor_gib": 5.0,
+    "fits_budget": true,
+    "floor_ok": true,
+    "config": "config/sft-assistant.json"
+  },
+  "time": {
+    "max_seconds": 3600.0,
+    "max_duration": "1h 00m",
+    "est_seconds": 206.03295887013826,
+    "est_duration": "3m 26s"
+  },
+  "stopping": [
+    "overall time limit of 1h 00m (stages share one deadline)",
+    "Stop button: graceful stop with checkpoint, resumable without replanning",
+    "disk pause: stages halt safely on storage-guard trips, checkpoints intact"
+  ],
+  "eval": null,
+  "warnings": [],
+  "status": "stopped",
+  "created_at": 1789678569.5228121,
+  "started_at": 1789678569.5558467,
+  "updated_at": 1789679021.007499,
+  "stop_reason": "stage 1 reached planned full-pass boundary (8290304 actual tokens from step_00002024.pt, 995 tail tokens short of 8291299 target); resume continues stage 2 from stage-1 weights with remaining 1709696 tokens",
+  "failure": null,
+  "produced_checkpoint": null,
+  "promotion": null
+}

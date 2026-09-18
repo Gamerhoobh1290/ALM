@@ -1,0 +1,39 @@
+{
+  "seed": 1337,
+  "model": {
+    "vocab_size": 4096,
+    "block_size": 512,
+    "n_layer": 4,
+    "n_head": 6,
+    "n_embd": 384,
+    "dropout": 0.0
+  },
+  "tokenizer": "tokenizers/bpe4096/tokenizer.json",
+  "validation": "data/tinystories-v2/validation-snapshot.json",
+  "run_dir": "results/bpe512-local-run",
+  "precision": "bf16",
+  "batch_size": 8,
+  "accumulation": 1,
+  "target_tokens": 50000000,
+  "learning_rate": 0.0003,
+  "minimum_learning_rate": 3e-05,
+  "warmup_steps": 250,
+  "checkpoint_every": 250,
+  "sample_every": 1000,
+  "max_session_seconds": 3600,
+  "data": {
+    "dataset": "roneneldan/TinyStories",
+    "config": "default",
+    "split": "train",
+    "page_size": 100,
+    "timeout": 20
+  },
+  "storage": {
+    "project_budget_gb": 50,
+    "cache_limit_gb": 2,
+    "minimum_free_disk_gb": 5,
+    "checkpoint_keep": 3,
+    "disk_poll_seconds": 30
+  },
+  "local_manifest": "config/tinystories-v2.json"
+}

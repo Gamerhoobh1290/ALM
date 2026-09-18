@@ -1,0 +1,8 @@
+{
+  "config": "C:\\AdamLM\\config\\bpe512-local.json",
+  "target_tokens": 32768,
+  "stage": "pretrain",
+  "dataset": "tinystories",
+  "mixture": null,
+  "parent_checkpoint": "C:\\AdamLM\\results\\bpe512-local-run\\checkpoints\\step_00012208.pt"
+}

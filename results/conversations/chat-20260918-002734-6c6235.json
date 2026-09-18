@@ -1,0 +1,26 @@
+{
+  "conversation_id": "chat-20260918-002734-6c6235",
+  "title": "hey",
+  "saved_at": 1789687654.3583038,
+  "approved_version": "auto-assistant-20260917-231947-s3@step-00002024",
+  "message_count": 4,
+  "messages": [
+    {
+      "role": "user",
+      "text": "hey"
+    },
+    {
+      "role": "assistant",
+      "text": "Malebia and North Carolina"
+    },
+    {
+      "role": "user",
+      "text": "what the fuck are u saying"
+    },
+    {
+      "role": "assistant",
+      "text": "While in America, there are several other states that will depend on the type of goods. These states are particularly dangerous for each type of goods, they can lead to the cortex. The"
+    }
+  ],
+  "training_use": "never \u2014 saved history only; promotion to a training example requires explicit feedback approval"
+}
